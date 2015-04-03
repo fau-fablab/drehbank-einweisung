@@ -15,8 +15,12 @@
 \usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{pdfpages}
 \usepackage{booktabs}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+\presetkeys%
+    {todonotes}%
+    {inline,backgroundcolor=red}{}
 \renewcommand{\texteuro}{\euro}
-\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
+%\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
 \newcommand{\pfeil}{\ensuremath{\rightarrow}}
 \newcommand{\kommando}[1]{\texttt{#1}}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
@@ -53,7 +57,7 @@
 \newpage
 \section{Grundlagen}
 \subsection{Begriffserklärung}
-\todo{Alphabetisch sortieren}\\
+\todo{Alphabetisch sortieren}
 \begin{tabular}{p{0.15\textwidth} p{0.8\textwidth}}
 Spannfutter 	& Auf der Hauptspindel befestigt. Haltevorrichtung mit 3 bis 4 Backen, welche das Werkstück aufnehmen und festklemmen. \\
 Reitstock 		& Gegenlager auf der rechten Seite Hauptachse. Wird verwendet um lange Werkstücke gegenzuspannen. \\
@@ -177,7 +181,7 @@ Die Spanbildung bzw. Spanform ist sehr wichtig für die erreichbare Oberflächen
 
 \subsubsection{Schnittwerte}
 \label{Schnittwerte}
-\todo{Hinweis, woher Werte kommen. Hinweis, dass nicht ideal}\\
+\todo{Hinweis, woher Werte kommen. Hinweis, dass nicht ideal}
 Der Vorschub ist in den Datenblätten meist als spezifischer Vorschub angegeben (mm pro Umdrehung) und muss entsprechend mit der Drehzahl multipliziert werden. In der Praxis nimmt man die ungefähre Größenordnung aus der Tabelle und probiert.
 
 Zu niedriger Vorschub führt dazu, dass zu wenig Span abgenommen wird und das Werkstück eher gerieben als zerspant wird. Das setzt das Werkzeug zu und verschlechtert die Schneide. Zu hoher Vorschub hingegen belastet Werkzeug und Maschine unnötig, führt zu erhöhtem Verschleiß und kann die Spindel überlasten, wodurch die Drehzahl einbricht.
@@ -403,7 +407,7 @@ Das Vorgehen entspricht der Vorgehensweise beim Abstechen. Als Werkzeug wird ein
 
 \subsection{Rändeln}
 \label{handdrehen:raendeln}
-\todo{Beim Manuell-Drehen: Überschneidung des Rändels, CNC in Arbeit}\\
+\todo{Beim Manuell-Drehen: Überschneidung des Rändels, CNC in Arbeit}
 Es ist ein relativ preiswertes Rändelwerkzeug vorhanden.
 Das Werkzeug kann in den Schnellspannhalter des Fasenmeißels gespannt werden.
 Es besteht aus einem einspannbaren Körper mit einem flexiblem, mit zwei Rändelrädern ausgestatteten Kopf.
