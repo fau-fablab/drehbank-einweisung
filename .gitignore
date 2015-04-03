@@ -1,6 +1,9 @@
 ## Built file
 Einweisung Drehbank.pdf
 
+##file explorer files
+.directory
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
