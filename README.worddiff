@@ -1,0 +1,12 @@
+Fuer sinnvolle Git-Logs der Word-Dateien, folgendes an ~/.gitconfig anhaengen:
+
+[diff "pandoc"]
+	textconv = pandoc --to=markdown
+	prompt = false
+[diff "antiword"]
+	textconv = antiword
+	prompt = false
+
+
+
+antiword und pandoc muessen natuerlich installiert sein.
