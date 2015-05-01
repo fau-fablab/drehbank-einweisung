@@ -7,6 +7,7 @@
 \newcommand{\basedir}{fablab-document} % Pfad zur Dokumentenvorlage
 \documentclass{\basedir/fablab-document}
 
+\usetikzlibrary{positioning}
 \usepackage{amssymb} % Symbole für Knöpfe
 \usepackage{subfigure,caption}
 \usepackage{eurosym}
@@ -726,7 +727,7 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 \begin{itemize}
 	\item Rohteil wie weiter oben beschrieben einspannen
 	\item Durchmesser des Rohteils mit Schieblehre bestimmen, Radius berechnen
-	\item Werkzeug 3 einsetzen\footnote{Es ist auch möglich ein anderes Werkzeug als Werkzeug 3 zum Setzen des Nullpunktes zu verwenden. Hierzu müssen aber zuerst die Werkzeugoffsets dieses anderen Werkzeugs geladen werden. Hierzu muss man manuell in der Registerkarte \encode{MDI (F5)} den GCode \verb#M6 Tn# wobei $n$ die Werkzeugnummer ist, also beispielsweise \verb#M6 T2# für Werkzeug Nummer 2 eingeben. Anschliessend muss noch \verb#G43# eingegeben werden um das Koordinatensystem dem grade gesetzten Werkzeug anzupassen. Nach dem Rückwechsel auf die Registerkarte \encode{Manuelle Kontrolle (F3)} kann man in der Anleitung normal weiter fortfahren. Es ist zu beachten, dass sich nicht alle Werkzeuge aufgrund ihrer Geometrie zur Nullpunktseinstellung eignen.}
+	\item Werkzeug 3 einsetzen\footnote{Es ist auch möglich ein anderes Werkzeug als Werkzeug 3 zum Setzen des Nullpunktes zu verwenden. Hierzu müssen aber zuerst die Werkzeugoffsets dieses anderen Werkzeugs geladen werden. Hierzu muss man manuell in der Registerkarte \enquote{MDI (F5)} den GCode \texttt{M6 T$n$} wobei $n$ die Werkzeugnummer ist, also beispielsweise \texttt{M6 T2} für Werkzeug Nummer 2 eingeben. Anschliessend muss noch \texttt{G43} eingegeben werden um das Koordinatensystem dem gerade gesetzten Werkzeug anzupassen. Nach dem Rückwechsel auf die Registerkarte \enquote{Manuelle Kontrolle (F3)} kann man in der Anleitung normal weiter fortfahren. Es ist zu beachten, dass sich nicht alle Werkzeuge aufgrund ihrer Geometrie zur Nullpunktseinstellung eignen.}
 	\item Schutzhaube schliessen
 	\item Spindel im Rechtslauf drehen lassen, Drehzahl grösser 1000 Umdrehungen (Einstellung mit \enquote{+} und \enquote{-}, Drehzahlanzeige ist grüner Balkengraph rechts oben)
 	\item Schrittgeschwindigkeit langsam einstellen, z.B. $20\,\frac{\mathrm{mm}}{\mathrm{min}}$
