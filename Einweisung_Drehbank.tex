@@ -52,25 +52,28 @@
 
 \begin{itemize}
  \item Ohne eine unterschriebene Grund-Einweisung in diese Regeln darf die Drehbank garnicht benutzt werden, d.\,h. du darfst dann nichts selber an und in der Drehbank tun.
- \item Mit Grund-Einweisung bist du zunächst \enquote{Fahrschüler} und darfst den Auftrag zwar selber vorbereiten (NC-Code laden, Werkstück ein- und ausspannen, Drehbank säubern), \textbf{die Steuerung aber nicht selbstständig bedienen.} 
+ \item Mit Grund-Einweisung bist du zunächst \enquote{Fahrschüler} und darfst den Auftrag zwar selber vorbereiten (Werkstück ein- und ausspannen, Drehbank säubern), \textbf{die Steuerung aber nicht selbstständig bedienen.} 
 
        Ein Benutzer, der die Drehbank selbstständig benutzen darf, prüft dann, ob dein Auftrag keine gefährlichen Fehler enthält, und führt dann als \enquote{Fahrlehrer} gemeinsam mit dir die Arbeit durch.
 
  Die Bedienung der Steuersoftware (Verfahren, Antasten, Starten, Fortsetzen nach Pause, \dots) darf dabei nur unter ständiger Aufsicht durch den Experten erfolgen!
- \item Sobald du genug Erfahrung und Routine hast und das entsprechend dokumentiert ist (mehrere Werkstücke selbstständig unter Aufsicht gefertigt, dies über einen größeren Zeitraum verteilt), wird dir die schriftliche Erlaubnis erteilt, den CNC-Betrieb ohne Aufsicht zu benutzen.
+ \item Sobald du genug Erfahrung und Routine hast und das entsprechend dokumentiert ist (mehrere Werkstücke selbstständig unter Aufsicht gefertigt, dies über einen größeren Zeitraum verteilt), wird dir die schriftliche Erlaubnis erteilt, den CNC-Betrieb ohne Aufsicht zu benutzen. Dabei sollen verschiedene Bearbeitungsarten und Werkzeuge verwendet worden sein.
  \item  \textbf{Für die Benutzung des Handbetriebs ist eine zusätzliche schriftliche Erlaubnis nötig!} Es gelten dabei weitere Vorschriften, siehe Kapitel \ref{handdrehen}.
 \end{itemize}
 
 
 \newpage
 \section{Grundlagen}
+
+Ein denkender Bediener wird generell bei allen Beschreibungen dieses Dokuments vorausgesetzt. Eine Drehmaschine ist ein gefährliches Werkzeug, deren sichere Bedienung unbedingt notwendig ist um schwere Unfälle zu vermeiden.
+
 \subsection{Begriffserklärung}
 \begin{tabular}{p{0.15\textwidth} p{0.8\textwidth}}
-Achsen 				& Z längs der Drehachse (nach rechts = positiv), X quer zur Drehachse (nach vorne = positiv) \\
+Achsen 				& Z in Richtung der Drehachse (vom Futter weg = positiv), X senkrecht horizontal zur Drehachse (nach vorne, auf den Bediener zu = positiv) \\
 Drehmeißel 		& Komplettes Teil aus Wendeplatte und Wendeplattenhalter. Ist in einem Schnell\-wechsel\-halter eingespannt und darf nicht verändert werden. \\
 Körnerspitze 	& Die mitlaufende Körnerspitze steckt anstelle des Bohrfutters in der Aufnahme des Reitstocks. Wird zum Gegenspannen von langen Werkstücken verwendet. Festdrehen, bis die Körnerspitze dauerhaft mitdreht, dann nicht mehr fester machen. Genaue Erklärung in Kapitel \ref{handdrehen:gegenspannen}. \\
-Nullpunkte 		& Z beim rechten Rand des Werkstücks, X in der Drehmitte \\
-Reitstock 		& Gegenlager auf der rechten Seite Hauptachse. Wird verwendet um lange Werkstücke gegenzuspannen. \\
+Nullpunkte 		& Z i.d.R. beim rechten oder linken Rand des Werkstücks, X in der Drehmitte \\
+Reitstock 		& Gegenlager auf der rechten Seite der Hauptachse. Wird verwendet um lange Werkstücke gegenzuspannen. \\
 Spannfutter 	& Auf der Hauptspindel befestigt. Haltevorrichtung mit 3 bis 4 Backen, welche das Werkstück aufnehmen und festklemmen. \\
 Wendeplatte 	& Das kleine, aus Hartmetall gefertigte Teil, das schließlich das Material zerspant. Brüchig aber sehr hart. Die Kanten können leicht brechen, wenn sie überlastet werden oder Stöße abbekommen. \\
 \end{tabular}
@@ -104,9 +107,11 @@ Es gibt im Grunde keine feste Regel nach der das Futter gewählt werden kann, je
 \item Objekte mit quadratischem Querschnitt ausschließlich im Vierbackenfutter
 \end{itemize}
 
+Spannfutter haben einen definierten maximalen Spanndurchmesser, der üblicherweise kleiner als die maximale Backenöffnung ist. Dieser Durchmesser ist unbedingt zu beachten, es besteht die Gefahr von Desintegration im laufenden Betrieb.
+
 \subsubsection{Spannfutterwechsel}
 
-Achtung das Spannfutter ist schwer! Lass dir am Besten von jemandem helfen. Achte unbedingt auf Sauberkeit!
+Achtung das Spannfutter ist schwer! Lass dir am Besten von jemandem helfen. Achte unbedingt auf Sauberkeit, insbesondere Spanfreiheit!
 \begin{itemize}
 \item Maul- und Imbusschlüsselsatz holen
 \item Abdeckhaube wegklappen
@@ -122,9 +127,9 @@ Achtung das Spannfutter ist schwer! Lass dir am Besten von jemandem helfen. Acht
 \subsubsection{Spannbacken}
 
 Es gibt Innen- und Außenspannbacken.
-Innenspannbacken werden zum Spannen von Innenradien wie z.\,B. Bohrungen verwendet oder
-zum Spannen auf Außenflächen bei kleinen Außendurchmessern.\todo{Ist der vorherige Satz korrekt?}
-Außenspannbacken kommen hingegen beim Spannen auf Außenflächen zum Einsatz.
+Innenspannbacken werden zum Spannen von Innenradien wie z.\,B. Bohrungen sowie von kleinen bis mittelgrossen Aussenradien verwendet. Innenspannbacken haben dazu sowohl innere als auch äussere Spannflächen.
+
+Außenspannbacken kommen hingegen ausschliesslich beim Spannen auf Außenflächen zum Einsatz.
 Wichtig: Sechskantmaterial immer mit den Innenbacken spannen.
 
 \todo{Bilder}
@@ -140,14 +145,14 @@ Achte dabei darauf, dass die Spannbacken nicht herausfallen.
 
 Das Einsetzen der neuen Spannbacken beginnt mit der Nummer 1.
 Unbedingt darauf achten, dass die Spannbacke Nummer 1 auch an der Postion 1 des Spannfutters eingesetzt wird!
-Achte darauf keinen Schmutz oder Späne ins Futter zu bringen.
+Achte darauf keinen Schmutz oder Späne ins Futter zu bringen. Hierzu vor dem Einbau die Spannbacken vorsichtig mit Druckluft ausblasen.
 
 Das Prinzip der Spannbackenbefestigung ist eine Spirale, die in die Nuten der Spannbacken greift.
 Drehe solange den Spannfutterschlüssel, bis der Beginn der Spirale bei Spannbacken 1 zu sehen ist.
 Dann drehe ein kleines Stück zurück und schiebe die Spannbacke bis zum Anschlag in die Nut und drehe mit dem Spannfutterschlüssel ein wenig weiter.
 Das Vorgehen wiederholt man bei den Spannbacken 2 und 3.
 
-Zum Ende das Futter einmal vollständig zu drehen.
+Zum Ende das Futter einmal vollständig zudrehen.
 Wenn nun die Spannbacken sauber schließen ist alles richtig gemacht.
 Wenn eine Spannbacke jedoch zu früh oder zu spät in der Mitte ankommt, wurde diese falsch eingesetzt.
 In diesem Fall müssen alle Spannbacken wieder ausgebaut und die Prozedur komplett wiederholt werden.
@@ -156,7 +161,7 @@ Die ausgebauten Spannbacken säubern, ölen und wieder aufräumen.
 
 \subsubsection{Kühlschmierstoff}
 
-Das Kühlmittel besteht aus einer Öl-Wasser-Emulsion.
+Das Kühlschmiermittel besteht aus einer Öl-Wasser-Emulsion.
 Die Aufgabe des Kühlschmierstoffes (KSS) besteht darin den Schneidvorgang zu kühlen (Wasser) und zu schmieren (Öl).
 Aufgrund der Zusätze und der entfettenden Wirkung des Emulgators sollte der Hautkontakt vermieden werden.
 Bei Augenkontakt sofort mit reichlich Wasser ausspülen und gelegentlich die oberen und unteren Augenlieder anheben.
@@ -164,7 +169,7 @@ Anschließend ist ein Augenarzt aufzusuchen.
 
 \subsubsection{Drehbank}
 \todo{Bild mit Beschreibung: Bild Philipp, Michael}
-Unsere Drehbank besteht aus Hauptspindel mit Schutzhaube, Reitstock, Werkzeughalter, Kühlmittelpumpe, CNC-Steuerung und Einhausung mit Schutzhaube
+Unsere Drehbank besteht aus Hauptspindel mit Futterschutzhaube, Reitstock, Werkzeughalter, Kühlmittelpumpe, CNC-Steuerung und Einhausung mit Kunststoffschutzhaube.
 \begin{figure}[ht]
 \centering
 \includegraphics[width = 0.9\linewidth]{img/drehbank} \\
@@ -215,7 +220,7 @@ Die Spanbildung bzw. Spanform ist sehr wichtig für die erreichbare Oberflächen
 
 \subsubsection{Schnittwerte}
 \label{Schnittwerte}
-Der Vorschub ist in den Datenblättern meist als spezifischer Vorschub angegeben (mm pro Umdrehung) und muss entsprechend mit der Drehzahl multipliziert werden.
+Der Vorschub ist in den Datenblättern der Werkzeuge meist als spezifischer Vorschub angegeben (mm pro Umdrehung) und muss entsprechend mit der Drehzahl multipliziert werden.
 In der Praxis nimmt man die ungefähre Größenordnung aus der Tabelle und probiert.
 
 Zu niedriger Vorschub führt dazu, dass zu wenig Span abgenommen wird und das Werkstück eher gerieben als zerspant wird.
@@ -269,6 +274,7 @@ Die Oberfläche wird dabei wesentlich feiner.
 \caption{Herstellerangaben für ideale Bedingungen nach \href{http://www.taegutec.com/Ustyles/DownloadFiles/I_Grades_en.pdf}{TaeguTec} und \href{http://www.roehmschweiz.ch/fileadmin/Roehm/PDF_Plexiglas/311-1_Bearbeiten_von_PLEXIGLAS_de.pdf}{Evonic}}
 \end{table}
 
+\todo{Unter welchen Bedingungen gilt diese Tabelle? VHM, Beschichtung?}
 \newpage
 \section{Sicherheit und Verhaltensregeln}
 \subsection{Schutzmaßnahmen und Verhaltensregeln}
@@ -326,17 +332,14 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \section{Vorbereitende Aufgaben}
 \subsection{Rohmaterial einspannen}
 
-Achte vor dem Einspannen darauf das passende Futter zu verwenden.
-Zum Wechseln siehe Kapitel \ref{zerspanung:spannbackenwechsel}.
-
 Öffne die Spannbacken vor dem Einsetzen auf einen adäquaten Durchmesser und setze das Rohmaterial
 plan zu den Auflageflächen der Spannbacken ein.
-Achte beim Festziehen darauf, dass das Material eine möglichst geringe Unwucht hat.
+Achte beim Festziehen darauf, dass das Material keine Unwucht hat.
 Das Werkstück darf in keinem Fall wackeln oder rutschen können.
 Bei hohen Drehzahlen muss das Werkstück unbedingt fest gespannt werden!
 (Der Fliehkrafteinfluss verringert die Spannkraft.)
 Außerdem sollte es möglichst weit in das Spannfutter gesteckt werden.
-Achte dabei auf einen Sicherheitsabstand von 1\,mm zwischen Spannfutter und Drehmeißel.
+Achte dabei auf einen Sicherheitsabstand von mindestens 1\,mm, besser 5\,mm, zwischen Spannfutter und Drehmeißel.
 
 Lange oder schlanke Werkstücke müssen mit dem Reitstock gegengespannt werden,
 wie im Kapitel \ref{handdrehen:gegenspannen} beschrieben.
@@ -344,11 +347,11 @@ wie im Kapitel \ref{handdrehen:gegenspannen} beschrieben.
 \subsection{Werkzeug einsetzen} %Eventuell Praxsistipps anhängen
 Achte vor dem Einsetzen darauf, die richtige Wendeplatte zu verwenden. Zum Wechseln siehe \todo{Abhandlung über den Wechsel von Wendeschneidplatten}.
 
-Am Schnellwechselhalter wir der Hebel so gestellt, dass die Halteklammern maximal geöffnet sind.
+Am Schnellwechselhalter wird der Hebel so gestellt, dass die Halteklammern maximal geöffnet sind.
 Das eingespannte Werkzeug sollte sich jetzt leicht nach oben abziehen lassen.
 Das neue Werkzeug wird nach dem gleichen Prinzip eingesetzt und mit dem Hebel handfest gespannt.
 
-Achte darauf, dass der Schnellwechselhalter nicht verdreht ist.
+Achte darauf, dass der Schnellwechselhalter nicht verdreht ist. Die Einsätze und Höhenverstellschrauben der Schnellwechselhalter dürfen nicht gelöst oder anderweitig verstellt werden, da die Werkzeuge kalibriert sein müssen.
 
 \subsection{Kühlung einrichten}
 
@@ -368,10 +371,10 @@ Die Skalen an den beiden Handrädern können über Drehen des Skalenrings auf \e
 Dabei das Handrad festhalten.
 Dabei gilt folgende Skalierung:
 \begin{itemize}
-\item Z-Achse: Die aufgeprägten Zahlen entsprechen 1/10\,mm 
-\item X-Achse: Die aufgeprägten Zahlen entsprechen 1\,mm Durchmesser
-\item Oberschlitten: Die aufgeprägten Zahlen entsprechen 1/10\,mm 
-\item Reitstock: Skala auf der Reitstockpinole oder Drehrad, dabei entsprechen die aufgeprägten Zahlen 1/2\,mm
+\item Z-Achse: Die aufgeprägten Zahlen entsprechen $\frac{1}{10}$\,mm 
+\item X-Achse: Die aufgeprägten Zahlen entsprechen $1$\,mm Durchmesser
+\item Oberschlitten: Die aufgeprägten Zahlen entsprechen $\frac{1}{10}$\,mm 
+\item Reitstock: Skala auf der Reitstockpinole oder Drehrad, dabei entsprechen die aufgeprägten Zahlen am Drehrad $\frac{1}{10}$\,mm
 \end{itemize}
 
 \todo{Bild mit Achsenbezeichnung}
@@ -414,7 +417,7 @@ Vorgehen:
 
 Um das Verlaufen des Bohrers zu vermeiden ist es zunächst notwendig eine Zentrierbohrung wie im Kapitel \ref{handdrehen:zentrierbohrung} beschrieben anzubringen.
 Anschließend bringt man das Bohrfutter an der Reitstockspindel an und wählt den passenden Bohrer aus.
-Verwende hierfür unbedingt die Bohrer, die sich in der Schublade unter der Drehbank befinden.
+Verwende hierfür unbedingt die Bohrer, die sich in der Schublade unter der Drehbank befinden, diese sind speziell reserviert um eine hohe Rundlaufgenauigkeit zu erhalten.
 
 Positioniere den Bohrer kurz vor dem Werkstück und wähle die passende Drehzahl aus der Drehzahltabelle an der Drehbank aus.
 Danach kann durch Zustellung mit der Reitstockpinole gebohrt werden.
@@ -440,7 +443,8 @@ Das Innendrehen funktioniert im Grunde wie das Außendrehen. Es gibt jedoch trot
 \subsection{Fasen}
 
 Für das Anbringen von 45$^\circ$ Fasen gibt es ein spezielles Werkzeug, einen sogenannten Fasenmeißel.
-Das Werkzeug ist gut an seiner blauen Lackierung und der breiten Schneide zu erkennen.
+Das Werkzeug ist gut an seiner blauen Lackierung und der breiten Schneide zu erkennen. 
+\todo{Werkzeugnummer anbringen, hier reinschreiben.}
 Den Fasenmeißel spannt man senkrecht zum Werkstück ein, sodass die Schneide 45$^\circ$ zum Werkstück zeigt.
 Danach kann an das Werkstück herangefahren werden und eine Fase angebracht werden.
 Wenn sehr viele Fasen angebracht werden müssen, empfiehlt es sich nicht immer auf der selben Stelle der Schneide zu arbeiten.
@@ -451,22 +455,15 @@ Für andere Winkel kann der Werkzeughalter mit dem Fasenmeißel auch verdreht in
 \subsection{Plandrehen}
 \label{handdrehen:Plandrehen}
 
-Um eine Fläche an einem Werkstück plan zu drehen, fährt man das Werkzeug bis kurz vor die zu planende Fläche. Nun kommt es darauf an, ob die zu planende Fläche als Referenzfläche oder als Fläche für eine Zentrierbohrung vorbereitet werden soll. 
+Zum Plandrehen wird mit einem geeigneten Drehmeissel bei konstantem X für eine radiale Aussenflaeche, bei konstantem Z für eine Stirnfläche abgedreht.
 
-Im Falle einer Referenzfläche muss zunächst der Nullpunkt in axialer Richtung gesucht werden.
-Dazu bewegt man das Werkzeug soweit in radialer Richtung bis die Schneideplattenspitze sich in radialer Richtung innerhalb des Werkstückes befindet.
-Nach dem Starten der Spindel wird das Werkzeug vorsichtig in axialer Richtung auf das Werkstück zu bewegt.
-Sobald die Schneideplatte beginnt, am Material zu kratzen wird der Skalenring der Z-Achse genullt und fährt sowohl in axialer als auch in radialer Richtung wieder vom Werkstück weg.
-Sobald die Schneideplatte in radialer Richtung das Werkstück nicht mehr berühren kann, stellt man auf der Z-Achse zu und beginnt zunächst langsam und zum Ende hin schneller das Werkzeug radial zu verfahren bis die Mitte des Werkstückes erreicht ist.
-Nun muss das Werkzeug \textbf{zuerst axial} und danach radial vom Werkstück zurück gefahren werden.
-Falls die Fläche nun noch nicht ausreichend plan ist, wird erneut zugestellt.
+Beim Abdrehen einer Stirnfläche ist darauf zu achten, nicht in X-Richtung über die Drehachse hinaus zu bewegen, da hinter der Drehachse das Material den Meissel von der falschen Seite anläuft.
 
-Für eine Zentrierbohrung entfällt das Nullen der Skalenringe.
-Das restliche Vorgehen bleibt jedoch gleich.
+Das Abdrehen einer radialen oder Stirnfläche kann auch zum Setzen von Nullpunkten mitverwendet werden, wenn man die "Antasten"-Funktion der Steuersoftware bei unveränderter anzutastender Koordinate verwendet.
 
 \subsection{Abstechen}
 
-\textbf{Plane gut welches Teil abgestochen werden soll. Steche möglichst nur kleine Teile ab und wähle eine niedrige Spindeldrehzahl. Kann das Teil eventuell mit einer Säge getrennt werden und anschließend die Schnittfläche plan gedreht werden? Der abgestochene Werkstückteil kann bei hoher Drehzahl aus der Maschine springen und den Bediener schwer verletzen!}
+\textbf{Plane gut welches Teil abgestochen werden soll. Steche möglichst nur kleine Teile ab und wähle eine niedrige Spindeldrehzahl. Kann das Teil eventuell mit einer Säge getrennt werden und anschließend die Schnittfläche plan gedreht werden? Der abgestochene Werkstückteil kann bei hoher Drehzahl aus der Maschine springen und den Bediener schwer verletzen!} Dies kann insbesondere bei schweren oder langen Teilen vorkommen. Diese springen durch den Restdrehimpulse, rollen oder knicken ab und werden durch die Drehbeweggung \enquote{geworfen}.
 
 Für ein Abstechen wird der Stechmeißel benötigt.
 Dieser wird 90$^\circ$ zum Werkstück eingespannt.
@@ -475,7 +472,9 @@ Außerdem ist es sinnvoll nicht kontinuierlich zu schneiden, sondern immer wiede
 Dabei zügig aus dem Werkstück herausfahren, sonst kann sich das Werkzeug aufgrund von Wärmedehnung mit dem Werkstück verklemmen!
 Während des Schnittvorganges immer wieder mit Öl schmieren.
 
-Bei Teilen, die gegengespannt wurden ist das Risiko, dass das abgestochene Bauteil aus der Maschine springt, relativ gering, da das Werkstück zwischen dem Abstechwerkzeug und der Körnerspitze eingeklemmt ist und aufhört sich zu drehen, sobald es vom Rest des Werkstückes getrennt ist.
+Bei Teilen, die gegengespannt wurden ist das Risiko, dass das abgestochene Bauteil aus der Maschine springt, relativ gering, da das Werkstück zwischen dem Abstechwerkzeug und der Körnerspitze eingeklemmt ist und aufhört sich zu drehen, sobald es vom Rest des Werkstückes getrennt ist. Es besteht jedoch die Gefahr, durch den Einspanndruck der gefederten Körnerspitze eine Verklemmung beim Abstechen zu erzeugen. Daher ist ggf. die Körnerspitze leicht zu lockern. Generell ist das Verkippen und Verklemmen des Werkstücks möglich, wenn das Werkstück zu lang und zu dick ist. Das Werkstück kann dann unkontrolliert in der Maschine schlagen.
+
+Bei gegengespannten Werkstücken ist daher sehr sorgfältig abzuwägen ob ein Abstechen sicher möglich ist. 
 
 \textbf{Greife niemals in die drehende Maschine, um das abgestochene Bauteil zu entnehmen! Vorher Spindel ausschalten!}
 
@@ -486,9 +485,9 @@ Bei Teilen, die gegengespannt wurden ist das Risiko, dass das abgestochene Baute
 Vorgehen:
 \begin{itemize}
 \item Zunächst Zentrierbohrung (\ref{handdrehen:zentrierbohrung}) setzen\\
-\textbf{WICHTIG: eine gute Zentrierbohrung mit sauberen Flanken im richtigen Winkel ist essentiell, ansonsten überhitzt die Spitze der Körnerspitze, da Gleitreibung statt Haftreibung auftritt (die Körnerspitze dreht nicht sauber mit). Im Zweifelsfall nochmal mit dem Zentrierbohrer nachbesseren, falls die Spitze nicht sauber mitläuft}
+	\textbf{WICHTIG: eine gute Zentrierbohrung mit sauberen Flanken im richtigen Winkel ist essentiell, ansonsten überhitzt die Spitze der Körnerspitze, da Gleitreibung statt Haftreibung auftritt (die Körnerspitze dreht nicht sauber mit). Im Zweifelsfall nochmal mit dem Zentrierbohrer nachbesseren, falls die Spitze nicht sauber mitläuft.} 
 \item Sicherstellen, dass alle Späne aus der Bohrung entfernt sind
-\item Falls nicht die mitlaufende Körnerspitze montiert ist, Bohrfutter o.\,ä. aus dem Reitstock entfernen
+\item Falls nicht die mitlaufende Körnerspitze montiert ist, Bohrfutter o.\,Ä. aus dem Reitstock entfernen
 \item Körnerspitze mit leichtem Druck in die Reitstockpinole einsetzen\\
 \textbf{Unbedingt auf Spanfreiheit achten! siehe \ref{handdrehen:zentrierbohrung}}
 \item Klemmung des Reitstock öffnen und Körnerspitze bis kurz vor Materialkontakt schieben 
@@ -501,17 +500,20 @@ Vorgehen:
 
 \subsection{Schleifen und Polieren}
 Schleifen mit Schleifpapierband durch Umschlingen ist verboten!
-Dies darf nur mit einem speziell dafür vorgesehenen Werkzeug durchgeführt werden.
+Schleifen darf nur mit einem speziell dafür vorgesehenen Werkzeug durchgeführt werden. Die Verwendung anderer Werkzeuge wie Feilen ist nicht gestattet, da diese vom Futter oder vom Werkstück erfasst werden können und den Bediener schwer verletzen.
 
 \subsection{Nut drehen}
 
 Das Vorgehen entspricht der Vorgehensweise beim Abstechen.
-Als Werkzeug wird eine Stechwendeschneidplatte (sternförmig) in das Werkzeug Nummer 4 eingesetzt. 
+Als Werkzeug wird eine Stechwendeschneidplatte (sternförmig), Werkzeug Nummer 4, verwendet.
 
 %\subsection{Oberflächen-schonend Spannen} \textbf{WICHTIG: Wenn du keine ausreichende Erfahrung hast frage dabei IMMER einen erfahrenen Betreuer, der an der Drehbank eingewiesen ist. Ein unzuverlässig gespanntes Werkstück ist lebensgefährlich!}\\ Eine Möglichkeit ist zwischen dem Werkstück und dem Futter ein Stück grobes Schmirgelpapier (Körnung 80 o.Ä) einzulegen, dass das Werkstück komplett umschlingt. Dabei zeigt die raue Seite nach außen zum Futter. Das Schmirgelpapier sollte dabei möglichst nicht überlappen. Außerdem muss mit einer Messuhr der Rundlauf überprüft werden und notfalls durch ein Ausrichten des Werkstückes korrigiert werden. Problem ist nämlich, dass das Schmirgelpapier, das die Reibung erhöht leider auch die Ausrichtung des Werkstückes zu den Spannbolzen behindert. Das Einspannen mit Schmirgelpapier empfiehlt sich vor allem bei einem Spannen auf Gewinden.
 
 \subsection{Rändeln}
 \label{handdrehen:raendeln}
+
+Rändeln ist das Einprägen von Mustern in das Werkstück, beispielsweise um geriffelte Grifflächen an Stellschrauben zu erzeugen.
+
 \todo{Beim Manuell-Drehen: Überschneidung des Rändels nur sehr schwer vermeidbar, CNC in Arbeit}
 Es ist ein relativ preiswertes Rändelwerkzeug vorhanden.
 Das Werkzeug kann in den Schnellspannhalter des Fasenmeißels gespannt werden.
@@ -527,11 +529,10 @@ Nun wird das Rändelwerkzeug so nahe an das Werkstück gefahren, dass der flexib
 Danach befindet sich das Werkstück zwischen den beiden Rändelrollen.
 
 Nun wird eine mittlere Drehzahl eingestellt und Rechtslauf aktiviert. 
-Das Rändelwerkzeug kann nun eingesetzt werden.
-Dazu wird es langsam im Randbereich des gewünschten Rändels an das Werkstück gefahren. 
+Das Rändelwerkzeug wird langsam im Randbereich des gewünschten Rändels an das Werkstück gefahren. 
 Bei schwer spanbaren Materialien empfiehlt es sich zunächst nur die Hälfte der Rollen zu belasten, um die auftretenden Kräfte gering zu halten.
 
-Je nach Material wird nun 1 mm zugestellt. Sobald die Rollen anfangen zu schneiden, darf das Werkzeug nicht mehr von der Oberfläche getrennt werden, um Überschneidungen im Rändel zu vermeiden.
+Je nach Material wird nun $1$\,mm zugestellt. Sobald die Rollen anfangen zu schneiden, darf das Werkzeug nicht mehr von der Oberfläche getrennt werden, um Überschneidungen im Rändel zu vermeiden.
 Um einen sauberen Rändel zu erzeugen, sollte die Rändelrolle mit wohl dosiertem Druck gleichmäßig über die Oberfläche geführt werden.
 Um mögliche Späne während des Rändelns abzuspülen empfielt es sich immer wieder mit einem Schwung KSS die Laufflächen zu spülen.
 Zwischendurch kann die Maschine abgeschalten werden, um zu überprüfen, ob der Anpressdruck ausreicht.
@@ -548,10 +549,31 @@ Der Rändel in der Grafik ist überschnitten, da die Maschine nicht schnell genu
 \newpage
 \section{CNC - Drehen}
 
+Beim CNC-Drehen wird die Drehmaschine durch ein in GCode geschriebenes oder automatisch aus einer CAM-Anwendung wie NX erzeugtes Programm gesteuert.
+
+Voraussetzungen für eine Erstellung des GCode aus NX sind:
+\begin{itemize}
+	\item Ein dreidimensionales Modell des rotationssymmetrischen Werkstückes.
+	\item Ein dreidimensionales Modell des Rohstückes.
+	\item Daten der vorhandenen Werkzeuge und der Maschine.
+\end{itemize}
+Diese können in NX erzeugt werden.
+
+
+
+\subsection{Job-Vorbereitung mit NX}
+Diese Einweisung wurde mit NX 9 erstellt. Möglicherweise kann das hier geschilderte Verhalten in anderen Versionen, Sprachen oder Installationen abweichen. NX enthält generell einige Fehler und Übersetzungsfehler sowie schwer verständliche Terminologie. Ein denkender Bediener wird generell bei allen Beschreibungen dieses Dokuments vorausgesetzt.
+
+NX wird in mehreren Tutorials erklärt. Diese sind über die Hilfefunktion in der Fertigungs-Anwendung auffindbar. Hierbei ist insbesondere das speziell für das Drehen vorgesehene Tutorial als Einstieg sehr zu empfehlen. Auf im Tutorial vorkommende Sachverhalte wird hier nicht mehr gesondert eingegangen, dieser Abschnitt beschreibt nur die Besonderheiten im Falle des FabLab.
+
+
+
+\subsection{Bedienung von LinuxCNC}
+\subsubsection{Nullpunkt und Referenzierung}
+\subsubsection{Laden und Kontrollieren des Jobs}
+\subsubsection{Jobablauf}
+
 \newpage
 \section{Aufräumen und Wartung}
-
-
-
 
 \end{document}
