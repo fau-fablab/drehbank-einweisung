@@ -700,12 +700,12 @@ Die Einschaltreihenfolge ist:
 	\item Drehmaschine auf Betriebsart "Auto" stellen
 	\item LinuxCNC auf dem Steuerrechner starten
 	\item Mit dem Not-Aus-Reset den Not-Aus freigeben
-	\item 2. Icon in LinuxCNC "`Maschine starten"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
+	\item 2. Icon in LinuxCNC "`Maschine an/aus (F12)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
 \end{itemize}
 
 \subsubsection{Nullpunkt und Referenzierung}
 
-Zunächst muss eine Referenzierung der Maschine durchgeführt werden. Hierzu ohne eingelegtes Material und ohne Werkzeug mit der LinuxCNC-Funktion "Referenzierung" eine Referenzierungsfahrt starten. Hierzu muss die Schutzhaube geschlossen sein. Die Maschine fährt nun bis zu den mit Endschaltern versehenen Positionen in beiden Achsen.
+Zunächst muss eine Referenzfahrt der Maschine durchgeführt werden. Hierzu ohne eingelegtes Material und ohne Werkzeug den LinuxCNC-Knopf "Referenzfahrt" betätigen. Hierzu muss die Schutzhaube geschlossen sein. Die Maschine fährt nun bis zu den mit Endschaltern versehenen Positionen in beiden Achsen.
 
 Die Einstellung des Nullpunkts des Koordinatensystems hängt vom im GCode angenommenen Nullpunkt ab. Beispielsweise kann der Nullpunkt der Z-Achse am rechten oder linken Ende des Werkstücks liegen, der Nullpunkt der X-Achse muss in der Drehachse\footnote{wird nicht die Drehachse als X-Nullpunkt gewählt kann sich die Steuerung der Drehzahl für die konstante Schnittgeschwindigkeit unvorhergesehen verhalten} liegen. Bei der Erstellung des GCode sollte die Wahl des Nullpunkts daher separat vermerkt werden.
 
@@ -713,18 +713,21 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 \begin{itemize}
 	\item Rohteil wie weiter oben beschrieben einspannen
 	\item Durchmesser des Rohteils mit Schieblehre bestimmen, Radius berechnen
-	\item Werkzeug 3 einsetzen
+	\item Werkzeug 3 einsetzen\footnote{Es ist auch möglich ein anderes Werkzeug als Werkzeug 3 zum Setzen des Nullpunktes zu verwenden. Hierzu müssen aber zuerst die Werkzeugoffsets dieses anderen Werkzeugs geladen werden. Hierzu muss man manuell in der Registerkarte \encode{MDI (F5)} den GCode \verb#M6 Tn# wobei $n$ die Werkzeugnummer ist, also beispielsweise \verb#M6 T2# für Werkzeug Nummer 2 eingeben. Anschliessend muss noch \verb#G43# eingegeben werden um das Koordinatensystem dem grade gesetzten Werkzeug anzupassen. Nach dem Rückwechsel auf die Registerkarte \encode{Manuelle Kontrolle (F3)} kann man in der Anleitung normal weiter fortfahren. Es ist zu beachten, dass sich nicht alle Werkzeuge aufgrund ihrer Geometrie zur Nullpunktseinstellung eignen.}
 	\item Schutzhaube schliessen
-	\item Spindel im Rechtslauf drehen lassen, Drehzahl grösser 1000 Umdrehungen
+	\item Spindel im Rechtslauf drehen lassen, Drehzahl grösser 1000 Umdrehungen (Einstellung mit \enquote{+} und \enquote{-}, Drehzahlanzeige ist grüner Balkengraph rechts oben)
 	\item Schrittgeschwindigkeit langsam einstellen, z.B. $20\,\frac{\mathrm{mm}}{\mathrm{min}}$
 	\item mit Pfeiltasten kann das Werkzeug verfahren werden
-	\item mit dem Werkzeug die Aussenfläche leicht berühren, so dass gerade so ein minimaler Span auftritt, Werkzeug an dieser Position \textbf{stehenlassen}
+	\item mit dem Werkzeug die Aussenfläche (aussen auf der Rundung) leicht berühren, so dass gerade so ein minimaler Span auftritt, Werkzeug an dieser Position \textbf{stehenlassen}
 	\item mittels "Antasten" kann nun die Werkzeugposition spezifiziert werden, hierbei für die Aussenfläche die X-Achse im erscheinenden Dialog auswählen und den oben vermessenen Radius als X-Koordinate angeben
 	\item der Nullpunkt der X-Achse ist nun die Rotationsachse
 	\item mit der "nach-unten-Taste" von der Aussenflaeche des Rohteils wegfahren.
 	\item die Stirnfläche kann in gleicher Weise angefahren werden um den Nullpunkt der Z-Achse zu setzen, mit dem im Antasten-Dialog angegebenen Wert kann bestimmt werden ob der Nullpunkt dabei an der Stirnseite oder an anderer Stelle liegen soll.
 	\item wiederum in Richtung der Z-Achse vom Rohteil wegfahren bevor Bewegungen in der X-Achse durchgeführt werden
+	\item Spindel mit dem \enquote{Stop}-Knopf anhalten. Bei Stillstand kann die Schutzhaube wieder geöffnet werden.
 \end{itemize}
+
+\todo{Verfolgungspunkt aller Werkzeuge beschreiben}
 
 Analog kann auch das Rohteil hier abgedreht werden und dabei der Nullpunkt festgelegt oder verstellt werden. Die obige Anleitung ist zweckmässig modifiziert zu verwenden je nach Wahl des Nullpunktes im GCode. Wird der Nullpunkt falsch gewählt sind Kollisionen, schwere Schäden und Unfälle möglich.
 
@@ -741,7 +744,8 @@ Ein Leerlauf ohne Werkzeug ist auch zum Einüben des Arbeitsablaufs sinnvoll.
 
 \subsubsection{Jobablauf}
 
-Ein Job wird durch Drücken des \enquote{Start}-Icons gestartet.
+Ein Job wird durch Drücken des \enquote{Start}-Icons gestartet. Vorher sollte darauf geachtet werden,
+dass das passende Werkzeug eingelegt ist. LinuxCNC wird bei den meisten Jobs zum Start des Programms nach einem Werkzeugwechsel fragen. Bei GCode der nicht mit NX und dem FabLab-Preprocessing-Skript erzeugt wurde muss das aber nicht unbedingt der Fall sein.
 \todo{KSS?}
 
 Der Job kann mit den entsprechenden Icons pausiert oder angehalten werden. Beim Werkzeugwechsel ist ggf. auch eine Pausierung mit dem entsprechenden Knopf aufzuheben.
