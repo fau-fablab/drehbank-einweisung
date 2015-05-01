@@ -685,6 +685,8 @@ somit zu mysteriös verschwindenden, nicht-löschbaren oder ähnlich
 "`interessanten"' Dateien kommt. Ausserdem ist ein neuer Ordner pro neuer
 Version der GCode-Ausgabe sinnvoll.
 
+Momentan ist aufgrund von Beschränkungen im Postprocessing nur ein Werkzeug pro GCode-Datei möglich, ein Werkzeugwechsel, der nicht am Anfang sondern Mitten im Ablauf der Datei stattfindet wird nicht unterstützt. Daher sind für verschiedene Werkzeuge verschiedene Dateien zu erstellen.
+
 \subsection{Bedienung von LinuxCNC}
 
 Zur Ausführung von vorhandenem GCode sind die folgenen Schritte der Reihe nach auszuführen.
@@ -696,6 +698,8 @@ Die Einschaltreihenfolge ist:
 	\item Drehmaschine am Hauptschalter einschalten
 	\item Drehmaschine auf Betriebsart "Auto" stellen
 	\item LinuxCNC auf dem Steuerrechner starten
+	\item Mit dem Not-Aus-Reset den Not-Aus freigeben
+	\item 2. Icon in LinuxCNC "`Maschine starten"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
 \end{itemize}
 
 \subsubsection{Nullpunkt und Referenzierung}
@@ -711,20 +715,41 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 	\item Werkzeug 3 einsetzen
 	\item Schutzhaube schliessen
 	\item Spindel im Rechtslauf drehen lassen, Drehzahl grösser 1000 Umdrehungen
-	\item Vorschub langsam einstellen, 
+	\item Schrittgeschwindigkeit langsam einstellen, z.B. $20\,\frac{\mathrm{mm}}{\mathrm{min}}$
 	\item mit Pfeiltasten kann das Werkzeug verfahren werden
 	\item mit dem Werkzeug die Aussenfläche leicht berühren, so dass gerade so ein minimaler Span auftritt, Werkzeug an dieser Position \textbf{stehenlassen}
 	\item mittels "Antasten" kann nun die Werkzeugposition spezifiziert werden, hierbei für die Aussenfläche die X-Achse im erscheinenden Dialog auswählen und den oben vermessenen Radius als X-Koordinate angeben
 	\item der Nullpunkt der X-Achse ist nun die Rotationsachse
 	\item mit der "nach-unten-Taste" von der Aussenflaeche des Rohteils wegfahren.
 	\item die Stirnfläche kann in gleicher Weise angefahren werden um den Nullpunkt der Z-Achse zu setzen, mit dem im Antasten-Dialog angegebenen Wert kann bestimmt werden ob der Nullpunkt dabei an der Stirnseite oder an anderer Stelle liegen soll.
-	\item wiederum in Richtung der Z-Achse vom Rohteil wegfahren bevor Bewegungen in der X-Achse durchgefúhrt werden
+	\item wiederum in Richtung der Z-Achse vom Rohteil wegfahren bevor Bewegungen in der X-Achse durchgeführt werden
 \end{itemize}
 
 Analog kann auch das Rohteil hier abgedreht werden und dabei der Nullpunkt festgelegt oder verstellt werden. Die obige Anleitung ist zweckmässig modifiziert zu verwenden je nach Wahl des Nullpunktes im GCode. Wird der Nullpunkt falsch gewählt sind Kollisionen, schwere Schäden und Unfälle möglich.
 
 \subsubsection{Laden und Kontrollieren des Jobs}
+
+Mit der \enquote{Datei öffnen}-Funktion kann der GCode geöffnet werden. Die im GCode enthaltenen Fahrpfade werden angezeigt, diese können nun geprüft werden. Dazu kann man:
+\begin{itemize}
+	\item die Pfade anschauen, dazu ggf. mit dem Besen-Icon vorherige Fahrpfade löschen
+	\item Mit eingesetztem Werkzeug in manueller Fahrt (Pfeiltasten) können visuell die Grenzen der Fahrpfade \enquote{erforscht} werden. Achtung: Hierbei keinesfalls mit dem Werkzeug ein Maschinenteil oder das Rohteil berühren, selbst leichtes Anfahren kann z.B. die Schneidplatten beschädigen.
+	\item Einen Leerlauf des Programms ohne Werkzeug durchführen. Achtung: Bei sehr groben Fehlern kann hier zwar nicht das Werkzeug, aber der Halter kollidieren! Man kann auch durch geeignete Wahl des Z-Nullpunktes die Leerfahrt weiter \enquote{rechts} in grossem Abstand zur Spindel durchführen.
+\end{itemize}
+
+Ein Leerlauf ohne Werkzeug ist auch zum Einüben des Arbeitsablaufs sinnvoll.
+
 \subsubsection{Jobablauf}
+
+Ein Job wird durch Drücken des \enquote{Start}-Icons gestartet.
+\todo{KSS?}
+
+Der Job kann mit den entsprechenden Icons pausiert oder angehalten werden. Beim Werkzeugwechsel ist ggf. auch eine Pausierung mit dem entsprechenden Knopf aufzuheben.
+
+Im Programmablauf muss die Schutzhaube geschlossen sein. Die einzige Ausnahme davon ist wenn LinuxCNC einen Werkzeugwechsel anfordert. Die Maschine muss beim Programmablauf unbedingt genau beobachtet werden um ggf. rechtzeitig den Not-Aus-Schalter betätigen zu können falls Kollissionen oder andere Probleme auftreten. Bei \enquote{harmloseren} Problemen ist das Stop-Icon oder die Taste \enquote{Esc} ebenfalls geeignet.
+
+Nach Ablauf des Jobs bis zum Stillstand der Spindel warten, bevor die Schutzhaube geöffnet wird.
+
+Besteht ein Job aus mehreren GCode-Dateien, weil beispielsweise mehrere Werkzeugwechsel notwendig sind kann nun mit dem Laden der nächsten Datei fortgefahren werden.
 
 \newpage
 \section{Aufräumen und Wartung}
