@@ -324,14 +324,22 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \end{itemize}
 
 
-\pagestyle{plain}\newgeometry{margin=0cm}
-\newpage%
+% HACK WORKAROUND: leider geht \newgeometry...\restoregeometry nicht in der alten tex-Version auf macgyver. Deshalb wird eine große Menge von negativem vspace+hspace und figure eingesetzt um den gleichen Effekt zu erzielen.
+%\newgeometry{a4paper,margin=0cm}
+
+
+\newpage
+\thispagestyle{plain}
+% \fancyhf{}
+\begin{figure}[pc]%
+\vspace{-4.5cm}%move up
 \tikzstyle{abschnitt}=[text width=19cm,draw,black,fill=white];%
+\hspace{-2.5cm}
 \begin{tikzpicture}[node distance=1em]
 \node [fill=blue,rectangle,minimum width=21.5cm,minimum height=29.7cm,anchor=north east] (seite) at (0,0)  {};
 \newcommand{\abschnittTitel}[1]{\vspace{-2em}\subsection{#1}}
 
-\node[abschnitt,below=2cm of seite.north] (anwendungsbereich) {{\vspace{-2em}\section{Betriebsanweisung Drehmaschine Wabeco CC-D6000hs im FAU FabLab} \label{sec:betriebsanweisung}}
+\node[abschnitt,below=1.5cm of seite.north] (anwendungsbereich) {{\vspace{-2em}\section{Betriebsanweisung Drehmaschine Wabeco CC-D6000hs im FAU FabLab} \label{sec:betriebsanweisung}}
 % 	\abschnittTitel{Anwendungsbereich}
 	
 	Diese Betriebsanweisung fasst die wichtigsten Gefahren und Regeln zusammen.\\
@@ -409,10 +417,15 @@ Im Handbetrieb:
 \node[abschnitt, text width=9em, below left = 1em and 0em of instandhaltung.south east] (datum) {Stand: \today};
 \end{tikzpicture}
 
+\vspace{-4cm}
+\end{figure}
+
 % muss auf eine Seite passen!
-\restoregeometry
-\pagestyle{fancy}
 \newpage
+\pagestyle{fancy}
+% \restoregeometry ... wäre besser als diese Frickeleien mit vspace+hspace, aber der macgyver hat keine aktuell genuge Version
+
+
 
 %\includepdf[pages=1, offset=5mm -3mm]{Drehmaschinen.pdf} %offset nötig wegen offsets in Vorlage
 
