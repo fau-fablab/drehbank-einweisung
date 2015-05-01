@@ -1,7 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COPYRIGHT: (C) 2012-2015 FAU FabLab and others
-% Bearbeitungen ab 2015-02-20 fallen unter CC-BY-SA 3.0
-% Sobald alle Mitautoren zugestimmt haben, steht die komplette Datei unter CC-BY-SA 3.0. Bis dahin ist der Lizenzstatus aller alten Bestandteile ungeklärt.
+% CC-BY-SA 3.0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -47,6 +46,8 @@
 \tableofcontents
 
 \newpage
+
+
 
 \section{Einweisungsstufen}
 
@@ -322,8 +323,98 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 	\item Über Tastatureingabe ist nur ein Abbrechen oder Anhalten des Jobs möglich. Dies ersetzt keinen Not-Aus!
 \end{itemize}
 
-\clearpage
-\includepdf[pages=1, offset=5mm -3mm]{Drehmaschinen.pdf} %offset nötig wegen offsets in Vorlage
+
+\pagestyle{plain}\newgeometry{margin=0cm}
+\newpage%
+\tikzstyle{abschnitt}=[text width=19cm,draw,black,fill=white];%
+\begin{tikzpicture}[node distance=1em]
+\node [fill=blue,rectangle,minimum width=21.5cm,minimum height=29.7cm,anchor=north east] (seite) at (0,0)  {};
+\newcommand{\abschnittTitel}[1]{\vspace{-2em}\subsection{#1}}
+
+\node[abschnitt,below=2cm of seite.north] (anwendungsbereich) {{\vspace{-2em}\section{Betriebsanweisung Drehmaschine Wabeco CC-D6000hs im FAU FabLab} \label{sec:betriebsanweisung}}
+% 	\abschnittTitel{Anwendungsbereich}
+	
+	Diese Betriebsanweisung fasst die wichtigsten Gefahren und Regeln zusammen.\\
+	Für die Bedienung der Drehbank ist eine unterschriebene Einweisung nötig.\\
+	Weitere Informationen finden sich im ausführlichen Einweisungstext.
+};
+
+ \node[abschnitt, below=of anwendungsbereich] (gefahren) {
+	\abschnittTitel{Gefahren für Mensch und Umwelt}
+	\begin{itemize}
+		\item Erfasstwerden der Haare, Kleidung, Schmuck usw. durch Antrieb, Spindel, Werkzeug oder Werkstück.
+		\item Getroffenwerden vom wegfliegendem Werkstück, von wegfliegenden Teilen, Spänen usw.
+		\item Sich schneiden, stechen usw. an Werkzeug, Werkstück, Spänen.
+		\item Ablenkung und Störung bei der Maschinenbedienung erhöht das Unfallrisiko.
+		\item Intensiver Hautkontakt mit Kühlschmierstoff führt zur Zerstörung des Säureschutzmantels, Entfettung, 
+		\item Entwässerung und Reizung der Haut als Vorstufe von Hauterkrankungen.
+		\item Schon geringfügige Hautverletzungen, z.B. durch Metallteilchen, erhöhen das Risiko einer kühlschmierstoffbedingten Hauterkrankung.
+	\end{itemize}
+};
+
+\node[abschnitt, below=of gefahren] (vorschriften) {
+\abschnittTitel{Schutzmaßnahmen und Verhaltensregeln}
+Generell:
+\begin{itemize}
+ \item Vor Arbeitsbeginn Wartungsplan beachten, Maschine auf Mängel und mögliche Probleme kontrollieren.
+ \item Sicherstellen, dass sich nur der Bediener und höchstens eine Hilfsperson in der Sicherheitszone befinden, Sicherheitszone absperren.
+ \item Zum Werkzeugwechsel, Messen, Reinigen usw. Stillstand aller Maschinenteile sicherstellen. (Handbetrieb: Drehrichtung auf 0 stellen)
+ \item Maschine nach Gebrauch abschalten und Hauptschalter auf Stellung „0“ stellen.
+ \item Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Hand, Druckluft) entfernen
+\end{itemize}
+Im Betrieb:
+\begin{itemize}
+ \item Werkstück fest im Futter spannen und Spannschlüssel abziehen.
+ \item Stangenmaterial darf nicht aus der Maschine ragen.
+ \item Lose Teile (Spannschlüssel, Werkstücke, etc.) nicht im Gefahrenbereich beweglicher Maschinenteile lagern.
+ \item Handschuhe dürfen beim Drehen nicht getragen werden.
+\end{itemize}
+Im Handbetrieb:
+\begin{itemize}
+ \item Lange Haare durch Mütze, Haarnetz o.\,Ä. verdecken. Zusammenbinden mit Zopfgummi ist nicht ausreichend!
+ \item Eng anliegende, geschlossene Arbeitskleidung tragen, ggf. Ärmel nach innen aufrollen.
+ \item Lose Teile, Uhren,  Ringe, Arm- und Halsschmuck, Krawatten, Schals usw. ablegen.
+ \item Grundsätzlich Gesichtsschild oder Schutzbrille tragen. Eine normale Brille ist keine Schutzbrille!
+ \item Benachbarte Arbeitsplätze nicht durch spritzenden Kühlschmierstoff, wegfliegende Späne usw. gefährden.
+ \item Ausreichend Abstand von allen drehenden Teilen halten. Handbearbeitung mit Schleifpapier ist nur mit dem speziellen Halter zulässig. Sonstiges Handwerkzeug wie eine Feile darf nicht verwendet werden.
+\end{itemize}
+};
+
+\node[abschnitt, text width=9cm, below right=1em and 0em of vorschriften.south west] (unfall) {
+	\abschnittTitel{Verhalten bei Unfällen}
+	\begin{itemize}
+	\item Maschine abschalten. - NOT-AUS drücken
+	\item Betreuer informieren. Gegebenenfalls Rettungsdienst rufen (Tel. 09-112 / Handy: 112)
+	\item Verletzten betreuen.
+	\end{itemize}
+};
+
+\node[abschnitt, text width=9cm, below right= 0em and 0.5cm of unfall.north east] (stoerung) {
+	\abschnittTitel{Verhalten bei Schäden und Störungen}
+	\begin{itemize}
+	\item Ausschalten und Betreuer informieren. Schadensmeldung sichtbar an der Maschine anbringen.
+	\item Schäden nur vom Fachmann beseitigen lassen.
+	\end{itemize}
+};
+
+\node[abschnitt, below right= 1em and 0em of unfall.south west] (instandhaltung) {
+	\abschnittTitel{Instandhaltung, Entsorgung}
+	\begin{itemize}
+	\item Rutschgefahr (z.B. durch Kühlschmiermittel, Späne) beseitigen.
+	\item Nach Abschluss der Arbeiten Späne sortenrein in die Sammelbehälter entsorgen. Gemischte Späne sind Restmüll.
+	\item Maschine bei Arbeitsende reinigen und Wartungsplan beachten.
+	\item Für die Instandhaltung ist die Zerspanungsgruppe (zerspanung@fablab.fau.de) zuständig.
+	\end{itemize}
+};
+\node[abschnitt, text width=9em, below left = 1em and 0em of instandhaltung.south east] (datum) {Stand: \today};
+\end{tikzpicture}
+
+% muss auf eine Seite passen!
+\restoregeometry
+\pagestyle{fancy}
+\newpage
+
+%\includepdf[pages=1, offset=5mm -3mm]{Drehmaschinen.pdf} %offset nötig wegen offsets in Vorlage
 
 
 \newpage
