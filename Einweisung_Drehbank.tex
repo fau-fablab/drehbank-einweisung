@@ -356,7 +356,7 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \newcommand{\regelZu}[2]{\node[regel, right=of #1.north east, anchor=north west] (#1R) {#2};}
 
 
-\node[gefahr, below right=.7em and .3em of anwendungsbereich.south west,anchor=north west] (ablenkung) {\textbf{Ablenkung und Störung} bei der Maschinenbedienung};
+\node[gefahr, below right=.7em and .3em of anwendungsbereich.south west,anchor=north west] (ablenkung) {\textbf{Ablenkung und Störung}\\ bei der Maschinenbedienung};
 
 \regelZu{ablenkung}{\vspace{-.5em}
 \begin{itemize} 
@@ -370,18 +370,23 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \regelZu{anlaufen}{\vspace{-.5em}
 \begin{itemize} 
  \item Zum Werkzeugwechsel, Messen, Reinigen usw. Stillstand aller Maschinenteile sicherstellen. (Handbetrieb: Drehrichtung auf 0 stellen)
- \item Maschine nach Gebrauch abschalten: Hauptschalter auf „0“ stellen.
+ \item Maschine nach Gebrauch abschalten: Hauptschalter auf 0 stellen.
 \end{itemize}
 }
 
 \gefahr{drehbewegung}{anlaufen}{\textbf{Erfasstwerden von Haaren}, Kleidung, Schmuck usw. durch drehende (Futter, Werkstück) und sonstige Teile (Werkzeug)}
 
 \regelZu{drehbewegung}{
-Stangenmaterial darf nicht aus der Maschine ragen.\\
+\vspace{-.5em}
+\begin{itemize}
+ \item
+Stangenmaterial darf nicht aus der Maschine ragen.
+\end{itemize}
+
 \vspace{.5em}
 Im Handbetrieb:
 \begin{itemize}
- \item Lange Haare durch Mütze, Haarnetz o.\,Ä. verdecken. Zusammenbinden mit Zopfgummi ist nicht ausreichend!
+ \item Lange Haare durch Mütze, Haarnetz o.\,Ä. verdecken.\\ Das Zusammenbinden mit Zopfgummi ist nicht ausreichend!
  \item Eng anliegende, geschlossene Arbeitskleidung tragen, ggf. Ärmel nach innen aufrollen.
  \item Lose oder hervorstehende Teile an Arm und Hals wie Uhren, Ringe, Krawatten, Schals usw. ablegen.
  \item Ausreichend Abstand von allen drehenden Teilen halten. Handbearbeitung mit Schleifpapier ist nur mit dem speziellen Halter zulässig. Sonstiges Handwerkzeug wie eine Feile darf nicht verwendet werden.
@@ -415,7 +420,7 @@ Im Handbetrieb:
 }
 
 \regelZu{kssSpaene}{
-Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft) entfernen. Von Hand nur bei Alu und POM, sonstige Späne können scharf sein! \\[.6em]
+Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft) entfernen. Von Hand nur bei Alu und POM, sonstige Späne sind meist scharf! \\[.6em]
 Regelmäßig Hände waschen. (Intensiver Kontakt mit Kühlschmierstoff führt zur Reizung der Haut als Vorstufe von Hauterkrankungen. Schon geringfügige Verletzungen, z.B. durch Metallteilchen, erhöhen das Risiko.)
 }
  
