@@ -38,7 +38,7 @@
 \fancyhead[C]{\textbf{\color{red}{TODO: unfertig!}}}
 \date{2015}
 \author{kontakt@fablab.fau.de}
-\title{Grundlagen Drehbank}
+\title{Drehbank}
 
 \begin{document}
 
@@ -94,7 +94,7 @@ abgetragen wird.
 \begin{figure}[ht]
 \centering
 \includegraphics[width = 0.75\linewidth]{img/drehmeissel}
-\caption{Quelle: \href{http://commons.wikimedia.org/wiki/File:Flaechen_am_Schneidkeil.svg}{wikipedia.de}; Autor: David W.}
+\caption{Flächen am Drehmeißel. Autor: \href{http://commons.wikimedia.org/wiki/File:Flaechen_am_Schneidkeil.svg}{David W.}, Lizenz \href{http://creativecommons.org/licenses/by-sa/2.5}{CC-BY-SA 2.5}}
 \end{figure}
 
 \subsubsection{Spannfutter}
@@ -110,6 +110,7 @@ Es gibt im Grunde keine feste Regel nach der das Futter gewählt werden kann, je
 \end{itemize}
 
 Spannfutter haben einen definierten maximalen Spanndurchmesser, der üblicherweise kleiner als die maximale Backenöffnung ist. Dieser Durchmesser ist unbedingt zu beachten, es besteht die Gefahr von Desintegration im laufenden Betrieb.
+\todo{Überschneidung mit Abschnitt Rohmaterial einspannen -- umsortieren?}
 
 \subsubsection{Spannfutterwechsel}
 
@@ -182,8 +183,8 @@ Unsere Drehbank besteht aus Hauptspindel mit Futterschutzhaube, Reitstock, Werkz
 \begin{tabular}{lll}
     Schnittgeschw. in $\frac{m}{min}$ 					& $v_c = \pi \cdot d \cdot n $ 			& Geschwindigkeit mit der das Material auf den Drehmeißel trifft 	\\ 
 																								&																		& Material- und geometrieabhängiger Wert siehe \ref{Schnittwerte} \\ \addlinespace
-		Drehzahl in $\frac{1}{min}$ 								& $ n = \frac{v_c}{\pi \cdot d} $		& Drehzahl der Hauptspindel, ergibt sich aus $V_c$								\\ \addlinespace
-		Vorschub in $mm$ 														& $ f_z $  													& Materialstärke welche pro Umdrehung abgetragen wird 						\\
+		Drehzahl in $\frac{1}{min}$ 								& $ n = \frac{v_c}{\pi \cdot d} $		& Drehzahl der Hauptspindel, ergibt sich aus $v_c$								\\ \addlinespace
+		spezifischer Vorschub in $mm$ 														& $ f_z $  													& Materialstärke welche pro Umdrehung abgetragen wird 						\\
 																								&																		& Material- und geometrieabhängiger Wert siehe \ref{Schnittwerte} \\ \addlinespace
 		Vorschubgeschw. in $\frac{mm}{min}$ 				& $ v_f = n \cdot f_z $ 						& Geschwindigkeit mit der der Drehmeißel verfährt			 						\\ \addlinespace
 		Zustellung in $mm$ 													& $ h  $  													& Materialstärke welche auf einmal vom Radius weggenommen wird		\\
@@ -193,7 +194,7 @@ Unsere Drehbank besteht aus Hauptspindel mit Futterschutzhaube, Reitstock, Werkz
 \begin{figure}[ht]
 \centering
 \includegraphics[width = 0.9\linewidth]{img/drehprozess}
-\caption{Selbst erstellt, nach Folien des FAPS, FAU Erlangen; Autor: Michael Jäger}
+\caption{Größen beim Drehprozess.\\Autor: Michael Jäger, selbst erstellt nach Folien des FAPS, FAU Erlangen}
 \end{figure}
 
 
@@ -216,7 +217,7 @@ Die Spanbildung bzw. Spanform ist sehr wichtig für die erreichbare Oberflächen
 \begin{figure}[ht]
 \centering
 \includegraphics[width = \linewidth]{img/spanformen}
-\caption{Selbst erstellt, nach Folien des FAPS, FAU Erlangen; Autor: Michael Jäger}
+\caption{Spanformen. Autor: Michael Jäger, selbst erstellt nach Folien des FAPS, FAU Erlangen}
 \end{figure}
 
 \subsubsection{Schnittwerte}
@@ -278,13 +279,16 @@ Die Oberfläche wird dabei wesentlich feiner.
 \todo{Unter welchen Bedingungen gilt diese Tabelle? VHM, Beschichtung?}
 \newpage
 \section{Sicherheit und Verhaltensregeln}
+
+Diese Einweisung wird laufend überarbeitet und ergänzt und kann nie vollständig sein. 
+
 \subsection{Schutzmaßnahmen und Verhaltensregeln}
 Die hier beschriebenen Abläufe müssen unbedingt eingehalten werden.
 Bei Unklarheiten nachfragen!
 \begin{itemize}
 \item \textbf{Die Maschine darf niemals von zwei oder mehr Personen gleichzeitig bedient werden. Massive Gefährdung möglich!}
-\item Nur der Maschinenbediener und maximal eine weitere eingewiesene Person dürfen sich im Sicherheitsbereich aufhalten. Dieser ist durch die gelb-schwarzen Absperrbänder begrenzt. Diese sind unbedingt zu verwenden.\\
-\item \textbf{Im Sicherheitsbereich ist immer eine Schutzbrille zu tragen!}
+\item Nur der Maschinenbediener und maximal eine weitere eingewiesene Person dürfen sich im Sicherheitsbereich aufhalten. Dieser ist durch die gelb-schwarzen Absperrbänder begrenzt. Diese sind unbedingt zu verwenden.
+\item \textbf{Im Sicherheitsbereich ist (bei Handbetrieb) immer eine Schutzbrille zu tragen!}
 \item Die Regeln für den Sicherheitsbereich gelten, sobald an der Maschine gearbeitet wird bzw. sobald die Absperrbänder gespannt wurden.
 \item Grundlegende Verhaltensregeln stehen in der Betriebsanweisung (blaue Seite am Ende dieses Abschnitts).
 \item Besondere Vorkommnisse sind unverzüglich dem Maschinenverantwortlichen (siehe Schild auf der Steuerung) zu melden.\\
@@ -292,20 +296,20 @@ Bei Problemen ist eine Störungsmeldung (Zettel) an der Maschine anzubringen und
 
 \item Vor Beginn der Arbeit:
 \begin{itemize}
-\item Gesamtzustand der Maschine überprüfen
+\item Gesamtzustand der Maschine überprüfen. Wartungsplan abarbeiten.
 \item Die Drehbank darf nur dann benutzt werden, wenn die beiden Absperrbänder gespannt wurden. Es dürfen sich dann nur in die Drehbank eingewiesene Personen in diesem Bereich befinden!
-\item Lange Haare durch Mütze, Haarnetz o.\,ä. verdecken; einfaches Zusammenbinden ist nicht ausreichend! Mützen sind selbst mitzubringen, können aber auch gestellt werden.
+\item Lange Haare durch Mütze, Haarnetz o.\,ä. verdecken; einfaches Zusammenbinden ist nicht ausreichend! Mützen sind selbst mitzubringen, Einweg-Haarnetze sind vorrätig.
 \end{itemize}
 
- \item Die Schutzhaube darf nur offen sein, solange die Spindel steht. (Dies gilt nicht für den Handbetrieb.) Nachlaufdauer!  % wird zwar teils durch den Schalter erzwungen, aber trotzdem Nachlaufgefahr.
- \item Spannschlüssel \textbf{nie} im Futter stecken lassen. % \\ Der Spannschlüssel darf nicht manipuliert sein, die Sicherheits-Feder muss aufgesteckt bleiben. - Nicht zwingend Notwendig nach BGI 5003 2.5.1.2
+ \item Spannschlüssel \textbf{nie} im Futter stecken lassen. Der Spannschlüssel darf nicht manipuliert sein, die Sicherheits-Feder muss aufgesteckt bleiben. % Hier stand mal als Kommentar "Nicht zwingend Notwendig nach BGI 5003 2.5.1.2", das halte ich aber für eine sehr gewagte Deutung. TODO
  \item Zum Reinigen oder Warten ist die Maschine auszuschalten!
- \item Metallspäne können sehr scharf und heiß sein (besonders bei Stahl und Edelstahl). Späne dürfen nicht von Hand beseitigt werden, Spänehaken, Zange, Pinsel, Wischer oder Staubsauger verwenden. % per Hand nicht zulässig nach BGI 5003 2.5.
+ \item \enquote{Gewaltwerkzeug} wie Hammer oder Zange kann irreparablen Schaden anrichten und hat deshalb in der Drehbank nichts verloren. In bestimmten Fällen kann ein Schonhammer eingesetzt werden. % Diese Zeile NICHT entfernen, ohne vorher Rücksprache mit Max aufzunehmen!
+ \item Metallspäne können sehr scharf und heiß sein (besonders bei Stahl und Edelstahl). Späne dürfen nicht von Hand beseitigt werden, Spänehaken, Zange, Pinsel, Handfeger oder Staubsauger verwenden. % TODO per Hand nicht zulässig nach BGI 5003 2.5., selbst für Alu???
 
  \item Beim Hantieren in der Drehbank:
 \begin{itemize}
  \item Anleitung exakt beachten. Wenn du nicht ganz genau weißt was du tust, nachfragen!
- \item Schutzhaube nur öffnen, wenn die Spindel steht (Nachlauf abwarten!). Die Schutzhabe ist kein zulässiger Not-Aus-Schalter!
+ \item Schutzhaube nur öffnen, wenn die Spindel steht (Nachlauf abwarten!). (Ausnahme: Handbetrieb) Die Schutzhabe ist kein zulässiger Not-Aus-Schalter!
 \item Im Notfall die Maschine durch Drücken des Not-Aus-Schalters stoppen.
 \item Im CNC-Modus darf keine der Kurbeln von Hand bedient werden! Verletzungsgefahr! Falls doch geschehen, hat die Maschine Schritte auf der jeweiligen Achse verloren. Das Resultat ist eine verlorene Maschinenreferenzierung (muss wiederholt werden) und ein verschobener Werkstücknullpunkt (wird durch Maschinenreferenzierung wieder behoben, trotzdem kontrollieren!).
 \end{itemize}
@@ -420,7 +424,9 @@ Im Handbetrieb:
 }
 
 \regelZu{kssSpaene}{
-Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft) entfernen. Von Hand nur bei Alu und POM, sonstige Späne sind meist scharf! \\[.6em]
+Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft, Hand) entfernen.
+% Von Hand nur bei Alu und POM, sonstige Späne sind meist scharf! % TODO per Hand nicht zulässig nach BGI 5003 2.5., selbst für Alu???
+\\[.6em]
 Regelmäßig Hände waschen. (Intensiver Kontakt mit Kühlschmierstoff führt zur Reizung der Haut als Vorstufe von Hauterkrankungen. Schon geringfügige Verletzungen, z.B. durch Metallteilchen, erhöhen das Risiko.)
 }
  
@@ -449,7 +455,7 @@ Regelmäßig Hände waschen. (Intensiver Kontakt mit Kühlschmierstoff führt zu
 	\item Rutschgefahr (z.B. durch Kühlschmiermittel, Späne) beseitigen.
 	\item Nach der Arbeit die Späne sortenrein in die Sammelbehälter entsorgen. Gemischte Späne sind Restmüll.
 	\item Maschine bei Arbeitsende reinigen und Wartungsplan beachten.
-	\item Für die Instandhaltung ist die Zerspanungsgruppe (zerspanung@fablab.fau.de) zuständig.
+	\item Für die Instandhaltung ist Philipp (philipp@fablab.fau.de) zuständig.
 	\end{itemize}
 };
 \node[abschnitt, draw=none, fill=none,text width=9em, below left = .6em and 0em of instandhaltung.south east] (datum) {Stand: \today};
@@ -463,9 +469,6 @@ Regelmäßig Hände waschen. (Intensiver Kontakt mit Kühlschmierstoff führt zu
 \pagestyle{fancy}
 % \restoregeometry ... wäre besser als diese Frickeleien mit vspace+hspace, aber der macgyver hat keine aktuell genuge Version
 
-
-
-%\includepdf[pages=1, offset=5mm -3mm]{Drehmaschinen.pdf} %offset nötig wegen offsets in Vorlage
 
 
 \newpage
@@ -564,7 +567,7 @@ Um das Verlaufen des Bohrers zu vermeiden ist es zunächst notwendig eine Zentri
 Anschließend bringt man das Bohrfutter an der Reitstockspindel an und wählt den passenden Bohrer aus.
 Verwende hierfür unbedingt die Bohrer, die sich in der Schublade unter der Drehbank befinden, diese sind speziell reserviert um eine hohe Rundlaufgenauigkeit zu erhalten.
 
-Positioniere den Bohrer kurz vor dem Werkstück und wähle die passende Drehzahl aus der Drehzahltabelle an der Drehbank aus.
+Positioniere den Bohrer kurz vor dem Werkstück und wähle die passende Drehzahl aus der Drehzahltabelle \todo{wo ist diese Drehzahltabelle?} an der Drehbank aus.
 Danach kann durch Zustellung mit der Reitstockpinole gebohrt werden.
 Dabei gilt wie bei jedem Bohrvorgang: Mit guter Handkraft bohren!
 Ansonsten wird der Bohrer übermäßig verschlissen und die Qualität der Bohrung nimmt ab.
@@ -608,20 +611,26 @@ Das Abdrehen einer radialen oder Stirnfläche kann auch zum Setzen von Nullpunkt
 
 \subsection{Abstechen}
 
-\textbf{Plane gut welches Teil abgestochen werden soll. Steche möglichst nur kleine Teile ab und wähle eine niedrige Spindeldrehzahl. Kann das Teil eventuell mit einer Säge getrennt werden und anschließend die Schnittfläche plan gedreht werden? Der abgestochene Werkstückteil kann bei hoher Drehzahl aus der Maschine springen und den Bediener schwer verletzen!} Dies kann insbesondere bei schweren oder langen Teilen vorkommen. Diese springen durch den Restdrehimpulse, rollen oder knicken ab und werden durch die Drehbeweggung \enquote{geworfen}.
+\textbf{Das Abstechen ist eine vergleichsweise gefährliche Operation. Der abgestochene Werkstückteil kann bei hoher Drehzahl aus der Maschine springen und den Bediener schwer verletzen!} Dies kann insbesondere bei schweren oder langen Teilen vorkommen. Diese springen durch den Restdrehimpuls, rollen oder knicken ab und werden durch die Drehbeweggung \enquote{geworfen}.
 
-Für ein Abstechen wird der Stechmeißel benötigt.
-Dieser wird 90$^\circ$ zum Werkstück eingespannt.
+Für ein Abstechen wird der Stechmeißel benötigt. Dieser wird 90$^\circ$ zum Werkstück eingespannt.
 Es wird zu Beginn langsamer zum Ende hin schneller möglichst nahe am Futter abgestochen.
+
 Außerdem ist es sinnvoll nicht kontinuierlich zu schneiden, sondern immer wieder mit Unterbrechungen einen Span abzunehmen.
 Dabei zügig aus dem Werkstück herausfahren, sonst kann sich das Werkzeug aufgrund von Wärmedehnung mit dem Werkstück verklemmen!
+
 Während des Schnittvorganges immer wieder mit Öl schmieren.
 
-Bei Teilen, die gegengespannt wurden ist das Risiko, dass das abgestochene Bauteil aus der Maschine springt, relativ gering, da das Werkstück zwischen dem Abstechwerkzeug und der Körnerspitze eingeklemmt ist und aufhört sich zu drehen, sobald es vom Rest des Werkstückes getrennt ist. Es besteht jedoch die Gefahr, durch den Einspanndruck der gefederten Körnerspitze eine Verklemmung beim Abstechen zu erzeugen. Daher ist ggf. die Körnerspitze leicht zu lockern. Generell ist das Verkippen und Verklemmen des Werkstücks möglich, wenn das Werkstück zu lang und zu dick ist. Das Werkstück kann dann unkontrolliert in der Maschine schlagen.
-
-Bei gegengespannten Werkstücken ist daher sehr sorgfältig abzuwägen ob ein Abstechen sicher möglich ist. 
-
 \textbf{Greife niemals in die drehende Maschine, um das abgestochene Bauteil zu entnehmen! Vorher Spindel ausschalten!}
+
+
+\textbf{Gegengespannten Werkstücke können sich beim Abstechen verklemmen.} Dies kommt zum einen daher, dass die Körnerspitze gefedert ist. Daher ist ggf. die Körnerspitze leicht zu lockern. Zum anderen kann allein durch die Geometrie das Werkstück sich beim Herunterfallen zwischen Körnerspitze, Werkzeug und drehendem Werkstückteil verklemmen und unkontrolliert durch die Maschine springen.
+
+Es ist also immer sorgfältig abzuwägen, ob ein Abstechen sicher möglich ist. Solange damit noch eine sinnvolle Zerspanung möglich ist, senkt eine niedrige Spindeldrehzahl die Gefahren.
+
+Alternativ zum Abstechen kann das Teil eventuell mit einer Säge getrennt werden und anschließend die Schnittfläche plan gedreht werden.
+
+
 
 
 \subsection{Gegenspannen}
@@ -645,13 +654,14 @@ Vorgehen:
 
 \subsection{Schleifen und Polieren}
 Schleifen mit Schleifpapierband durch Umschlingen ist verboten!
-Schleifen darf nur mit einem speziell dafür vorgesehenen Werkzeug durchgeführt werden. Die Verwendung anderer Werkzeuge wie Feilen ist nicht gestattet, da diese vom Futter oder vom Werkstück erfasst< werden können und den Bediener schwer verletzen.
+Schleifen darf nur mit einem speziell dafür vorgesehenen Werkzeug durchgeführt werden. Die Verwendung anderer Werkzeuge wie Feilen ist nicht gestattet, da diese vom Futter oder vom Werkstück erfasst werden können und den Bediener schwer verletzen.
 
 \subsection{Nut drehen}
 
 Das Vorgehen entspricht der Vorgehensweise beim Abstechen.
 Als Werkzeug wird eine Stechwendeschneidplatte (sternförmig), Werkzeug Nummer 4, verwendet.
 
+% die folgende Erklärung ist zu gefährlich:
 %\subsection{Oberflächen-schonend Spannen} \textbf{WICHTIG: Wenn du keine ausreichende Erfahrung hast frage dabei IMMER einen erfahrenen Betreuer, der an der Drehbank eingewiesen ist. Ein unzuverlässig gespanntes Werkstück ist lebensgefährlich!}\\ Eine Möglichkeit ist zwischen dem Werkstück und dem Futter ein Stück grobes Schmirgelpapier (Körnung 80 o.Ä) einzulegen, dass das Werkstück komplett umschlingt. Dabei zeigt die raue Seite nach außen zum Futter. Das Schmirgelpapier sollte dabei möglichst nicht überlappen. Außerdem muss mit einer Messuhr der Rundlauf überprüft werden und notfalls durch ein Ausrichten des Werkstückes korrigiert werden. Problem ist nämlich, dass das Schmirgelpapier, das die Reibung erhöht leider auch die Ausrichtung des Werkstückes zu den Spannbolzen behindert. Das Einspannen mit Schmirgelpapier empfiehlt sich vor allem bei einem Spannen auf Gewinden.
 
 \subsection{Rändeln}
@@ -725,7 +735,7 @@ NX bietet die Möglichkeit Arbeitsabläufe einer Fertigung zu simulieren. Von di
 \subsubsection{Start- und Endpunkte}
 
 Es sollten Start- und Endpunkte in ausreichend grossem Abstand vom Rohmaterial gewählt werden. Die Punkte sollten sich immer nahe beieinander befinden, da später LinuxCNC beim Programmwechsel einen Pfad zwischen vorherigem End und nächstem Startpunkt fahren wird ohne dass dies auf Kollisionen prüfbar ist.
-Die Bewegung erfolgt ausserdem mit der maximalen Geschwindigkeit "G0".
+Die Bewegung erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
 
 \subsubsection{Postprocessing}
 
@@ -748,7 +758,7 @@ Die Einschaltreihenfolge ist:
 \begin{itemize}
 	\item Steuerrechner einschalten
 	\item Drehmaschine am Hauptschalter einschalten
-	\item Drehmaschine auf Betriebsart "Auto" stellen
+	\item Drehmaschine auf Betriebsart \enquote{Auto} stellen
 	\item LinuxCNC auf dem Steuerrechner starten
 	\item Mit dem Not-Aus-Reset den Not-Aus freigeben
 	\item 2. Icon in LinuxCNC "`Maschine an/aus (F12)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
@@ -756,9 +766,9 @@ Die Einschaltreihenfolge ist:
 
 \subsubsection{Nullpunkt und Referenzierung}
 
-Zunächst muss eine Referenzfahrt der Maschine durchgeführt werden. Hierzu ohne eingelegtes Material und ohne Werkzeug den LinuxCNC-Knopf "Referenzfahrt" betätigen. Hierzu muss die Schutzhaube geschlossen sein. Die Maschine fährt nun bis zu den mit Endschaltern versehenen Positionen in beiden Achsen.
+Zunächst muss eine Referenzfahrt der Maschine durchgeführt werden. Hierzu ohne eingelegtes Material und ohne Werkzeug den LinuxCNC-Knopf \enquote{Referenzfahrt} betätigen. Hierzu muss die Schutzhaube geschlossen sein. Die Maschine fährt nun bis zu den mit Endschaltern versehenen Positionen in beiden Achsen.
 
-Die Einstellung des Nullpunkts des Koordinatensystems hängt vom im GCode angenommenen Nullpunkt ab. Beispielsweise kann der Nullpunkt der Z-Achse am rechten oder linken Ende des Werkstücks liegen, der Nullpunkt der X-Achse muss in der Drehachse\footnote{wird nicht die Drehachse als X-Nullpunkt gewählt kann sich die Steuerung der Drehzahl für die konstante Schnittgeschwindigkeit unvorhergesehen verhalten} liegen. Bei der Erstellung des GCode sollte die Wahl des Nullpunkts daher separat vermerkt werden.
+Die Einstellung des Nullpunkts des Koordinatensystems hängt vom im GCode angenommenen Nullpunkt ab. Beispielsweise kann der Nullpunkt der Z-Achse am rechten oder linken Ende des Werkstücks liegen, der Nullpunkt der X-Achse muss in der Drehachse\footnote{Wird nicht die Drehachse als X-Nullpunkt gewählt, funktioniert die Steuerung der Drehzahl für die konstante Schnittgeschwindigkeit nicht.} liegen. Bei der Erstellung des GCode sollte die Wahl des Nullpunkts daher separat vermerkt werden.
 
 Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Koordinatensystems sind bei diesem Werkzeug exakt $0$, alle anderen Werkzeuge sind darauf abgestimmt. Daher ist es sinnvoll, den Nullpunkt mithilfe von Werkzeug 3 zu setzen. Hierzu geht man wie folgt vor:
 \begin{itemize}
@@ -829,6 +839,7 @@ Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW a
 
 \section{Quellen}
 \begin{itemize}
+ \item \href{http://www.arbeitssicherheit.de/media/pdfs/CCC_1290.pdf}{BGI 2003 Maschinen der Zerspanung}
  \item BGV Muster-Betriebsanweisung Drehmaschinen
 \end{itemize}
 
