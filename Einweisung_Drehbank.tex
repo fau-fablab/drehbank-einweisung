@@ -7,15 +7,8 @@
 \newcommand{\basedir}{fablab-document} % Pfad zur Dokumentenvorlage
 \documentclass{\basedir/fablab-document}
 
-\usetikzlibrary{positioning}
-\usepackage{amssymb} % Symbole für Knöpfe
-\usepackage{subfigure,caption}
-\usepackage{eurosym}
-\usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
-\usepackage{wrapfig} % Textumlauf um Bilder
-\usepackage{pdfpages}
-\usepackage{booktabs}
-\usepackage{microtype}
+\usepackage{booktabs} % für Tabellen: fancy \addlinespace und besondere Querlinien 
+
 \usepackage[colorinlistoftodos,prependcaption]{todonotes}
 \presetkeys%
     {todonotes}%
@@ -38,7 +31,7 @@
 \fancyhead[C]{\textbf{\color{red}{TODO: unfertig!}}}
 \date{2015}
 \author{kontakt@fablab.fau.de}
-\title{Drehbank}
+\title{Einweisung Drehbank}
 
 \begin{document}
 
@@ -52,7 +45,9 @@
 
 \section{Einweisungsstufen}
 
-\begin{itemize}
+\todo{Abgleich mit Einweisungsliste, zur Zeit inkonsistent bezüglich beaufsichtigter Benutzung Handbetrieb. Möglichkeit Sonder-Einweisung erwähnen}
+
+\begin{enumerate}
  \item Ohne eine unterschriebene Grund-Einweisung in diese Regeln darf die Drehbank garnicht benutzt werden, d.\,h. du darfst dann nichts selber an und in der Drehbank tun.
  \item Mit Grund-Einweisung bist du zunächst \enquote{Fahrschüler} und darfst den Auftrag zwar selber vorbereiten (Werkstück ein- und ausspannen, Drehbank säubern), \textbf{die Steuerung aber nicht selbstständig bedienen.} 
 
@@ -61,7 +56,7 @@
  Die Bedienung der Steuersoftware (Verfahren, Antasten, Starten, Fortsetzen nach Pause, \dots) darf dabei nur unter ständiger Aufsicht durch den Experten erfolgen!
  \item Sobald du genug Erfahrung und Routine hast und das entsprechend dokumentiert ist (mehrere Werkstücke selbstständig unter Aufsicht gefertigt, dies über einen größeren Zeitraum verteilt), wird dir die schriftliche Erlaubnis erteilt, den CNC-Betrieb ohne Aufsicht zu benutzen. Dabei sollen verschiedene Bearbeitungsarten und Werkzeuge verwendet worden sein.
  \item  \textbf{Für die Benutzung des Handbetriebs ist eine zusätzliche schriftliche Erlaubnis nötig!} Es gelten dabei weitere Vorschriften, siehe Kapitel \ref{handdrehen}.
-\end{itemize}
+\end{enumerate}
 
 
 \newpage
@@ -603,11 +598,11 @@ Für andere Winkel kann der Werkzeughalter mit dem Fasenmeißel auch verdreht in
 \subsection{Plandrehen}
 \label{handdrehen:Plandrehen}
 
-Zum Plandrehen wird mit einem geeigneten Drehmeissel bei konstantem X für eine radiale Aussenflaeche, bei konstantem Z für eine Stirnfläche abgedreht.
+Zum Plandrehen wird mit einem geeignetem \todo{welchem?} Drehmeissel bei konstantem X für eine radiale Aussenfläche, bei konstantem Z für eine Stirnfläche abgedreht.
 
 Beim Abdrehen einer Stirnfläche ist darauf zu achten, nicht in X-Richtung über die Drehachse hinaus zu bewegen, da hinter der Drehachse das Material den Meissel von der falschen Seite anläuft.
 
-Das Abdrehen einer radialen oder Stirnfläche kann auch zum Setzen von Nullpunkten mitverwendet werden, wenn man die "Antasten"-Funktion der Steuersoftware bei unveränderter anzutastender Koordinate verwendet.
+Das Abdrehen einer radialen oder Stirnfläche kann auch zum Setzen von Nullpunkten mitverwendet werden, wenn man die \enquote{Antasten}-Funktion der Steuersoftware bei unveränderter anzutastender Koordinate verwendet.
 
 \subsection{Abstechen}
 
@@ -780,9 +775,9 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 	\item Schrittgeschwindigkeit langsam einstellen, z.B. $20\,\frac{\mathrm{mm}}{\mathrm{min}}$
 	\item mit Pfeiltasten kann das Werkzeug verfahren werden
 	\item mit dem Werkzeug die Aussenfläche (aussen auf der Rundung) leicht berühren, so dass gerade so ein minimaler Span auftritt, Werkzeug an dieser Position \textbf{stehenlassen}
-	\item mittels "Antasten" kann nun die Werkzeugposition spezifiziert werden, hierbei für die Aussenfläche die X-Achse im erscheinenden Dialog auswählen und den oben vermessenen Radius als X-Koordinate angeben
+	\item mittels \enquote{Antasten} kann nun die Werkzeugposition spezifiziert werden, hierbei für die Aussenfläche die X-Achse im erscheinenden Dialog auswählen und den oben vermessenen Radius als X-Koordinate angeben
 	\item der Nullpunkt der X-Achse ist nun die Rotationsachse
-	\item mit der "nach-unten-Taste" von der Aussenflaeche des Rohteils wegfahren.
+	\item mit der \enquote{nach-unten-Taste} von der Aussenflaeche des Rohteils wegfahren.
 	\item die Stirnfläche kann in gleicher Weise angefahren werden um den Nullpunkt der Z-Achse zu setzen, mit dem im Antasten-Dialog angegebenen Wert kann bestimmt werden ob der Nullpunkt dabei an der Stirnseite oder an anderer Stelle liegen soll.
 	\item wiederum in Richtung der Z-Achse vom Rohteil wegfahren bevor Bewegungen in der X-Achse durchgeführt werden
 	\item Spindel mit dem \enquote{Stop}-Knopf anhalten. Bei Stillstand kann die Schutzhaube wieder geöffnet werden.

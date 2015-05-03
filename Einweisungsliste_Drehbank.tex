@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT: (C) 2012-2015 FAU FabLab and others
+% CC-BY-SA 3.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\basedir}{./fablab-document/}
+\documentclass[landscape]{\basedir/fablab-document}
+\usepackage{ifthen}
+\usepackage{xspace}
+\def\tabularnewcol{&\xspace} % hässlicher Workaround von http://tex.stackexchange.com/questions/7590/how-to-programmatically-make-tabular-rows-using-whiledo
+
+
+\usepackage{tabularx} % Tabelle mit teilweise gleich großen Spalten
+\title{Einweisungsliste Drehbank}
+\fancyfoot[C]{}
+\fancyfoot[L]{Einweisungsliste Nr. \underline{\hspace{3em}}}
+
+\begin{document}
+%\maketitle
+\setlength{\itemsep}{0em}
+\begin{itemize}
+\item Ich habe die relevanten Teile der Einweisung gelesen und verstanden:
+	\begin{enumerate}
+	\item Für Einspannen, Putzen und das Betreten des Sicherheitsbereichs:  Kapitel Sicherheit und die Betriebsanweisung
+	\item Ansonsten: Komplette Einweisung. Bei nur Handbetrieb entfällt das Kapitel CNC.
+	\end{enumerate}
+\item Ich weiß, dass ich nur die angegebenen Tätigkeiten selbstständig machen darf.
+\item Bei selbstständiger Benutzung: Ich habe zerspanung@fablab.fau.de abonniert und lese es regelmäßig, um über Änderungen informiert zu bleiben.
+% \item FIXME Ich habe zusammen mit einem Betreuer die Drehbank für die CNC-Bearbeitung vorbereitet habe
+\item Die Möglichkeit für Fragen und Diskussion war gegeben, ich habe die Möglichkeit, eine Kopie der Einweisung zu erhalten.
+\end{itemize}
+
+\newcommand{\quer}[1]{\rotatebox{90}{\textbf{#1}\hspace{1em}}}
+
+\vspace{10em}
+\hspace{2cm}\rotatebox{10}{\parbox{23cm}{\color{red}\bfseries\huge Im Moment kann noch nicht in die Drehbank eingewiesen werden,\\ da keine komplette Anleitung steht. Dieses Dokument ist lediglich ein Entwurf!}}
+\vspace{-27em}
+
+\newcounter{i}
+\setcounter{i}{1}
+
+\newcommand{\leerezeile}{\hspace{2em} \tabularnewcol\parbox[b]{2cm}{Datum:\\[2em]gültig bis:} \tabularnewcol \parbox{5cm}{Name:\\[2em]Einweisender:\\[2em]} \tabularnewcol  \tabularnewcol\tabularnewcol  \tabularnewcol   \tabularnewline \hline}
+
+\begin{tabularx}{\textwidth}{|l|l|l|l|l|l|X|}
+  \hline
+  \textbf{Nr.} & \parbox[b]{2cm}{\textbf{Datum}\\[.5em]gültig bis\\ (6 Monate)} & \parbox[b]{6cm}{\textbf{Name}, Unterschrift\\ \textbf{Einweisender} + Unterschrift} & \quer{\parbox[b]{2cm}{Einspannen,\\Putzen}} & \parbox[b]{2.5cm}{\centering \textbf{Handbetrieb?} Ja/ beaufsichtigt/ Nein} & \parbox[b]{2.5cm}{\centering \textbf{CNC-Betrieb:} Ja/ beaufsichtigt/ Nein} & \parbox[b]{8cm}{\textbf{Übungswerkstücke} (auch danach angefertigte):\linebreak Datum, Kürzel Ausbilder, Hand/CNC, Material, ...  }\\ \hline
+  \whiledo{\value{i}<3}%
+  {%
+    \stepcounter{i} \leerezeile
+  }%
+  \leerezeile % doofer Workaround, eigentlich sollte das auch in der Forschleife gehen! Ohne dies wird die Spaltenbegrenzung von Spalte 1 zu weit gezeichnet.
+\end{tabularx}
+
+\newpage
+{\huge Sondererlaubnis für bestimmte Arbeiten}
+
+Wenn ein Nutzer einzelne Arbeiten bereits mehrmals unter Aufsicht gemacht hat, aber noch nicht genug Erfahrung hat um beliebige Arbeiten durchzuführen, kann ihm zeitlich und inhaltlich stark eingeschränkt eine bestimmte Arbeit erlaubt werden.
+
+Beispiel: Hans muss Werkstücke von Hand bei niedriger Drehzahl anbohren und hat dies unter Aufsicht schon öfter gemacht. Er darf aber unbeaufsichtigt nur im CNC-Betrieb arbeiten.
+
+\textbf{Voraussetzung hierfür ist, dass der Nutzer diesen Betrieb beaufsichtigt durchführen darf (siehe Einweisungsliste) und dies schon mehrmals dokumentiert(!) getan hat.}
+
+\vspace{5em}
+\hspace{2cm}\rotatebox{10}{\parbox{23cm}{\color{red}\bfseries\huge Im Moment kann noch nicht in die Drehbank eingewiesen werden,\\ da keine komplette Anleitung steht. Dieses Dokument ist lediglich ein Entwurf!}}
+\vspace{-22em}
+
+\newcommand{\leerezeileSonder}{\hspace{2em} \tabularnewcol \hspace{3em}  \tabularnewcol  \tabularnewcol \parbox{5cm}{Name:\\[2em]Einweisender:\\[2em]} \tabularnewcol \tabularnewline\hline}
+\setcounter{i}{1}
+
+\begin{tabularx}{\textwidth}{|l|l|l|l|X|}
+  \hline
+  \textbf{Nr.} & \textbf{Datum} & \parbox{7em}{\textbf{gültig bis}\\max. 2  Monate} & \parbox{6cm}{\textbf{Name}, Unterschrift\\ \textbf{Einweisender} + Unterschrift} & \textbf{Genaue Tätigkeit}, Hand/CNC, ggf. Drehzahl, Material, ...  \\ \hline
+   \color{gray} Bsp. & \color{gray}11.1.13 & \color{gray}11.2.13 & \color{gray} Hans Muster / Emil Einweiser& \color{gray} im Handbetrieb: Kürzen und Anfasen von Schrauben bei $<$1000 rpm, wie am 11.1.13 gemeinsam durchgeführt \tabularnewline \hline 
+
+\leerezeileSonder
+\leerezeileSonder
+\leerezeileSonder
+
+%   \leerezeile % doofer Workaround, eigentlich sollte das auch in der Forschleife gehen! Ohne dies wird die Spaltenbegrenzung von Spalte 1 zu weit gezeichnet.
+\end{tabularx}
+
+\end{document}
