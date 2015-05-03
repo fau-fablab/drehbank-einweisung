@@ -1,0 +1,112 @@
+\documentclass[fontsize=9pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{a4paper, top=15mm, left=20mm, right=20mm, bottom=20mm,
+headsep=0mm, footskip=0mm}
+
+\usepackage{xparse}
+\NewDocumentCommand{\framecolorbox}{oommm}
+ {% #1 = width (optional)
+  % #2 = inner alignment (optional)
+  % #3 = frame color
+  % #4 = background color
+  % #5 = text
+  \IfValueTF{#1}
+   {%
+    \IfValueTF{#2}
+     {\fcolorbox{#3}{#4}{\makebox[#1][#2]{#5}}}
+     {\fcolorbox{#3}{#4}{\makebox[#1]{#5}}}%
+   }
+   {\fcolorbox{#3}{#4}{#5}}%
+ }
+ 
+\newenvironment{smallitemize}{\begin{itemize}\itemsep -3pt}{\end{itemize}}
+
+\newcommand{\bgvbox}[1]{\framecolorbox[18cm][l]{blue}{blue}{\textcolor{white}{#1}}}
+
+
+
+
+\begin{document}
+
+\begin{center}
+	\LARGE{Betriebsanweisung \enquote{Drehbank} Wabeco CC-D6000hs}
+\end{center}
+
+
+\section{\bgvbox{Anwendungsbereich}}
+\begin{center}
+	Diese Betriebsanweisung fasst die wichtigsten Gefahren und Regeln zusammen.\\
+	Für die Bedienung der Drehbank ist eine unterschriebene Einweisung nötig.\\
+	Weitere Informationen finden sich im ausführlichen Einweisungstext.\\
+\end{center}
+
+\section{\bgvbox{Gefahren für Mensch und Umwelt}}
+
+\begin{smallitemize}
+	\item Getroffenwerden vom wegfliegendem Werkstück, von wegfliegenden Teilen, Spänen usw.
+	\item Sich schneiden, stechen usw. an Werkzeug, Werkstück, Spänen.
+	\item Ablenkung und Störung bei der Maschinenbedienung erhöht das Unfallrisiko.
+	\item Intensiver Hautkontakt mit Kühlschmierstoff führt zur Zerstörung des Säureschutzmantels, Entfettung, Entwässerung und Reizung der Haut als Vorstufe von Hauterkrankungen.
+	\item Schon geringfügige Hautverletzungen, z.B. durch Metallteilchen, erhöhen das Risiko einer kühlschmierstoff-bedingten Hauterkrankung.
+\end{smallitemize}
+
+\section{\bgvbox{Schutzmaßnahmen und Verhaltensregeln}}
+
+\begin{itemize}
+	\item Generell:
+	\begin{smallitemize}
+		\item Vor Arbeitsbeginn Wartungsplan beachten, Maschine auf Mängel und mögliche Probleme kontrollieren.
+		\item Sicherstellen, dass sich nur der Bediener und höchstens eine Hilfsperson in der Sicherheitszone befinden, Sicherheitszone absperren.
+		\item Zum Werkzeugwechsel, Messen, Reinigen usw. Stillstand aller Maschinenteile sicherstellen. (Handbetrieb: Drehrichtung auf 0 stellen)
+		\item Maschine nach Gebrauch abschalten und Hauptschalter auf Stellung „0“ stellen.
+		\item Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Hand, Druckluft) entfernen
+		
+	\end{smallitemize}
+	\item Im Betrieb:
+	\begin{smallitemize}
+		\item Werkstück fest im Futter spannen und Spannschlüssel abziehen.
+		\item Stangenmaterial darf nicht aus der Maschine ragen.
+		\item Lose Teile (Spannschlüssel, Werkstücke, etc.) nicht im Gefahrenbereich beweglicher Maschinenteile lagern.
+		\item Handschuhe dürfen beim Drehen nicht getragen werden.
+		
+	\end{smallitemize}
+	\item Im Handbetrieb:
+	\begin{smallitemize}
+		\item Lange Haare durch Mütze, Haarnetz o.Ä. verdecken. Zopfgummi u.Ä. sind nicht ausreichend!
+		\item Eng anliegende, geschlossene Arbeitskleidung tragen, ggf. Ärmel nach innen aufrollen.
+		\item Lose Teile, Uhren,  Ringe, Arm- und Halsschmuck, Krawatten, Schals usw. ablegen.
+		\item Grundsätzlich Gesichtsschild oder Schutzbrille tragen. Eine normale Brille ist keine Schutzbrille!
+		\item Benachbarte Arbeitsplätze nicht durch spritzenden Kühlschmierstoff, wegfliegende Späne usw. gefährden.
+		\item Ausreichend Abstand von allen drehenden Teilen halten. Handbearbeitung mit Schleifpapier ist nur mit dem speziellen Halter zulässig. Sonstiges Handwerkzeug wie eine Feile darf nicht verwendet werden.
+		\end{smallitemize}
+\end{itemize}
+
+\section{\bgvbox{Verhalten bei Störungen und im Gefahrenfall}}
+\begin{smallitemize}
+	\item Bei Schäden oder Störungen an der Maschine: Ausschalten und Betreuer informieren. Schadensmeldung sichtbar an der Maschine anbringen.
+	\item Rutschgefahr (z.B. durch Kühlschmiermittel, Späne) beseitigen.
+	\item Schäden nur vom Fachmann beseitigen lassen.
+\end{smallitemize}
+
+\section{\bgvbox{Verhalten bei Unfällen - Erste Hilfe}}
+\begin{smallitemize}
+	\item Maschine abschalten. NOT-AUS drücken
+	\item Betreuer informieren. Gegebenenfalls Rettungsdienst rufen.
+	\item Verletzten betreuen.
+\end{smallitemize}
+
+\section{\bgvbox{Instandhaltung, Entsorgung}}
+\begin{smallitemize}
+	\item Nach Abschluss der Arbeiten Späne sortenrein in die Sammelbehälter entsorgen. Gemischte Späne sind Restmüll.
+	\item Maschine bei Arbeitsende reinigen und Wartungsplan beachten.
+		\vspace{5mm}
+	\item Für die Instandhaltung ist zuständig:...............................
+\end{smallitemize}
+
+
+\end{document} 
