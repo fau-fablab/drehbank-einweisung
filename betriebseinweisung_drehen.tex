@@ -3,10 +3,19 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage[babel,german=quotes]{csquotes}
+\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{geometry}
 \geometry{a4paper, top=15mm, left=20mm, right=20mm, bottom=20mm,
 headsep=0mm, footskip=0mm}
+
+\usepackage{background}
+\backgroundsetup{
+scale=1,	%% Größe (so lassen)
+angle=0,	%% Ausrichtung (Winkel)
+opacity=1,  %% Deckkraft
+contents={\includegraphics[width=\paperwidth,height=\paperheight]{img/blauer_rand.pdf}}
+}
 
 \usepackage{xparse}
 \NewDocumentCommand{\framecolorbox}{oommm}
@@ -32,6 +41,8 @@ headsep=0mm, footskip=0mm}
 
 
 \begin{document}
+
+% blauer Rand
 
 \begin{center}
 	\LARGE{Betriebsanweisung \enquote{Drehbank} Wabeco CC-D6000hs}
