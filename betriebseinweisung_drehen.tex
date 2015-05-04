@@ -1,4 +1,5 @@
 \documentclass[fontsize=9pt]{scrartcl}
+\pagestyle{empty}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -6,37 +7,26 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{geometry}
-\geometry{a4paper, top=15mm, left=20mm, right=20mm, bottom=20mm,
-headsep=0mm, footskip=0mm}
+\geometry{a4paper, top=15mm, left=20mm, right=20mm, bottom=15mm, headsep=0mm, footskip=0mm}
+
+\usepackage{tikz}
+\makeatletter
+\setkomafont{section}{\color{white}
+    \bfseries\Large
+    \begin{tikzpicture}[overlay]
+        \draw[blue,fill=blue] (-1.5cm,-6pt) rectangle (\paperwidth, 13pt)
+        (\linewidth,16.4pt);
+	\end{tikzpicture}}
 
 \usepackage{background}
 \backgroundsetup{
-scale=1,	%% Größe (so lassen)
-angle=0,	%% Ausrichtung (Winkel)
-opacity=1,  %% Deckkraft
-contents={\includegraphics[width=\paperwidth,height=\paperheight]{img/blauer_rand.pdf}}
+	scale=1,	%% Größe (so lassen)
+	angle=0,	%% Ausrichtung (Winkel)
+	opacity=1,  %% Deckkraft
+	contents={\includegraphics[width=\paperwidth,height=\paperheight]{img/blauer_rand.pdf}}
 }
 
-\usepackage{xparse}
-\NewDocumentCommand{\framecolorbox}{oommm}
- {% #1 = width (optional)
-  % #2 = inner alignment (optional)
-  % #3 = frame color
-  % #4 = background color
-  % #5 = text
-  \IfValueTF{#1}
-   {%
-    \IfValueTF{#2}
-     {\fcolorbox{#3}{#4}{\makebox[#1][#2]{#5}}}
-     {\fcolorbox{#3}{#4}{\makebox[#1]{#5}}}%
-   }
-   {\fcolorbox{#3}{#4}{#5}}%
- }
- 
 \newenvironment{smallitemize}{\begin{itemize}\itemsep -3pt}{\end{itemize}}
-
-\newcommand{\bgvbox}[1]{\framecolorbox[18cm][l]{blue}{blue}{\textcolor{white}{#1}}}
-
 
 
 
@@ -49,14 +39,15 @@ contents={\includegraphics[width=\paperwidth,height=\paperheight]{img/blauer_ran
 \end{center}
 
 
-\section{\bgvbox{Anwendungsbereich}}
+%\section{\bgvbox{Anwendungsbereich}}
+\section{Anwendungsbereich}
 \begin{center}
 	Diese Betriebsanweisung fasst die wichtigsten Gefahren und Regeln zusammen.\\
 	Für die Bedienung der Drehbank ist eine unterschriebene Einweisung nötig.\\
 	Weitere Informationen finden sich im ausführlichen Einweisungstext.\\
 \end{center}
 
-\section{\bgvbox{Gefahren für Mensch und Umwelt}}
+\section{Gefahren für Mensch und Umwelt}
 
 \begin{smallitemize}
 	\item Getroffenwerden vom wegfliegendem Werkstück, von wegfliegenden Teilen, Spänen usw.
@@ -66,7 +57,7 @@ contents={\includegraphics[width=\paperwidth,height=\paperheight]{img/blauer_ran
 	\item Schon geringfügige Hautverletzungen, z.B. durch Metallteilchen, erhöhen das Risiko einer kühlschmierstoff-bedingten Hauterkrankung.
 \end{smallitemize}
 
-\section{\bgvbox{Schutzmaßnahmen und Verhaltensregeln}}
+\section{Schutzmaßnahmen und Verhaltensregeln}
 
 \begin{itemize}
 	\item Generell:
@@ -97,21 +88,21 @@ contents={\includegraphics[width=\paperwidth,height=\paperheight]{img/blauer_ran
 		\end{smallitemize}
 \end{itemize}
 
-\section{\bgvbox{Verhalten bei Störungen und im Gefahrenfall}}
+\section{Verhalten bei Störungen und im Gefahrenfall}
 \begin{smallitemize}
 	\item Bei Schäden oder Störungen an der Maschine: Ausschalten und Betreuer informieren. Schadensmeldung sichtbar an der Maschine anbringen.
 	\item Rutschgefahr (z.B. durch Kühlschmiermittel, Späne) beseitigen.
 	\item Schäden nur vom Fachmann beseitigen lassen.
 \end{smallitemize}
 
-\section{\bgvbox{Verhalten bei Unfällen - Erste Hilfe}}
+\section{Verhalten bei Unfällen - Erste Hilfe}
 \begin{smallitemize}
 	\item Maschine abschalten. NOT-AUS drücken
 	\item Betreuer informieren. Gegebenenfalls Rettungsdienst rufen.
 	\item Verletzten betreuen.
 \end{smallitemize}
 
-\section{\bgvbox{Instandhaltung, Entsorgung}}
+\section{Instandhaltung, Entsorgung}
 \begin{smallitemize}
 	\item Nach Abschluss der Arbeiten Späne sortenrein in die Sammelbehälter entsorgen. Gemischte Späne sind Restmüll.
 	\item Maschine bei Arbeitsende reinigen und Wartungsplan beachten.
