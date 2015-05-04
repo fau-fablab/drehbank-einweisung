@@ -729,7 +729,10 @@ NX bietet die Möglichkeit Arbeitsabläufe einer Fertigung zu simulieren. Von di
 
 \subsubsection{Start- und Endpunkte}
 
-Es sollten Start- und Endpunkte in ausreichend grossem Abstand vom Rohmaterial gewählt werden. Die Punkte sollten sich immer nahe beieinander befinden, da später LinuxCNC beim Programmwechsel einen Pfad zwischen vorherigem End und nächstem Startpunkt fahren wird ohne dass dies auf Kollisionen prüfbar ist.
+\todo{anleitung NX drehen aus postprozessor repo hier hinein mergen, zumindest die crash-kritischen sachen}
+\todo{Containment (wie auch immer das auf deutsch heißt) erklären, auch Anfahrbewegungen an Operation}
+
+Es \textbf{müssen} Start- und Endpunkte in ausreichend grossem Abstand vom Rohmaterial gewählt werden. Die Punkte sollten sich immer nahe beieinander befinden, da später LinuxCNC beim Programmwechsel einen Pfad zwischen vorherigem End- und nächstem Startpunkt fahren wird, ohne dass dies auf Kollisionen prüfbar ist.
 Die Bewegung erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
 
 \subsubsection{Postprocessing}
