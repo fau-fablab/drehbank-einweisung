@@ -4,8 +4,10 @@ Wartungsplan.xlsx
 ## Built file
 Einweisung_Drehbank.pdf
 Einweisungsliste_Drehbank.pdf
-betriebseinweisung_drehen.pdf
+Betriebsanweisung_Drehen.pdf
+betriebseinweisung_drehen.pdf # veraltet
 revision.tex
+output/
 
 ##file explorer files
 .directory

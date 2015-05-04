@@ -8,6 +8,7 @@
 \documentclass{\basedir/fablab-document}
 
 \usepackage{booktabs} % für Tabellen: fancy \addlinespace und besondere Querlinien 
+\usepackage{pdfpages} % für \includepdf
 
 \usepackage[colorinlistoftodos,prependcaption]{todonotes}
 \presetkeys%
@@ -324,11 +325,13 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \end{itemize}
 
 
+\todo{Es gibt jetzt leider zwei alterantive Versionen der Betriebsanweisung. Gemeinsam entscheiden welche es werden soll und das Beste aus beiden in diese hineintun}
+\newpage
+\addcontentsline{toc}{section}{Betriebsanweisung}
+\includepdf[fitpaper=true,offset=14 -7]{Betriebsanweisung_Drehen.pdf}
+\newpage
 % HACK WORKAROUND: leider geht \newgeometry...\restoregeometry nicht in der alten tex-Version auf macgyver. Deshalb wird eine große Menge von negativem vspace+hspace und figure eingesetzt um den gleichen Effekt zu erzielen.
 %\newgeometry{a4paper,margin=0cm}
-
-
-\newpage
 \thispagestyle{empty}
 % \fancyhf{}
 \begin{figure}[pc]%
@@ -837,6 +840,7 @@ Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW a
 
 \section{Quellen}
 \begin{itemize}
+ \item \href{http://publikationen.dguv.de/dguv/pdf/10002/bgi578.pdf}{BGI 578 Sicherheit durch Betriebsanweisungen}
  \item \href{http://www.arbeitssicherheit.de/media/pdfs/CCC_1290.pdf}{BGI 2003 Maschinen der Zerspanung}
  \item BGV Muster-Betriebsanweisung Drehmaschinen
 \end{itemize}

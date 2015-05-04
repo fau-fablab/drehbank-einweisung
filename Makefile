@@ -1,2 +1,2 @@
-TARGET=Einweisung_Drehbank Einweisungsliste_Drehbank
+TARGET=Betriebsanweisung_Drehen Einweisung_Drehbank Einweisungsliste_Drehbank
 include fablab-document/Makefile.include
