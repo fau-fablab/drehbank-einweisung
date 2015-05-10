@@ -39,7 +39,7 @@
 
 \begin{document}
 
-\listoftodos
+\listoftodos \newpage % ohne \newpage baut das tex nicht sauber, das Makefile oszilliert dann irgendwie zwischen 2 und 3 seiten inhalt+toodo
 
 \tableofcontents
 
@@ -520,6 +520,27 @@ Der Strom ist dabei auf die Schneide der Schneidplatte auszurichten.
 
 Im Handbetrieb kann alternativ, besonders zum Abstechen, mit einer kleinen Ölflasche geschmiert werden. 
 
+\section{Aufräumen und Wartung}
+
+
+\subsection{Aufräumen und Wartung}
+Nach dem Drehen:
+
+\begin{itemize}
+ \item Späne wegräumen (aufsammeln/aufkehren), soweit man vernünftig hinkommt. Auf jeden Fall frei sein muss der vordere Bereich rund um die Handräder sowie der Bereich neben den Endschaltern.
+ \item Rest wegsaugen, wenn kein Kühlschmiersiff ist. Der Staubsauger mag keinen Siff (gammelt) und keine langen Späne (verstopfen den Saugschlauch).
+ \item Drehmeißel außerhalb der Bank ausblasen, Spitzen der Platten auf Beschädigung oder Verfärbung kontrollieren
+ \item Drehmeißel wegräumen, keinen im Schnellwechsler gespannt stehen lassen, entspannt ist ok.
+ \item Alle Teile haben in der Schublade unter der Drehbank ihren Platz, wo sie auch wieder hingehören! Der Futterschlüssel gehört an den Magneten ganz links in der Schutzhaube.
+\end{itemize}
+
+
+Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW abgeben! Alles andere ist Mischmüll. (Außer teure Metalle aka. Messing/Silber/Blei/Inconel90, diese extra und sortenrein aufbewahren)
+
+\todo{Wartungsaufgaben nach Plan erklären: Prüfung des KSS, Abschmieren, Ölen, ...}
+
+
+
 \newpage
 \section{Handdrehen}
 \label{handdrehen}
@@ -735,21 +756,62 @@ Der Rändel in der Grafik ist überschnitten, da die Maschine nicht schnell genu
 \includegraphics[width=.5\linewidth]{img/raendel}
 \end{figure}
 \newpage
-\section{CNC - Drehen}
+\section{CNC-Datenerstellung}
 
 Beim CNC-Drehen wird die Drehmaschine durch ein in GCode geschriebenes oder automatisch aus einer CAM-Anwendung wie NX erzeugtes Programm gesteuert.
 
-Voraussetzungen für eine Erstellung des GCode aus NX sind:
+Voraussetzungen für eine Erstellung des GCode sind:
 \begin{itemize}
 	\item Ein dreidimensionales Modell des rotationssymmetrischen Werkstückes.
 	\item Ein dreidimensionales Modell des Rohstückes.
 	\item Daten der vorhandenen Werkzeuge und der Maschine.
 \end{itemize}
-Diese können in der Konstruktionsanwendung in NX erzeugt werden.
+Diese können in der Konstruktionsanwendung (CAD) erzeugt werden, was hier nicht näher beschrieben wird.
 
-In der Fertigungsanwendung wird hieraus dann ein Arbeitsablauf erstellt, der simuliert und in GCode ausgegeben werden kann.
+In der Fertigungsanwendung (CAM) wird hieraus dann ein Arbeitsablauf erstellt, der simuliert und mit einem Postprocessor als maschinenspezifischer GCode ausgegeben werden kann.
 
-\subsection{Job-Vorbereitung mit NX}
+Dieser GCode wird dann in die Steuerung (LinuxCNC) geladen und ausgeführt.
+
+\subsection{Allgemeines zur Datenerstellung}
+
+Zur Verarbeitung von Modellen zur Fertigung können verschiedene CAM-Anwendungen wie NX oder Autodesk eingesetzt werden. Im Folgenden sind zunächst die allgemein gültigen Punkte beschrieben, bevor anschließend spezifische Programme erklärt werden.
+
+\subsubsection{Werkzeuge}
+
+Die im FabLab vorhandenen Drehwerkzeuge sind vermessen und in LinuxCNC unter der auf dem Schnellwechelhalter vorhandenen Nummer eingetragen. Es ist unbedingt darauf zu achten, dass im CAM-Programm auch die richtige Werkzeugnummer verwendet wird, da hierueber die Positionskorrektur ausgewählt wird.
+
+Für Sonderwerkzeuge ist eine ausreichend hohe Werkzeugnummer zu verwenden, die nicht in der Werkzeugtabelle hinterlegt ist.
+
+Werkzeugnummer 0 darf nicht verwendet werden!
+
+\subsubsection{Begrenzungen und Freifahrpunkt}
+
+Der Bereich nahe am Spannfutter sowie ggf. der Reitstock muss dem CAM-Programm verboten werden.
+
+Außerdem muss ein sicherer Freifahrpunkt definiert werden, an dem zwischen den Operationen ein gefahrloses Parken möglich ist. In der Regel wählt man diesen weit genug außen und etwas rechts vom Werkstück.
+
+Der Freifahrpunkt muss so liegen, dass die X-Achse zum Werkzeugwechsel nach ganz außen fahren kann.
+
+\subsubsection{Nullpunkte} \label{sec:cnc-erstellung.allg.nullpunkte}
+Der Nullpunkt der X-Achse muss immer in der Drehachse liegen.\footnote{Wird nicht die Drehachse als X-Nullpunkt gewählt, funktioniert die Steuerung der Drehzahl für die konstante Schnittgeschwindigkeit nicht.}
+
+Der Nullpunkt der Z-Achse ist frei wählbar und kann am rechten oder linken Ende des Werkstücks liegen. Bei der Erstellung des GCode sollte die Wahl des Nullpunkts daher separat vermerkt werden.
+
+\subsubsection{Postprocessing}
+Es ist sinnvoll nach dem Postprocessing den Texteditor und alle Ordner die die ausgegebenen
+GCode-Dateien verwenden zu schliessen, da es sonst zu Locking-Problemen und
+somit zu mysteriös verschwindenden, nicht-löschbaren oder ähnlich
+"`interessanten"' Dateien kommt. Ausserdem ist ein neuer Ordner pro neuer
+Version der GCode-Ausgabe sinnvoll.
+
+Momentan ist aufgrund von Beschränkungen im Postprocessing nur ein Werkzeug pro GCode-Datei möglich, ein Werkzeugwechsel, der nicht am Anfang sondern Mitten im Ablauf der Datei stattfindet wird nicht unterstützt. Daher sind für verschiedene Werkzeuge verschiedene Dateien zu erstellen.
+
+\todoUnwichtig{Dies ist ein Bug im postprozessor, sobald behoben: hier ändern und stattdessen schreiben, wann man doch lieber getrennte jobs haben will.}
+
+
+\subsection{Siemens NX}
+\emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
+
 Diese Einweisung wurde mit NX 9 erstellt. Möglicherweise kann das hier geschilderte Verhalten in anderen Versionen, Sprachen oder Installationen abweichen. NX enthält generell einige Fehler und Übersetzungsfehler sowie schwer verständliche Terminologie. Ein denkender Bediener wird generell bei allen Beschreibungen dieses Dokuments vorausgesetzt.
 
 NX wird in mehreren Tutorials erklärt. Diese sind über die Hilfefunktion in der Fertigungs-Anwendung auffindbar. Hierbei ist insbesondere das speziell für das Drehen vorgesehene Tutorial als Einstieg sehr zu empfehlen. Auf im Tutorial vorkommende Sachverhalte wird hier nicht mehr gesondert eingegangen, dieser Abschnitt beschreibt nur die Besonderheiten im Falle des FabLab.
@@ -758,16 +820,11 @@ NX wird in mehreren Tutorials erklärt. Diese sind über die Hilfefunktion in de
 \todo{diese anleitung NX drehen aus postprozessor repo hier hinein mergen, zumindest die crash-kritischen sachen}
 
 \subsubsection{Werkzeuge}
-
-Die im FabLab vorhandenen Drehwerkzeuge sind vermessen und in LinuxCNC unter der auf dem Schnellwechelhalter vorhandenen Nummer eingetragen. Es ist unbedingt darauf zu achten, dass bei der Verwendung von Werkzeugen in NX auch die richtige Werkzeugnummer verwendet wird, da hierueber die Positionskorrektur ausgewählt wird.
-
 Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit bereits richtig voreingestellten Eigenschaften und Abmessungen. \todo{Auffinden dieser Werkzeuge? Bezeichnungsschema?}
 
 \todo{Laden der Werkzeugbibliothek?}
 
 \todo{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Maxs Online-Kurzanleitung}
-
-Werkzeugnummer 0 darf nicht verwendet werden.
 
 \subsubsection{Simulation}
 
@@ -775,47 +832,41 @@ NX bietet die Möglichkeit Arbeitsabläufe einer Fertigung zu simulieren. Damit 
 
 \subsubsection{Start- und Endpunkte}
 
-
-\todo{Containment (wie auch immer das auf deutsch heißt) erklären, auch Anfahrbewegungen an Operation}
-
 Es \textbf{müssen} für jede Operation Start- und Endpunkte in ausreichend grossem Abstand vom Rohmaterial gewählt sowie passende Anfahrbewegungen vorgegeben werden. Die Punkte sollten sich immer nahe beieinander befinden, da später LinuxCNC beim Programmwechsel einen Pfad zwischen vorherigem End- und nächstem Startpunkt fahren wird, ohne dass dies auf Kollisionen prüfbar ist.
-Die Bewegung in der Simulation nur als Sprung gezeigt und erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
+Diese Bewegung wird in der Simulation nur als Sprung ohne Kollisionsprüfung gezeigt und erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
 
 Nähere Informationen dazu finden sich vorerst nur in der NX-Kurzanleitung \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}.
-\todo{Containment, Anfahrbewegungen hier erklären}
+\todo{Avoidance/Containment, Anfahrbewegungen hier erklären}
 
 \subsubsection{Postprocessing}
 
 Die Endgültige Erzeugung von GCode erfolgt im "`Postprocessing"' genannten Arbeitsschritt. Hierzu wird ein für die im FabLab verwendete Maschine erstelltes Postprocessing-Programm verwendet. \todo{Beschreibung Auswahl postprocessing}
 
-Es ist sinnvoll nach dem Postprocessing NX und alle Ordner die die ausgegebenen
-GCode-Dateien verwenden zu schliessen, da es sonst zu Locking-Problemen und
-somit zu mysteriös verschwindenden, nicht-löschbaren oder ähnlich
-"`interessanten"' Dateien kommt. Ausserdem ist ein neuer Ordner pro neuer
-Version der GCode-Ausgabe sinnvoll.
+\subsection{Autodesk}
+\emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
+\todoUnwichtig{darf gerne jemand machen...}
 
-Momentan ist aufgrund von Beschränkungen im Postprocessing nur ein Werkzeug pro GCode-Datei möglich, ein Werkzeugwechsel, der nicht am Anfang sondern Mitten im Ablauf der Datei stattfindet wird nicht unterstützt. Daher sind für verschiedene Werkzeuge verschiedene Dateien zu erstellen.
 
-\subsection{Bedienung von LinuxCNC}
+\section{CNC-Steuerung: LinuxCNC}
 
 Zur Ausführung von vorhandenem GCode sind die folgenen Schritte der Reihe nach auszuführen.
 
-\subsubsection{Einschalten}
+\subsection{Einschalten}
 Die Einschaltreihenfolge ist:
-\begin{itemize}
+\begin{enumerate}
 	\item Steuerrechner einschalten
 	\item Drehmaschine am Hauptschalter einschalten
 	\item Drehmaschine auf Betriebsart \enquote{Auto} stellen
 	\item LinuxCNC auf dem Steuerrechner starten
 	\item Mit dem Not-Aus-Reset den Not-Aus freigeben
-	\item 2. Icon in LinuxCNC "`Maschine an/aus (F2)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
-\end{itemize}
+	\item zweites Icon in LinuxCNC "`Maschine an/aus (F2)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
+\end{enumerate}
 
-\subsubsection{Nullpunkt und Referenzierung}
+\subsection{Nullpunkt und Referenzierung}
 
 Zunächst muss eine Referenzfahrt der Maschine durchgeführt werden. Hierzu ohne eingelegtes Material und ohne Werkzeug den LinuxCNC-Knopf \enquote{Referenzfahrt} betätigen. Hierzu muss die Schutzhaube geschlossen sein. Die Maschine fährt nun bis zu den mit Endschaltern versehenen Positionen in beiden Achsen.
 
-Die Einstellung des Nullpunkts des Koordinatensystems hängt vom im GCode angenommenen Nullpunkt ab. Beispielsweise kann der Nullpunkt der Z-Achse am rechten oder linken Ende des Werkstücks liegen, der Nullpunkt der X-Achse muss in der Drehachse\footnote{Wird nicht die Drehachse als X-Nullpunkt gewählt, funktioniert die Steuerung der Drehzahl für die konstante Schnittgeschwindigkeit nicht.} liegen. Bei der Erstellung des GCode sollte die Wahl des Nullpunkts daher separat vermerkt werden.
+Die Einstellung des Nullpunkts des Koordinatensystems hängt vom im GCode angenommenen Nullpunkt ab, siehe \ref{sec:cnc-erstellung.allg.nullpunkte}.
 
 Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Koordinatensystems sind bei diesem Werkzeug exakt $0$, alle anderen Werkzeuge sind darauf abgestimmt. Daher ist es sinnvoll, den Nullpunkt mithilfe von Werkzeug 3 zu setzen. Hierzu geht man wie folgt vor:
 \begin{itemize}
@@ -839,7 +890,7 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 
 Analog kann auch das Rohteil hier abgedreht werden und dabei der Nullpunkt festgelegt oder verstellt werden. Die obige Anleitung ist zweckmässig modifiziert zu verwenden je nach Wahl des Nullpunktes im GCode. Wird der Nullpunkt falsch gewählt sind Kollisionen, schwere Schäden und Unfälle möglich.
 
-\subsubsection{Laden und Kontrollieren des Jobs}
+\subsection{Laden und Kontrollieren des Jobs}
 
 Mit der \enquote{Datei öffnen}-Funktion kann der GCode geöffnet werden. Die im GCode enthaltenen Fahrpfade werden angezeigt, diese können nun geprüft werden. Dazu kann man:
 \begin{itemize}
@@ -850,7 +901,7 @@ Mit der \enquote{Datei öffnen}-Funktion kann der GCode geöffnet werden. Die im
 
 Ein Leerlauf ohne Werkzeug ist auch zum Einüben des Arbeitsablaufs sinnvoll.
 
-\subsubsection{Jobablauf}
+\subsection{Jobablauf}
 
 Ein Job wird durch Drücken des \enquote{Start}-Icons gestartet. Vorher sollte darauf geachtet werden,
 dass das passende Werkzeug eingelegt ist. LinuxCNC wird bei den meisten Jobs zum Start des Programms nach einem Werkzeugwechsel fragen. Bei GCode der nicht mit NX und dem FabLab-Preprocessing-Skript erzeugt wurde muss das aber nicht unbedingt der Fall sein.
@@ -865,24 +916,6 @@ Im Programmablauf muss die Schutzhaube geschlossen sein. Die einzige Ausnahme da
 Nach Ablauf des Jobs bis zum Stillstand der Spindel warten, bevor die Schutzhaube geöffnet wird.
 
 Besteht ein Job aus mehreren GCode-Dateien, weil beispielsweise mehrere Werkzeugwechsel notwendig sind kann nun mit dem Laden der nächsten Datei fortgefahren werden.
-
-\newpage
-\section{Aufräumen und Wartung}
-
-
-\subsection{Aufräumen und Wartung}
-Nach dem Drehen:
-
-\begin{itemize}
- \item Späne wegräumen (aufsammeln/aufkehren), soweit man vernünftig hinkommt. Auf jeden Fall frei sein muss der vordere Bereich rund um die Handräder sowie der Bereich neben den Endschaltern.
- \item Rest wegsaugen, wenn kein Kühlschmiersiff ist. Der Staubsauger mag keinen Siff (gammelt) und keine langen Späne (verstopfen den Saugschlauch).
- \item Drehmeißel außerhalb der Bank ausblasen, Spitzen der Platten auf Beschädigung oder Verfärbung kontrollieren
- \item Drehmeißel wegräumen, keinen im Schnellwechsler gespannt stehen lassen, entspannt ist ok.
- \item Alle Teile haben in der Schublade unter der Drehbank ihren Platz, wo sie auch wieder hingehören! Der Futterschlüssel gehört an den Magneten ganz links in der Schutzhaube.
-\end{itemize}
-
-
-Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW abgeben! Alles andere ist Mischmüll. (Außer teure Metalle aka. Messing/Silber/Blei/Inconel90, diese extra und sortenrein aufbewahren)
 
 \appendix
 
