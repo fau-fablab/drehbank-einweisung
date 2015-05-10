@@ -14,6 +14,7 @@
 \presetkeys%
     {todonotes}%
     {inline,backgroundcolor=red}{}
+\newcommand{\todoUnwichtig}[1]{\textbf{TODO: #1} }
 \renewcommand{\texteuro}{\euro}
 %\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
 \newcommand{\pfeil}{\ensuremath{\rightarrow}}
@@ -78,10 +79,9 @@ Wendeplatte 	& Das kleine, aus Hartmetall gefertigte Teil, das schließlich das 
 
 \subsection{Zerspanung}
 \subsubsection{Was ist Drehen?}
-Drehen ist ein zerspanender Prozess bei dem ein fest eingespanntes Werkzeug (Drehmeißel) am sich drehenden Werkstück entlanggeführt wird.
+Drehen ist ein zerspanender Prozess, bei dem ein fest eingespanntes Werkzeug (Drehmeißel) am sich drehenden Werkstück entlanggeführt wird.
 Der Drehmeißel hat eine geometrisch bestimmte Schneide aus Schnellarbeitsstahl (HSS) oder Wendeschneidplatten aus Vollhartmetall (VHM) und wird quer zur Drehrichtung bewegt.
 Daraus ergibt sich eine kreisförmige Schnittbewegung und es entstehen rotationssymtrische Werkstücke.
-\todo{mehr schreiben}
 
 \newpage
 \subsubsection{Drehmeißel}
@@ -106,6 +106,7 @@ Es gibt im Grunde keine feste Regel nach der das Futter gewählt werden kann, je
 \end{itemize}
 
 Spannfutter haben einen definierten maximalen Spanndurchmesser, der üblicherweise kleiner als die maximale Backenöffnung ist. Dieser Durchmesser ist unbedingt zu beachten, es besteht die Gefahr von Desintegration im laufenden Betrieb.
+\todo{Wie groß ist dieser Maximaldurchmesser?}
 \todo{Überschneidung mit Abschnitt Rohmaterial einspannen -- umsortieren?}
 
 \subsubsection{Spannfutterwechsel}
@@ -273,6 +274,8 @@ Die Oberfläche wird dabei wesentlich feiner.
 \end{table}
 
 \todo{Unter welchen Bedingungen gilt diese Tabelle? VHM, Beschichtung?}
+\todo{Verwendung dieser Tabelle (Startwert)? Mindestzustellung?}
+\todo{Verweis auf Katalogseiten mit erlaubten Schnittdatenbereichen je Wendeschneidplatte}
 \newpage
 \section{Sicherheit und Verhaltensregeln}
 
@@ -363,7 +366,7 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \regelZu{ablenkung}{\vspace{-.5em}
 \begin{itemize} 
  \item Vor Arbeitsbeginn Wartungsplan beachten, Maschine auf Mängel und mögliche Probleme kontrollieren.
- \item Sicherstellen, dass sich nur der Bediener und höchstens eine Hilfsperson in der Sicherheitszone befinden, Sicherheitszone absperren.
+ \item Sicherstellen, dass sich nur der Bediener und höchstens eine eingewiesene Hilfsperson in der Sicherheitszone befinden, Sicherheitszone absperren.
 \end{itemize}
 }
 
@@ -601,18 +604,32 @@ Für andere Winkel kann der Werkzeughalter mit dem Fasenmeißel auch verdreht in
 \subsection{Plandrehen}
 \label{handdrehen:Plandrehen}
 
-Zum Plandrehen wird mit einem geeignetem \todo{welchem?} Drehmeissel bei konstantem X für eine radiale Aussenfläche, bei konstantem Z für eine Stirnfläche abgedreht.
+Zum Plandrehen wird mit konstantem X für eine radiale Aussenfläche, bei konstantem Z für eine Stirnfläche abgedreht. Dafür wird ein normaler Außendrehmeißel verwendet.
 
-Beim Abdrehen einer Stirnfläche ist darauf zu achten, nicht in X-Richtung über die Drehachse hinaus zu bewegen, da hinter der Drehachse das Material den Meissel von der falschen Seite anläuft.
+Beim Abdrehen einer Stirnfläche ist darauf zu achten, nicht in X-Richtung über die Drehachse hinaus zu bewegen, da hinter der Drehachse das Material den Meißel von der falschen Seite anläuft.
 
 Das Abdrehen einer radialen oder Stirnfläche kann auch zum Setzen von Nullpunkten mitverwendet werden, wenn man die \enquote{Antasten}-Funktion der Steuersoftware bei unveränderter anzutastender Koordinate verwendet.
 
 \subsection{Abstechen}
+Beim Abstechen wird das Werkstück an einer Stelle durchtrennt. Abstechen ist eine vergleichsweise gefährliche Operation.
 
-\textbf{Das Abstechen ist eine vergleichsweise gefährliche Operation. Der abgestochene Werkstückteil kann bei hoher Drehzahl aus der Maschine springen und den Bediener schwer verletzen!} Dies kann insbesondere bei schweren oder langen Teilen vorkommen. Diese springen durch den Restdrehimpuls, rollen oder knicken ab und werden durch die Drehbeweggung \enquote{geworfen}.
+Alternativ zum Abstechen kann das Teil eventuell nur \enquote{angestochen} werden. Den Rest kann man dann außerhalb der Drehbank mit einer Säge trennen und anschließend die Schnittfläche abschleifen oder plan drehen.
 
+\subsubsection{Gefahren beim Abstechen}
+\textbf{Der abgestochene Werkstückteil kann bei hoher Drehzahl aus der Maschine springen und den Bediener schwer verletzen!} Dies kann insbesondere bei schweren oder langen Teilen vorkommen. Diese springen durch den Restdrehimpuls, rollen oder knicken ab und werden durch die Drehbeweggung \enquote{geworfen}.
+
+\textbf{Gegengespannten Werkstücke können sich beim Abstechen verklemmen.} Dies kommt zum einen daher, dass die Körnerspitze gefedert ist. Daher ist ggf. die Körnerspitze leicht zu lockern. Zum anderen kann allein durch die Geometrie das Werkstück sich beim Herunterfallen zwischen Körnerspitze, Werkzeug und drehendem Werkstückteil verklemmen und unkontrolliert durch die Maschine springen.
+
+Es ist also immer sorgfältig abzuwägen, ob ein Abstechen sicher möglich ist.
+
+Eine niedrige Spindeldrehzahl senkt die Gefahren. Dafür kann auch eine nicht-optimale niedrigere Schnittgeschwindigkeit in Kauf genommen werden.
+
+
+\subsubsection{Durchführung}
 Für ein Abstechen wird der Stechmeißel benötigt. Dieser wird 90$^\circ$ zum Werkstück eingespannt.
 Es wird zu Beginn langsamer zum Ende hin schneller möglichst nahe am Futter abgestochen.
+
+\todo{erklären, wieso schneller -- ist die Drehzahl gemeint?}
 
 Außerdem ist es sinnvoll nicht kontinuierlich zu schneiden, sondern immer wieder mit Unterbrechungen einen Span abzunehmen.
 Dabei zügig aus dem Werkstück herausfahren, sonst kann sich das Werkzeug aufgrund von Wärmedehnung mit dem Werkstück verklemmen!
@@ -621,12 +638,6 @@ Während des Schnittvorganges immer wieder mit Öl schmieren.
 
 \textbf{Greife niemals in die drehende Maschine, um das abgestochene Bauteil zu entnehmen! Vorher Spindel ausschalten!}
 
-
-\textbf{Gegengespannten Werkstücke können sich beim Abstechen verklemmen.} Dies kommt zum einen daher, dass die Körnerspitze gefedert ist. Daher ist ggf. die Körnerspitze leicht zu lockern. Zum anderen kann allein durch die Geometrie das Werkstück sich beim Herunterfallen zwischen Körnerspitze, Werkzeug und drehendem Werkstückteil verklemmen und unkontrolliert durch die Maschine springen.
-
-Es ist also immer sorgfältig abzuwägen, ob ein Abstechen sicher möglich ist. Solange damit noch eine sinnvolle Zerspanung möglich ist, senkt eine niedrige Spindeldrehzahl die Gefahren.
-
-Alternativ zum Abstechen kann das Teil eventuell mit einer Säge getrennt werden und anschließend die Schnittfläche plan gedreht werden.
 
 
 
@@ -667,7 +678,9 @@ Als Werkzeug wird eine Stechwendeschneidplatte (sternförmig), Werkzeug Nummer 4
 
 Rändeln ist das Einprägen von Mustern in das Werkstück, beispielsweise um geriffelte Grifflächen an Stellschrauben zu erzeugen.
 
-\todo{Beim Manuell-Drehen: Überschneidung des Rändels nur sehr schwer vermeidbar, CNC in Arbeit}
+Zur Zeit ist nur manuelles Rändeln für Alu möglich. Überschneidungen des Rändels nur sehr schwer vermeidbar, daher sieht es nicht optimal aus, aber besser als nichts.
+\todoUnwichtig{CNC-Rändeln in Arbeit}
+
 Es ist ein relativ preiswertes Rändelwerkzeug vorhanden.
 Das Werkzeug kann in den Schnellspannhalter des Fasenmeißels gespannt werden.
 Es besteht aus einem einspannbaren Körper mit einem flexiblem, mit zwei Rändelrädern ausgestatteten Kopf.
@@ -719,24 +732,34 @@ Diese Einweisung wurde mit NX 9 erstellt. Möglicherweise kann das hier geschild
 
 NX wird in mehreren Tutorials erklärt. Diese sind über die Hilfefunktion in der Fertigungs-Anwendung auffindbar. Hierbei ist insbesondere das speziell für das Drehen vorgesehene Tutorial als Einstieg sehr zu empfehlen. Auf im Tutorial vorkommende Sachverhalte wird hier nicht mehr gesondert eingegangen, dieser Abschnitt beschreibt nur die Besonderheiten im Falle des FabLab.
 
-\todo{ generell die folgenden Abschnitte zu NX eventuell erweitern }
+\todoUnwichtig{Diese Abschnitte beschreiben vorerst nur die gröbsten Fallstricke.} Weitere Informationen findest du in der Kurzanleitung: \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}
+\todo{diese anleitung NX drehen aus postprozessor repo hier hinein mergen, zumindest die crash-kritischen sachen}
+
 \subsubsection{Werkzeuge}
 
 Die im FabLab vorhandenen Drehwerkzeuge sind vermessen und in LinuxCNC unter der auf dem Schnellwechelhalter vorhandenen Nummer eingetragen. Es ist unbedingt darauf zu achten, dass bei der Verwendung von Werkzeugen in NX auch die richtige Werkzeugnummer verwendet wird, da hierueber die Positionskorrektur ausgewählt wird.
 
 Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit bereits richtig voreingestellten Eigenschaften und Abmessungen. \todo{Auffinden dieser Werkzeuge? Bezeichnungsschema?}
 
+\todo{Laden der Werkzeugbibliothek?}
+
+\todo{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Maxs Online-Kurzanleitung}
+
+
 \subsubsection{Simulation}
 
-NX bietet die Möglichkeit Arbeitsabläufe einer Fertigung zu simulieren. Von dieser Möglichkeit ist Gebrauch zu machen um Kollisionsfreiheit von Programmen zu prüfen. Achtung: NX hat diverse Bugs bei der Simulationsanzeige, Abhilfe schafft eine langsamere Ablaufgeschwindigkeit, das Wechseln der Tabs in der Simulationssteuerung oder ein Ein- und Ausblenden des 3D-Modells des Werkzeugs.
+NX bietet die Möglichkeit Arbeitsabläufe einer Fertigung zu simulieren. Damit sollte man die Kollisionsfreiheit von Programmen prüfen. Achtung: NX hat diverse Bugs bei der Simulationsanzeige, Abhilfe schafft eine langsamere Ablaufgeschwindigkeit, das Wechseln der Tabs in der Simulationssteuerung oder ein Ein- und Ausblenden des 3D-Modells des Werkzeugs.
 
 \subsubsection{Start- und Endpunkte}
 
-\todo{anleitung NX drehen aus postprozessor repo hier hinein mergen, zumindest die crash-kritischen sachen}
+
 \todo{Containment (wie auch immer das auf deutsch heißt) erklären, auch Anfahrbewegungen an Operation}
 
-Es \textbf{müssen} Start- und Endpunkte in ausreichend grossem Abstand vom Rohmaterial gewählt werden. Die Punkte sollten sich immer nahe beieinander befinden, da später LinuxCNC beim Programmwechsel einen Pfad zwischen vorherigem End- und nächstem Startpunkt fahren wird, ohne dass dies auf Kollisionen prüfbar ist.
-Die Bewegung erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
+Es \textbf{müssen} für jede Operation Start- und Endpunkte in ausreichend grossem Abstand vom Rohmaterial gewählt sowie passende Anfahrbewegungen vorgegeben werden. Die Punkte sollten sich immer nahe beieinander befinden, da später LinuxCNC beim Programmwechsel einen Pfad zwischen vorherigem End- und nächstem Startpunkt fahren wird, ohne dass dies auf Kollisionen prüfbar ist.
+Die Bewegung in der Simulation nur als Sprung gezeigt und erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
+
+Nähere Informationen dazu finden sich vorerst nur in der NX-Kurzanleitung \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}.
+\todo{Containment, Anfahrbewegungen hier erklären}
 
 \subsubsection{Postprocessing}
 
@@ -762,7 +785,7 @@ Die Einschaltreihenfolge ist:
 	\item Drehmaschine auf Betriebsart \enquote{Auto} stellen
 	\item LinuxCNC auf dem Steuerrechner starten
 	\item Mit dem Not-Aus-Reset den Not-Aus freigeben
-	\item 2. Icon in LinuxCNC "`Maschine an/aus (F12)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
+	\item 2. Icon in LinuxCNC "`Maschine an/aus (F2)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
 \end{itemize}
 
 \subsubsection{Nullpunkt und Referenzierung}
@@ -808,7 +831,9 @@ Ein Leerlauf ohne Werkzeug ist auch zum Einüben des Arbeitsablaufs sinnvoll.
 
 Ein Job wird durch Drücken des \enquote{Start}-Icons gestartet. Vorher sollte darauf geachtet werden,
 dass das passende Werkzeug eingelegt ist. LinuxCNC wird bei den meisten Jobs zum Start des Programms nach einem Werkzeugwechsel fragen. Bei GCode der nicht mit NX und dem FabLab-Preprocessing-Skript erzeugt wurde muss das aber nicht unbedingt der Fall sein.
-\todo{KSS?}
+
+KSS ist manuell am Schaltschrank einzuschalten, es geht noch nicht automatisch.
+\todoUnwichtig{Text ändern, sobald es automatisch geht}
 
 Der Job kann mit den entsprechenden Icons pausiert oder angehalten werden. Beim Werkzeugwechsel ist ggf. auch eine Pausierung mit dem entsprechenden Knopf aufzuheben.
 
