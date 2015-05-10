@@ -23,6 +23,7 @@
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\mcc}[1]{\multicolumn{2}{c}{#1}}
 \renewcaptionname{ngerman}{\tablename}{Tab.}
+\renewcaptionname{ngerman}{\figurename}{Abb.}
 
 \hyphenation{%
 	Reit-stock-auf-nah-me
@@ -165,7 +166,7 @@ Die ausgebauten Spannbacken säubern, ölen und wieder aufräumen.
 Das Kühlschmiermittel besteht aus einer Öl-Wasser-Emulsion.
 Die Aufgabe des Kühlschmierstoffes (KSS) besteht darin den Schneidvorgang zu kühlen (Wasser) und zu schmieren (Öl).
 Aufgrund der Zusätze und der entfettenden Wirkung des Emulgators sollte der Hautkontakt vermieden werden.
-Bei Augenkontakt sofort mit reichlich Wasser ausspülen und gelegentlich die oberen und unteren Augenlieder anheben.
+Bei Augenkontakt sofort mit der Augenspüleinrichtung (beim Waschbecken) oder reichlich Wasser ausspülen und gelegentlich die oberen und unteren Augenlider anheben.
 Anschließend ist ein Augenarzt aufzusuchen.
 
 \subsubsection{Drehbank}
@@ -265,18 +266,22 @@ Die Oberfläche wird dabei wesentlich feiner.
 	Aluminium	($<$12\% Si)			& 500	 	& 500  	& 0.25 	& 0.15	& 3.5 	& 1.0 	\\
 	Aluminium	($>$12\% Si)			& 150	 	& 150  	& 0.22 	& 0.13	& 3.5 	& 1.0 	\\
 	Kupfer											& 400	 	& 400  	& 0.20 	& 0.15	& 3.5 	& 1.0 	\\
-	Messing											& 400	 	& 400  	& 0.20 	& 0.15	& 3.5 	& 1.0 	\\
-	Acryl												& 200	 	& 300 	& 0.50 	& 0.10	& 6.0 	& 1.0 	\\
-	Kunsstoff										& 500	 	& 800 	& 0.40 	& 0.10	& 6.0 	& 1.0 	\\
-	Hartholz										& 60	 	& 90  	& 0.30 	& 0.15	& 6.0 	& 1.0 	\\
-	Weichholz										& 70	 	& 110  	& 0.30 	& 0.15	& 6.0 	& 1.0 	\\
+	\textbf{Messing}											& 400	 	& 400  	& 0.20 	& 0.15	& 3.5 	& 1.0 	\\
+	\textbf{Acryl}												& 200	 	& 300 	& 0.50 	& 0.10	& 6.0 	& 1.0 	\\
+	Kunststoff										& 500	 	& 800 	& 0.40 	& 0.10	& 6.0 	& 1.0 	\\
+% Holz ist bei uns nicht zulässig. (organischer Eintrag ins KSS)
+%	Hartholz										& 60	 	& 90  	& 0.30 	& 0.15	& 6.0 	& 1.0 	\\
+%	Weichholz										& 70	 	& 110  	& 0.30 	& 0.15	& 6.0 	& 1.0 	\\
 \end{tabular}
 \caption{Herstellerangaben für ideale Bedingungen nach \href{http://www.taegutec.com/Ustyles/DownloadFiles/I_Grades_en.pdf}{TaeguTec} und \href{http://www.roehmschweiz.ch/fileadmin/Roehm/PDF_Plexiglas/311-1_Bearbeiten_von_PLEXIGLAS_de.pdf}{Evonic}}
+Fett markiert: im Lab vorrätige Werkstoffe.
+\todo{Bei uns vorrätige Materialien markieren: welches Alu? welcher Stahl? POM = Kunststoff?}
 \end{table}
 
 \todo{Unter welchen Bedingungen gilt diese Tabelle? VHM, Beschichtung?}
 \todo{Verwendung dieser Tabelle (Startwert)? Mindestzustellung?}
 \todo{Verweis auf Katalogseiten mit erlaubten Schnittdatenbereichen je Wendeschneidplatte}
+
 \newpage
 \section{Sicherheit und Verhaltensregeln}
 
@@ -328,6 +333,14 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 	\item Über Tastatureingabe ist nur ein Abbrechen oder Anhalten des Jobs möglich. Dies ersetzt keinen Not-Aus!
 \end{itemize}
 
+\subsection{Kühlschmierstoff}
+Holz und saugfähiges Material wie Schaumstoff darf nicht bearbeitet werden. In den Kühlschmierstoff dürfen keine organischen Materialien eingebracht werden, da es sonst zu Bakterienwachstum kommt. Saugfähige Späne verschlammen außerdem den Kreislauf.
+
+Stein, glasverstärkte Kunststoffe sowie sonstige abrasive oder staubende Stoffe dürfen ebenfalls nicht bearbeitet werden. Abrasive Fremdkörper führen zum Verschleiß von beweglichen Teilen in der Drehbank, außerdem ist keine Staubabsaugung bzw. KSS-Schlammabscheidung vorhanden.
+
+Die regelmäßige Wartung und Kontrolle des KSS-Systems ist nötig, um Gesundheitsgefahren durch Bakterien und deren Ausscheidungen zu vermeiden.
+
+\todo{Drehbank offen stehen lassen oder schließen? Bisher war der Konsens offen damit es nicht so krass rostet, aber bei zu kriegen die KSS-Bewohner weniger Futter?}
 
 \todo{Es gibt jetzt leider zwei alterantive Versionen der Betriebsanweisung. Gemeinsam entscheiden welche es werden soll und das Beste aus beiden in diese hineintun}
 \newpage
@@ -754,6 +767,7 @@ Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit b
 
 \todo{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Maxs Online-Kurzanleitung}
 
+Werkzeugnummer 0 darf nicht verwendet werden.
 
 \subsubsection{Simulation}
 
