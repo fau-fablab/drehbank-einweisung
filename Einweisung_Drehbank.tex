@@ -23,12 +23,11 @@
 \renewcaptionname{ngerman}{\tablename}{Tab.}
 \renewcaptionname{ngerman}{\figurename}{Abb.}
 
-\hyphenation{%
+\hyphenation{
 	Reit-stock-auf-nah-me
 	Schnell-wech-sel-halt-er
 	}
 
-% \linespread{1.2}
 
 \fancyhead[C]{\textbf{\color{red}{TODO: unfertig!}}}
 \date{2015}
@@ -132,7 +131,8 @@ Innenspannbacken werden zum Spannen von Innenradien wie z.\,B. Bohrungen sowie v
 Außenspannbacken kommen hingegen ausschliesslich beim Spannen auf Außenflächen zum Einsatz.
 Wichtig: Sechskantmaterial immer mit den Innenbacken spannen.
 
-\todo{Bilder}
+% unnötig. das lernt man bei der bedinung.
+%\todo{Bilder}
 
 \subsubsection{Spannbackenwechsel}
 \label{zerspanung:spannbackenwechsel}
@@ -266,18 +266,20 @@ Die Oberfläche wird dabei wesentlich feiner.
 	Kupfer											& 400	 	& 400  	& 0.20 	& 0.15	& 3.5 	& 1.0 	\\
 	\textbf{Messing}											& 400	 	& 400  	& 0.20 	& 0.15	& 3.5 	& 1.0 	\\
 	\textbf{Acryl}												& 200	 	& 300 	& 0.50 	& 0.10	& 6.0 	& 1.0 	\\
-	Kunststoff										& 500	 	& 800 	& 0.40 	& 0.10	& 6.0 	& 1.0 	\\
+	\textbf{Kunststoff}										& 500	 	& 800 	& 0.40 	& 0.10	& 6.0 	& 1.0 	\\
 % Holz ist bei uns nicht zulässig. (organischer Eintrag ins KSS)
 %	Hartholz										& 60	 	& 90  	& 0.30 	& 0.15	& 6.0 	& 1.0 	\\
 %	Weichholz										& 70	 	& 110  	& 0.30 	& 0.15	& 6.0 	& 1.0 	\\
 \end{tabular}
 \caption{Herstellerangaben für ideale Bedingungen nach \href{http://www.taegutec.com/Ustyles/DownloadFiles/I_Grades_en.pdf}{TaeguTec} und \href{http://www.roehmschweiz.ch/fileadmin/Roehm/PDF_Plexiglas/311-1_Bearbeiten_von_PLEXIGLAS_de.pdf}{Evonic}}
 Fett markiert: im Lab vorrätige Werkstoffe.
-\todo{Bei uns vorrätige Materialien markieren: welches Alu? welcher Stahl? POM = Kunststoff?}
+\todo{Bei uns vorrätige Materialien markieren: welches Alu? welcher Stahl? : s235}
 \end{table}
 
-\todo{Unter welchen Bedingungen gilt diese Tabelle? VHM, Beschichtung?}
-\todo{Verwendung dieser Tabelle (Startwert)? Mindestzustellung?}
+Diese Schnittwerte sind für die Verwendung der im Lab vorhandenen Ingersoll-VHM-Platten geeignet. Sie seien als Richtwerte zu sehen, die abhängig von der genauen Legierung, von der Steifigkeit der Aufspannung oder der Maschine selbst abhängen. Daher sollte ruhig mit einem geringeren Wert als in der Tabelle begonnen werden.\\
+Der vorrätige Kunststoff \enquote{POM} ist in der Tabelle mit den Werten für \enquote{Kunststoff} zu bearbeiten.\\
+Bei Stahl ist zwingend KSS zu verwenden, bei Alu und Messing in der Regel auch. Ausnahmen für sehr kleine Zustellungen oder Abstechen im Handbetrieb mit Ölschmierung.
+
 \todo{Verweis auf Katalogseiten mit erlaubten Schnittdatenbereichen je Wendeschneidplatte}
 
 \newpage
@@ -338,9 +340,12 @@ Stein, glasverstärkte Kunststoffe sowie sonstige abrasive oder staubende Stoffe
 
 Die regelmäßige Wartung und Kontrolle des KSS-Systems ist nötig, um Gesundheitsgefahren durch Bakterien und deren Ausscheidungen zu vermeiden.
 
-\todo{Drehbank offen stehen lassen oder schließen? Bisher war der Konsens offen damit es nicht so krass rostet, aber bei zu kriegen die KSS-Bewohner weniger Futter?}
+Nach der Arbeit ist die Maschine offen zu lassen, damit sich keine gesättigte Luftfeuchtigkeit in der Maschine bildet, die zu Verrostungen des Maschinenbetts führen.
+% das kss hat doch biozid...
 
-\todo{Es gibt jetzt leider zwei alterantive Versionen der Betriebsanweisung. Gemeinsam entscheiden welche es werden soll und das Beste aus beiden in diese hineintun}
+%\todo{Es gibt jetzt leider zwei alterantive Versionen der Betriebsanweisung. Gemeinsam entscheiden welche es werden soll und das Beste aus beiden in diese hineintun}
+% in Zeile 
+
 \newpage
 \addcontentsline{toc}{section}{Betriebsanweisung}
 \includepdf[fitpaper=true,offset=14 -7]{Betriebsanweisung_Drehen.pdf}
