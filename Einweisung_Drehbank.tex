@@ -538,8 +538,7 @@ Im Handbetrieb kann alternativ, besonders zum Abstechen, mit einer kleinen Ölfl
 \section{Aufräumen und Wartung}
 
 
-\subsection{Aufräumen und Wartung}
-Nach dem Drehen:
+\subsection{Nach dem Drehen}
 
 \begin{itemize}
  \item Späne wegräumen (aufsammeln/aufkehren), soweit man vernünftig hinkommt. Auf jeden Fall frei sein muss der vordere Bereich rund um die Handräder sowie der Bereich neben den Endschaltern.
@@ -552,8 +551,8 @@ Nach dem Drehen:
 
 Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW abgeben! Alles andere ist Mischmüll. (Außer teure Metalle aka. Messing/Silber/Blei/Inconel90, diese extra und sortenrein aufbewahren)
 
-\todo{Wartungsaufgaben nach Plan erklären: Prüfung des KSS, Abschmieren, Ölen, ...}
-
+\subsection{KSS prüfen, Abschmieren und Ölen}
+An der Tür zum Besprechnungsraum hängt ein Wartungs- und Schmierplan. Dieser ist nach jeder Benutzung zu kontrollieren und gegebenenfalls sind die nötigen Wartungen auszuführen. Besonders wichtig sind dabei die Punkte \enquote{Schmieren nach Schmierplan} und die Punkte \enquote{KSS Prüfen}.
 
 
 \newpage
@@ -685,9 +684,7 @@ Eine niedrige Spindeldrehzahl senkt die Gefahren. Dafür kann auch eine nicht-op
 
 \subsubsection{Durchführung}
 Für ein Abstechen wird der Stechmeißel benötigt. Dieser wird 90$^\circ$ zum Werkstück eingespannt.
-Es wird zu Beginn langsamer zum Ende hin schneller möglichst nahe am Futter abgestochen.
-
-\todo{erklären, wieso schneller -- ist die Drehzahl gemeint?}
+Es wird zu Beginn langsamer, zum Ende hin mit ansteigender Drehzahl, möglichst nahe am Futter abgestochen. Dadurch wird versucht, mit einer möglichst konstanten Schnittgeschwindigkeit (== Oberflächengeschwindigkeit) abzustechen.
 
 Außerdem ist es sinnvoll nicht kontinuierlich zu schneiden, sondern immer wieder mit Unterbrechungen einen Span abzunehmen.
 Dabei zügig aus dem Werkstück herausfahren, sonst kann sich das Werkzeug aufgrund von Wärmedehnung mit dem Werkstück verklemmen!
@@ -695,7 +692,6 @@ Dabei zügig aus dem Werkstück herausfahren, sonst kann sich das Werkzeug aufgr
 Während des Schnittvorganges immer wieder mit Öl schmieren.
 
 \textbf{Greife niemals in die drehende Maschine, um das abgestochene Bauteil zu entnehmen! Vorher Spindel ausschalten!}
-
 
 
 
@@ -859,7 +855,6 @@ Die Endgültige Erzeugung von GCode erfolgt im "`Postprocessing"' genannten Arbe
 
 \subsection{Autodesk}
 \emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
-\todoUnwichtig{darf gerne jemand machen...}
 
 
 \section{CNC-Steuerung: LinuxCNC}
@@ -901,9 +896,12 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 	\item Spindel mit dem \enquote{Stop}-Knopf anhalten. Bei Stillstand kann die Schutzhaube wieder geöffnet werden.
 \end{itemize}
 
-\todo{Verfolgungspunkt aller Werkzeuge beschreiben}
 
 Analog kann auch das Rohteil hier abgedreht werden und dabei der Nullpunkt festgelegt oder verstellt werden. Die obige Anleitung ist zweckmässig modifiziert zu verwenden je nach Wahl des Nullpunktes im GCode. Wird der Nullpunkt falsch gewählt sind Kollisionen, schwere Schäden und Unfälle möglich.
+
+\subsection{Verfolgungspunkt des Werkzeugs}
+Jeder Drehmeißel hat einen sogenannten Verfolgungspunkt. Dieser Punkt liegt am Kreuzungspunkt der beiden Schneidkanten vorn und links, wenn der Meißel in die Maschine eingespannt ist. Der Punkt liegt jedoch nicht auf der Schneide der Schneidplatte, da diese noch einen Spitzenradius hat. Der Spitzenradius ist im CAM eingetragen und wird von der Software weggerechnet.
+% vielleicht hier ein Bild
 
 \subsection{Laden und Kontrollieren des Jobs}
 
