@@ -305,10 +305,10 @@ Die hier beschriebenen Abläufe müssen unbedingt eingehalten werden.
 Bei Unklarheiten nachfragen!
 \begin{itemize}
 \item \textbf{Die Maschine darf niemals von zwei oder mehr Personen gleichzeitig bedient werden. Massive Gefährdung möglich!}
-\item Nur der Maschinenbediener und maximal eine weitere eingewiesene Person dürfen sich im Sicherheitsbereich aufhalten. Dieser ist durch die gelb-schwarzen Absperrbänder begrenzt. Diese sind unbedingt zu verwenden.
+\item Nur der Maschinenbediener und maximal eine weitere \emph{eingewiesene} Hilfsperson dürfen sich im Sicherheitsbereich aufhalten. Dieser ist durch die gelb-schwarzen Absperrbänder begrenzt. Diese sind unbedingt zu verwenden.
 \item \textbf{Im Sicherheitsbereich ist (bei Handbetrieb) immer eine Schutzbrille zu tragen!}
 \item Die Regeln für den Sicherheitsbereich gelten, sobald an der Maschine gearbeitet wird bzw. sobald die Absperrbänder gespannt wurden.
-\item Grundlegende Verhaltensregeln stehen in der Betriebsanweisung (blaue Seite am Ende dieses Abschnitts).
+\item Grundlegende Verhaltensregeln stehen in der Betriebsanweisung (blaue Seite am Ende dieses Abschnitts). \todo{diese hier duplizieren und mit Erläuterungen versehen. Dann kann man die Betriebsanweisung weiter kürzen.}
 \item Besondere Vorkommnisse sind unverzüglich dem Maschinenverantwortlichen (siehe Betriebsanweisung) zu melden.\\
 Bei Problemen ist eine Störungsmeldung (Zettel) an der Maschine anzubringen und, wenn die Sicherheit beeinträchtigt ist, die Maschine außer Betrieb zu nehmen.
 
@@ -347,6 +347,7 @@ Die Maschine ist mit mehreren Sicherheitseinrichtungen und -funktionen ausgestat
 \end{itemize}
 
 \subsection{Kühlschmierstoff}
+
 Holz und saugfähiges Material wie Schaumstoff darf nicht bearbeitet werden. In den Kühlschmierstoff dürfen keine organischen Materialien eingebracht werden, da es sonst zu Bakterienwachstum kommt. Saugfähige Späne verschlammen außerdem den Kreislauf.
 
 Stein, glasverstärkte Kunststoffe sowie sonstige abrasive oder staubende Stoffe dürfen ebenfalls nicht bearbeitet werden. Abrasive Fremdkörper führen zum Verschleiß von beweglichen Teilen in der Drehbank, außerdem ist keine Staubabsaugung bzw. KSS-Schlammabscheidung vorhanden.
@@ -354,6 +355,10 @@ Stein, glasverstärkte Kunststoffe sowie sonstige abrasive oder staubende Stoffe
 Die regelmäßige Wartung und Kontrolle des KSS-Systems ist nötig, um Gesundheitsgefahren durch Bakterien und deren Ausscheidungen zu vermeiden.
 
 Nach der Arbeit ist die Maschine offen zu lassen, damit sich keine gesättigte Luftfeuchtigkeit in der Maschine bildet, die zu Verrostungen des Maschinenbetts führen.
+
+Wenn Späne auf die Hand kommen, diese nicht wegreiben, sondern abspülen. Für Reinigungsarbeiten (niemals beim Drehen!) können Einweghandschuhe getragen werden.
+
+\todoUnwichtig{Einen ähnlichen Abschnitt gibt es weiter unten nochmal}
 
 %\todo{Es gibt jetzt leider zwei alterantive Versionen der Betriebsanweisung. Gemeinsam entscheiden welche es werden soll und das Beste aus beiden in diese hineintun}
 % in Zeile 
@@ -518,7 +523,7 @@ Lange oder schlanke Werkstücke müssen mit dem Reitstock gegengespannt werden,
 wie im Kapitel \ref{handdrehen:gegenspannen} beschrieben.
 
 \subsection{Werkzeug einsetzen} %Eventuell Praxsistipps anhängen
-Achte vor dem Einsetzen darauf, die richtige Wendeplatte zu verwenden. Zum Wechseln ist das geeignete Torx-Mini-Werkzeug der in der Drehbankschublade liegt zu verwenden. Das zulässige Anzugsdrehmoment ist zu beachten, dieses ist relativ gering ($0.9$ bis $8.0$\,Nm von TX7 bis TX20).
+Achte vor dem Einsetzen darauf, die richtige Wendeplatte zu verwenden. Zum Wechseln ist das geeignete Torx-Mini-Werkzeug, das in der Drehbankschublade liegt zu verwenden. Das zulässige Anzugsdrehmoment ist zu beachten, dieses ist relativ gering ($0.9$ bis $8.0$\,Nm von TX7 bis TX20).
 
 Am Schnellwechselhalter wird der Hebel so gestellt, dass die Halteklammern maximal geöffnet sind.
 Das eingespannte Werkzeug sollte sich jetzt leicht nach oben abziehen lassen.
@@ -553,6 +558,18 @@ Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW a
 
 \subsection{KSS prüfen, Abschmieren und Ölen}
 An der Tür zum Besprechnungsraum hängt ein Wartungs- und Schmierplan. Dieser ist nach jeder Benutzung zu kontrollieren und gegebenenfalls sind die nötigen Wartungen auszuführen. Besonders wichtig sind dabei die Punkte \enquote{Schmieren nach Schmierplan} und die Punkte \enquote{KSS Prüfen}.
+
+\todoUnwichtig{ oder auch vor der Benutzung?}
+
+\subsection{Bezahlen}
+\begin{itemize}
+ \item Grundpreis nach Ermessen des Betreuers: In der Regel einmal pro Projekt, mindestens einmal pro Tag und Nutzer
+ \item Maschinenminuten (inkl. normalem Werkzeugverschleiß)
+ \item schlagartig kaputtgegangene Wendeschneidplatten
+ \item Material
+\end{itemize}
+
+
 
 
 \newpage
@@ -856,6 +873,7 @@ Die Endgültige Erzeugung von GCode erfolgt im "`Postprocessing"' genannten Arbe
 \subsection{Autodesk}
 \emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
 
+\url{https://github.com/fau-fablab/drehbank-postprozessor-autodesk}
 
 \section{CNC-Steuerung: LinuxCNC}
 
