@@ -720,13 +720,11 @@ Für Sonderwerkzeuge ist eine ausreichend hohe Werkzeugnummer zu verwenden, die 
 
 Werkzeugnummer 0 darf nicht verwendet werden!
 
-\subsubsection{Begrenzungen und Freifahrpunkt}
+\subsubsection{Begrenzungen und Freifahrwege}
 
 Der Bereich nahe am Spannfutter sowie ggf. der Reitstock muss dem CAM-Programm verboten werden.
 
-Außerdem muss ein sicherer Freifahrpunkt definiert werden, an dem zwischen den Operationen ein gefahrloses Parken möglich ist. In der Regel wählt man diesen weit genug außen und etwas rechts vom Werkstück.
-
-Der Freifahrpunkt muss so liegen, dass die X-Achse zum Werkzeugwechsel nach ganz außen fahren kann.
+Bei den Fahrten außerhalb des Materials muss darauf geachtet werden, dass diese nicht mit dem Spannfutter oder dem Reitstock kollidieren. Dies kann besonders bei den Freifahrten zwischen zwei Werkzeugwegen auftreten.
 
 \subsubsection{Nullpunkte} \label{sec:cnc-erstellung.allg.nullpunkte}
 Der Nullpunkt der X-Achse muss immer in der Drehachse liegen.\footnote{Wird nicht die Drehachse als X-Nullpunkt gewählt, funktioniert die Steuerung der Drehzahl für die konstante Schnittgeschwindigkeit nicht.}
@@ -740,10 +738,15 @@ somit zu mysteriös verschwindenden, nicht-löschbaren oder ähnlich
 "`interessanten"' Dateien kommt. Ausserdem ist ein neuer Ordner pro neuer
 Version der GCode-Ausgabe sinnvoll.
 
-Momentan ist aufgrund von Beschränkungen im Postprocessing nur ein Werkzeug pro GCode-Datei möglich, ein Werkzeugwechsel, der nicht am Anfang sondern Mitten im Ablauf der Datei stattfindet wird nicht unterstützt. Daher sind für verschiedene Werkzeuge verschiedene Dateien zu erstellen.
+\subsection{Autodesk Inventor HSM 2016}
+\emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
 
-\todoUnwichtig{Dies ist ein Bug im postprozessor, sobald behoben: hier ändern und stattdessen schreiben, wann man doch lieber getrennte jobs haben will.}
+Im Wesentlichen müssen bei Autodesk Inventor HSM 2016 nur die im vorherigen Abschnitt genannten allgemeinen Einschränkungen beachtet werden.
+Begrenzungen und Freifahrbewegungen müssen für jede Operation einzeln eingestellt werden, wenn die Standardwerte nicht passen. Es ist vermutlich nicht möglich, diese global für das gesamte Werkstück festzulegen, um etwa den Reitstock als verbotene Zone einzurichten.
 
+Postprozessor und Werkzeugdatenbank sind unter \url{https://github.com/fau-fablab/drehbank-postprozessor-autodesk} zu finden. \todoUnwichtig{Installation erklären}
+
+Die Bedienung ist weitestgehend logisch, außerdem ist das \href{http://help.autodesk.com/view/INVHSM/2016/DEU/?guid=GUID-56A84DA8-46DB-458A-91FD-41791CE6FABA}{Tutorial} und die \href{http://help.autodesk.com/view/INVHSM/2016/DEU/?guid=GUID-7B7A2457-8EE9-4AE0-839B-6271340A396C}{Referenz} aus der Online-Hilfe des Programms sehr zu empfehlen.
 
 \subsection{Siemens NX}
 \emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
@@ -752,19 +755,23 @@ Diese Einweisung wurde mit NX 9 erstellt. Möglicherweise kann das hier geschild
 
 NX wird in mehreren Tutorials erklärt. Diese sind über die Hilfefunktion in der Fertigungs-Anwendung auffindbar. Hierbei ist insbesondere das speziell für das Drehen vorgesehene Tutorial als Einstieg sehr zu empfehlen. Auf im Tutorial vorkommende Sachverhalte wird hier nicht mehr gesondert eingegangen, dieser Abschnitt beschreibt nur die Besonderheiten im Falle des FabLab.
 
-\todoUnwichtig{Diese Abschnitte beschreiben vorerst nur die gröbsten Fallstricke.} Weitere Informationen findest du in der Kurzanleitung: \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}
-\todo{diese anleitung NX drehen aus postprozessor repo hier hinein mergen, zumindest die crash-kritischen sachen}
+\todoUnwichtig{Diese Anleitung ist unvollständig und beschreibt vorerst nur die gröbsten Fallstricke. Es wird empfohlen, statt NX lieber Autodesk einzusetzen. } Weitere wichtige Informationen findest du in der Kurzanleitung: \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}
 
 \subsubsection{Werkzeuge}
-Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit bereits richtig voreingestellten Eigenschaften und Abmessungen. \todo{Auffinden dieser Werkzeuge? Bezeichnungsschema?}
+Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit bereits richtig voreingestellten Eigenschaften und Abmessungen. \todoUnwichtig{Auffinden dieser Werkzeuge? Bezeichnungsschema?}
 
-\todo{Laden der Werkzeugbibliothek?}
+\todoUnwichtig{Laden der Werkzeugbibliothek?}
 
-\todo{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Maxs Online-Kurzanleitung}
+\todoUnwichtig{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Maxs Online-Kurzanleitung}
 
 \subsubsection{Simulation}
 
 NX bietet die Möglichkeit Arbeitsabläufe einer Fertigung zu simulieren. Damit sollte man die Kollisionsfreiheit von Programmen prüfen. Achtung: NX hat diverse Bugs bei der Simulationsanzeige, Abhilfe schafft eine langsamere Ablaufgeschwindigkeit, das Wechseln der Tabs in der Simulationssteuerung oder ein Ein- und Ausblenden des 3D-Modells des Werkzeugs.
+
+\subsubsection{Freifahrwege}
+Es muss ein sicherer Freifahrpunkt definiert werden, an dem zwischen den Operationen ein gefahrloses Parken möglich ist. In der Regel wählt man diesen weit genug außen und etwas rechts vom Werkstück.
+
+Der Freifahrpunkt muss so liegen, dass die X-Achse zum Werkzeugwechsel nach ganz außen fahren kann.
 
 \subsubsection{Start- und Endpunkte}
 
@@ -772,16 +779,11 @@ Es \textbf{müssen} für jede Operation Start- und Endpunkte in ausreichend gros
 Diese Bewegung wird in der Simulation nur als Sprung ohne Kollisionsprüfung gezeigt und erfolgt ausserdem mit der maximalen Geschwindigkeit \texttt{G0}.
 
 Nähere Informationen dazu finden sich vorerst nur in der NX-Kurzanleitung \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}.
-\todo{Avoidance/Containment, Anfahrbewegungen hier erklären}
+\todoUnwichtig{Avoidance/Containment, Anfahrbewegungen hier erklären}
 
 \subsubsection{Postprocessing}
 
-Die Endgültige Erzeugung von GCode erfolgt im "`Postprocessing"' genannten Arbeitsschritt. Hierzu wird ein für die im FabLab verwendete Maschine erstelltes Postprocessing-Programm verwendet. \todo{Beschreibung Auswahl postprocessing}
-
-\subsection{Autodesk}
-\emph{Dieser Abschnitt ist nicht für die Einweisung notwendig, wenn du nicht mit diesem Programm arbeitest.}
-
-\url{https://github.com/fau-fablab/drehbank-postprozessor-autodesk}
+Die Endgültige Erzeugung von GCode erfolgt im "`Postprocessing"' genannten Arbeitsschritt. Hierzu wird ein für die im FabLab verwendete Maschine erstelltes Postprocessing-Programm verwendet. \todoUnwichtig{Beschreibung Auswahl postprocessing}
 
 \section{CNC-Steuerung: LinuxCNC}
 
