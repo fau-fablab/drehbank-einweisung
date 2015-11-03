@@ -46,17 +46,19 @@
 
 \section{Einweisungsstufen}
 
-\todo{Abgleich mit Einweisungsliste, zur Zeit inkonsistent bezüglich beaufsichtigter Benutzung Handbetrieb. Möglichkeit Sonder-Einweisung erwähnen}
+% unserermeinung nach fertig. (Toni, Philipp)
+% \todo{Abgleich mit Einweisungsliste, zur Zeit inkonsistent bezüglich beaufsichtigter Benutzung Handbetrieb. Möglichkeit Sonder-Einweisung erwähnen}
 
 \begin{enumerate}
- \item Ohne eine unterschriebene Grund-Einweisung in diese Regeln darf die Drehbank garnicht benutzt werden, d.\,h. du darfst dann nichts selber an und in der Drehbank tun.
- \item Mit Grund-Einweisung bist du zunächst \enquote{Fahrschüler} und darfst den Auftrag zwar selber vorbereiten (Werkstück ein- und ausspannen, Drehbank säubern), \textbf{die Steuerung aber nicht selbstständig bedienen.} 
+	\item Ohne eine unterschriebene Grund-Einweisung in diese Regeln darf die Drehbank garnicht benutzt werden, d.\,h. du darfst dann nichts selber an und in der Drehbank tun.
+	\item Mit Grund-Einweisung bist du zunächst \enquote{Fahrschüler} und darfst den Auftrag zwar selber vorbereiten (Werkstück ein- und ausspannen, Drehbank säubern), \textbf{die Steuerung aber nicht selbstständig bedienen.} 
 
        Ein Benutzer, der die Drehbank selbstständig benutzen darf, prüft dann, ob dein Auftrag keine gefährlichen Fehler enthält, und führt dann als \enquote{Fahrlehrer} gemeinsam mit dir die Arbeit durch.
 
  Die Bedienung der Steuersoftware (Verfahren, Antasten, Starten, Fortsetzen nach Pause, \dots) darf dabei nur unter ständiger Aufsicht durch den Experten erfolgen!
- \item Sobald du genug Erfahrung und Routine hast und das entsprechend dokumentiert ist (mehrere Werkstücke selbstständig unter Aufsicht gefertigt, dies über einen größeren Zeitraum verteilt), wird dir die schriftliche Erlaubnis erteilt, den CNC-Betrieb ohne Aufsicht zu benutzen. Dabei sollen verschiedene Bearbeitungsarten und Werkzeuge verwendet worden sein.
- \item  \textbf{Für die Benutzung des Handbetriebs ist eine zusätzliche schriftliche Erlaubnis nötig!} Es gelten dabei weitere Vorschriften, siehe die Sicherheitshinweise (\enquote{beim Handdrehen}) und die Erkläuterungen in Kapitel \ref{handdrehen}.
+	\item Sobald du genug Erfahrung und Routine hast und das entsprechend dokumentiert ist (mehrere Werkstücke selbstständig unter Aufsicht gefertigt, dies über einen größeren Zeitraum verteilt), wird dir die schriftliche Erlaubnis erteilt, den CNC-Betrieb ohne Aufsicht zu benutzen. Dabei sollen verschiedene Bearbeitungsarten und Werkzeuge verwendet worden sein.
+	\item  \textbf{Für die Benutzung des Handbetriebs ist eine zusätzliche schriftliche Erlaubnis nötig!} Es gelten dabei weitere Vorschriften, siehe die Sicherheitshinweise (\enquote{beim Handdrehen}) und die Erkläuterungen in Kapitel \ref{handdrehen}.
+	\item Wenn ein Nutzer einzelne Arbeiten bereits mehrmals erfolgreich und unter Aufsicht gemacht hat, aber noch nicht genug Erfahrung für die Durchführung beliebiger anderer Arbeiten hat, kann ihm inhaltlich stark eingeschränkt diese bestimmte Arbeit (z.B. nur Anbohren) erlaubt werden.
 \end{enumerate}
 
 
@@ -100,13 +102,21 @@ Es gibt im Grunde keine feste Regel nach der das Futter gewählt werden kann, je
 \begin{itemize} 
 \item Rundmaterial im Dreibackenfutter spannen
 \item Beim Drehen von Passungen kann das Vierbackenfutter von Vorteil sein (Stichwort \enquote{Dreibogengleichdick})
-\item 6-Kant-Material ausschließlich im Dreibackenfutter
+\item Sechskantmaterial immer mit den Dreibackenfutter spannen
 \item Objekte mit quadratischem Querschnitt ausschließlich im Vierbackenfutter
 \end{itemize}
 
 Spannfutter haben einen definierten maximalen Spanndurchmesser, der üblicherweise kleiner als die maximale Backenöffnung ist. Dieser Durchmesser ist unbedingt zu beachten, es besteht die Gefahr von Desintegration im laufenden Betrieb.
-\todo{Wie groß ist dieser Maximaldurchmesser?}
-\todo{Überschneidung mit Abschnitt Rohmaterial einspannen -- umsortieren?}
+
+Der maximale Spanndurchmesser ist davon abhängig, ob das Innen- oder das Außenbackenfutter verwendet wird.
+
+\begin{itemize}
+	\item Innenbacken: maximal 40\,mm
+	\item Außenbacken: maximal 110\,mm
+\end{itemize}
+
+%\todo{Überschneidung mit Abschnitt Rohmaterial einspannen -- umsortieren?}
+% keine Überschneidung, Thematisch hier passend.
 
 \subsubsection{Spannfutterwechsel}
 
@@ -128,8 +138,7 @@ Achtung das Spannfutter ist schwer! Lass dir am Besten von jemandem helfen. Acht
 Es gibt Innen- und Außenspannbacken.
 Innenspannbacken werden zum Spannen von Innenradien wie z.\,B. Bohrungen sowie von kleinen bis mittelgrossen Aussenradien verwendet. Innenspannbacken haben dazu sowohl innere als auch äussere Spannflächen.
 
-Außenspannbacken kommen hingegen ausschliesslich beim Spannen auf Außenflächen zum Einsatz.
-Wichtig: Sechskantmaterial immer mit den Innenbacken spannen.
+Außenspannbacken kommen hingegen ausschliesslich beim Spannen auf Außenflächen und bei Durchmessern größer 40\,mm zum Einsatz.
 
 % unnötig. das lernt man bei der bedinung.
 %\todo{Bilder}
@@ -308,15 +317,14 @@ Eine kurze Zusammenfassung der wichtigsten Regeln findet sich in der Betriebsanw
 
 \subsection{Allgemeines}
 \begin{itemize}
-\item Je nach Einweisungsstufe dürfen manche Tätigkeiten nicht oder nur unter Aufsicht durchgeführt werden.
-\item Besondere Vorkommnisse sind unverzüglich dem Maschinenverantwortlichen (siehe Betriebsanweisung) zu melden.\\
+	\item Je nach Einweisungsstufe dürfen manche Tätigkeiten nicht oder nur unter Aufsicht durchgeführt werden.
+	\item Besondere Vorkommnisse sind unverzüglich dem Maschinenverantwortlichen (siehe Betriebsanweisung) zu melden.\\
 Bei Problemen ist eine Störungsmeldung (Zettel) an der Maschine anzubringen und, wenn die Sicherheit beeinträchtigt ist, die Maschine außer Betrieb zu nehmen.\\
 Bei Unfall: Rettungsdienst rufen (Tel. 09-112 / Handy: 112), Verletzten betreuen, ins Verbandbuch eintragen.
- \item Zum Werkzeugwechsel, Reinigen, Messen usw. ist der Stillstand aller Teile sicherzustellen! Dazu bei Handbetrieb die Drehrichtung auf 0 stellen. Bei größeren Arbeiten Not-Aus betätigen oder Hauptschalter auf 0 stellen. \todo{was bei CNC?}
- \item \enquote{Gewaltwerkzeug} wie Hammer oder Zange kann irreparablen Schaden anrichten und hat deshalb in der Drehbank nichts verloren. In bestimmten Fällen kann ein Schonhammer eingesetzt werden. % Diese Zeile NICHT entfernen, ohne vorher Rücksprache mit Max aufzunehmen!
-
-\item Stangenmaterial darf nicht aus der Maschine ragen, da keine Schutzabdeckung vorhanden ist. % Wir bräuchten eine stabile Fangeinrichtung
-\item Drehen zwischen Spitzen ist nicht zulässig. % Wir haben kein Sicherheitsdrehherz o.Ä.
+	\item Zum Werkzeugwechsel, Reinigen, Messen usw. ist der Stillstand aller Teile sicherzustellen! Dazu bei Handbetrieb die Drehrichtung auf 0 stellen. Bei größeren Arbeiten Not-Aus betätigen oder Moduswahlschalter auf 0 (Maschine aus, Not-Aus fällt) stellen.
+	\item \enquote{Gewaltwerkzeug} wie Hammer oder Zange kann irreparablen Schaden anrichten und hat deshalb in der Drehbank nichts verloren. In bestimmten Fällen kann ein Schonhammer eingesetzt werden. % Diese Zeile NICHT entfernen, ohne vorher Rücksprache mit Max aufzunehmen! lol.
+	\item Stangenmaterial darf nicht aus der Maschine ragen, da keine Schutzabdeckung vorhanden ist. % Wir bräuchten eine stabile Fangeinrichtung
+	\item Drehen zwischen Spitzen ist nicht zulässig. % Wir haben kein Sicherheitsdrehherz o.Ä.
 \end{itemize}
 
 \subsection{Arbeitsablauf}
@@ -366,17 +374,17 @@ Im Handbetrieb ist die größte Gefahr, dass Haare, Kleidung oder Schmuck erfass
 \begin{itemize}
  \item Spannschlüssel \textbf{nie} im Futter stecken lassen.
 \item Werkstück fest und möglichst kurz im Futter spannen. Bei langen Werkstücken Reitstock zum Gegenspannen verwenden.
-\item Futter nicht zu weit aufspannen, da sich sonst die Backen im Betrieb lösen können. \todo{genaues Maß angeben wie weit Backen maximal rausdürfen o.ä.}
-\item Beim Abstechen ist besondere Vorsicht und ggf. eine begrenzte Drehzahl nötig.
+\item Futter nicht zu weit aufspannen, da sich sonst die Backen im Betrieb lockern können und das Werkstück davon fliegt. Sie dürfen maximal 12\,mm über die Außenfläche des Futters überstehen.
+\item Beim Abstechen ist besondere Vorsicht und eine unter 1000 Umdrehungen begrenzte Drehzahl nötig.
 \end{itemize}
 
 \paragraph{Schnittverletzungen} an Werkzeug, Werkstück oder Spänen entstehen oft aus Unachtsamkeit. Kühlschmierstoff reizt die Haut. Wenn diese etwa durch kleinste Metallteilchen verletzt ist, kann dies bis zu Hauterkrankungen führen. Metallspäne können sehr scharf und heiß sein, besonders bei Stahl und Edelstahl.
 \begin{itemize}
-\item Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft, Hand) entfernen. % TODO per Hand nicht zulässig nach BGI 5003 2.5., selbst für Alu???
- \item Kontakt mit Kühlschmierstoff vermeiden, Hände waschen.
-\item \todo{Hautschutz: Handcreme bereitstellen mit Spender und darauf verweisen?}
- \item Späne nicht von der Haut reiben, sondern abwaschen.
- \item Zu Reinigungsarbeiten, aber \textbf{niemals beim Drehen}, können Einweghandschuhe verwendet werden.
+\item Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft, Hand) entfernen. % per Hand nicht zulässig nach BGI 5003 2.5., selbst für Alu??? -> leider ja. 
+	\item Kontakt mit Kühlschmierstoff vermeiden, Hände waschen.
+	\item \todo{Hautschutz: Handcreme bereitstellen mit Spender und darauf verweisen?}
+	\item Späne nicht von der Haut reiben, sondern abwaschen.
+	\item Zu Reinigungsarbeiten, aber \textbf{niemals beim Drehen}, können Einweghandschuhe verwendet werden.
 \end{itemize}
 
 \subsection{Instandhaltung, Entsorgung}
@@ -542,7 +550,7 @@ Um das Verlaufen des Bohrers zu vermeiden ist es zunächst notwendig eine Zentri
 Anschließend bringt man das Bohrfutter an der Reitstockspindel an und wählt den passenden Bohrer aus.
 Verwende hierfür unbedingt die Bohrer, die sich in der Schublade unter der Drehbank befinden, diese sind speziell reserviert um eine hohe Rundlaufgenauigkeit zu erhalten.
 
-Positioniere den Bohrer kurz vor dem Werkstück und wähle die passende Drehzahl aus der Drehzahltabelle \todo{wo ist diese Drehzahltabelle?} an der Drehbank aus.
+Positioniere den Bohrer kurz vor dem Werkstück und wähle die passende Drehzahl aus der Drehzahltabelle der Standbohrmaschine (hängt links neben der Standbohrmaschine an der Werkzeugwand)
 Danach kann durch Zustellung mit der Reitstockpinole gebohrt werden.
 Dabei gilt wie bei jedem Bohrvorgang: Mit guter Handkraft bohren!
 Ansonsten wird der Bohrer übermäßig verschlissen und die Qualität der Bohrung nimmt ab.
@@ -565,9 +573,8 @@ Das Innendrehen funktioniert im Grunde wie das Außendrehen. Es gibt jedoch trot
 
 \subsection{Fasen}
 
-Für das Anbringen von 45$^\circ$ Fasen gibt es ein spezielles Werkzeug, einen sogenannten Fasenmeißel.
+Für das Anbringen von 45$^\circ$ Fasen gibt es ein spezielles Werkzeug, einen sogenannten Fasenmeißel, Werkzeugnummer 10.
 Das Werkzeug ist gut an seiner blauen Lackierung und der breiten Schneide zu erkennen. 
-\todo{Sobald Schnellspanner da und eingesetzt Werkzeugnummer anbringen, hier reinschreiben.}
 Den Fasenmeißel spannt man senkrecht zum Werkstück ein, sodass die Schneide 45$^\circ$ zum Werkstück zeigt.
 Danach kann an das Werkstück herangefahren werden und eine Fase angebracht werden.
 Wenn sehr viele Fasen angebracht werden müssen, empfiehlt es sich nicht immer auf der selben Stelle der Schneide zu arbeiten.
@@ -744,7 +751,9 @@ Version der GCode-Ausgabe sinnvoll.
 Im Wesentlichen müssen bei Autodesk Inventor HSM 2016 nur die im vorherigen Abschnitt genannten allgemeinen Einschränkungen beachtet werden.
 Begrenzungen und Freifahrbewegungen müssen für jede Operation einzeln eingestellt werden, wenn die Standardwerte nicht passen. Es ist vermutlich nicht möglich, diese global für das gesamte Werkstück festzulegen, um etwa den Reitstock als verbotene Zone einzurichten.
 
-Postprozessor und Werkzeugdatenbank sind unter \url{https://github.com/fau-fablab/drehbank-postprozessor-autodesk} zu finden. \todoUnwichtig{Installation erklären}
+Postprozessor und Werkzeugdatenbank sind unter \url{https://github.com/fau-fablab/drehbank-postprozessor-autodesk} zu finden.
+%\todoUnwichtig{Installation erklären}
+% ist egal. dazu gibt es das Softwarehandbuch. Im Lab sind diese Dateien eingerichtet und für die Benutzung vorbereitet.
 
 Die Bedienung ist weitestgehend logisch, außerdem ist das \href{http://help.autodesk.com/view/INVHSM/2016/DEU/?guid=GUID-56A84DA8-46DB-458A-91FD-41791CE6FABA}{Tutorial} und die \href{http://help.autodesk.com/view/INVHSM/2016/DEU/?guid=GUID-7B7A2457-8EE9-4AE0-839B-6271340A396C}{Referenz} aus der Online-Hilfe des Programms sehr zu empfehlen.
 
@@ -755,7 +764,8 @@ Diese Einweisung wurde mit NX 9 erstellt. Möglicherweise kann das hier geschild
 
 NX wird in mehreren Tutorials erklärt. Diese sind über die Hilfefunktion in der Fertigungs-Anwendung auffindbar. Hierbei ist insbesondere das speziell für das Drehen vorgesehene Tutorial als Einstieg sehr zu empfehlen. Auf im Tutorial vorkommende Sachverhalte wird hier nicht mehr gesondert eingegangen, dieser Abschnitt beschreibt nur die Besonderheiten im Falle des FabLab.
 
-\todoUnwichtig{Diese Anleitung ist unvollständig und beschreibt vorerst nur die gröbsten Fallstricke. Es wird empfohlen, statt NX lieber Autodesk einzusetzen. } Weitere wichtige Informationen findest du in der Kurzanleitung: \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}
+% todo entfernt, weil diese Aussage so richtig ist.
+Diese Anleitung ist unvollständig und beschreibt vorerst nur die gröbsten Fallstricke. Es wird empfohlen, statt NX lieber Autodesk einzusetzen. Weitere wichtige Informationen findest du in der Kurzanleitung: \url{https://github.com/fau-fablab/NX9-linuxcnc-lathe-PP/blob/master/Anleitung%20NX%20Drehen.txt}
 
 \subsubsection{Werkzeuge}
 Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit bereits richtig voreingestellten Eigenschaften und Abmessungen. \todoUnwichtig{Auffinden dieser Werkzeuge? Bezeichnungsschema?}
