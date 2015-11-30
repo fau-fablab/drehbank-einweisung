@@ -29,12 +29,18 @@
 	}
 
 
-\fancyhead[C]{\textbf{\color{red}{TODO: unfertig!}}}
+%\fancyhead[C]{\textbf{\color{red}{TODO: unfertig!}}}
 \date{2015}
 \author{kontakt@fablab.fau.de}
 \title{Einweisung Drehbank}
 
 \begin{document}
+
+\maketitle
+\newpage
+this page intentionally left blank
+
+\newpage
 
 \listoftodos \newpage % ohne \newpage baut das tex nicht sauber, das Makefile oszilliert dann irgendwie zwischen 2 und 3 seiten inhalt+toodo
 
@@ -181,7 +187,7 @@ Unsere Drehbank besteht aus Hauptspindel mit Futterschutzhaube, Reitstock, Werkz
 \begin{figure}[ht]
 \centering
 \includegraphics[width = 0.9\linewidth]{img/drehbank-uebersicht-beschreibung} \\
-\caption{Bezeichnungen der Maschinenteile: 1: Futterschutzhaube; 2: Handverstellrad Z-Achse; 3: Handverstellrad X-Achse; 4: Werkzeughalter; Schnellspan-; 5: Feststellhebel Schnellspanhalterung; 6: Bohrfutter, hier kann stattdessen auch die mitlaufende Körnerspitze eingesetzt werden; 7: Feststellhebel Feineinstellung Reitstock; 8: Feststellhebel Grob/Verschiebung Reitstock; 9: Feineinstellung Reitstock; 10: Spannfutter; 11: Einstellung Planschlitten(?). Das blaue verstellbare Rohr zwischen 3 und 4 ist die KSS-Düse. Die am Koordinatensystem eingezeichneten Pfeilspitzen zeigen jeweils in positive Koordinatenrichtung. Der Koordinatennullpunkt ist einstellbar und im allgemeinen nicht an der dargestellten Stelle.}
+\caption{Bezeichnungen der Maschinenteile: 1: Futterschutzhaube; 2: Handverstellrad Z-Achse; 3: Handverstellrad X-Achse; 4: Werkzeughalter; Schnellspan-; 5: Feststellhebel Schnellspanhalterung; 6: Bohrfutter, hier kann stattdessen auch die mitlaufende Körnerspitze eingesetzt werden; 7: Feststellhebel Feineinstellung Reitstock; 8: Feststellhebel Grob/Verschiebung Reitstock; 9: Feineinstellung Reitstock; 10: Spannfutter; 11: Einstellung Planschlitten (z-Achse). Das blaue verstellbare Rohr zwischen 3 und 4 ist die KSS-Düse. Die am Koordinatensystem eingezeichneten Pfeilspitzen zeigen jeweils in positive Koordinatenrichtung. Der Koordinatennullpunkt ist einstellbar und im allgemeinen nicht an der dargestellten Stelle.}
 \end{figure}
 
 
@@ -337,8 +343,9 @@ Bei Unfall: Rettungsdienst rufen (Tel. 09-112 / Handy: 112), Verletzten betreuen
 \paragraph{Sicherheitsbereich, Vermeidung von Ablenkung:}
 \begin{itemize}
 \item Die Regeln für den Sicherheitsbereich gelten, sobald an der Maschine gearbeitet wird bzw. sobald die Absperrbänder gespannt wurden.
-\item Nur der Maschinenbediener und maximal eine weitere \emph{eingewiesene} Hilfsperson dürfen sich im Sicherheitsbereich aufhalten. Dieser ist durch die gelb-schwarzen Absperrbänder begrenzt. Diese sind unbedingt zu verwenden.
-\item \textbf{Bei Handbetrieb ist im Sicherheitsbereich immer die Schutzbrille usw. zu tragen!}
+\item Nur der Maschinenbediener und maximal eine weitere eingewiesene oder einzuweisende Hilfsperson dürfen sich im Sicherheitsbereich aufhalten. Dieser ist durch die gelb-schwarzen Absperrbänder begrenzt. Diese sind unbedingt zu verwenden.
+% kommt etwas weiter unten bei "Schutzausrüstung und Gefahren" nochmal.
+%\item \textbf{Bei Handbetrieb im Sicherheitsbereich immer Schutzbrille oder Gesichtsschild zu tragen!}
 \item \textbf{Die Maschine darf niemals von zwei oder mehr Personen gleichzeitig bedient werden.}
 \end{itemize}
 
@@ -356,7 +363,7 @@ Bei Unfall: Rettungsdienst rufen (Tel. 09-112 / Handy: 112), Verletzten betreuen
 \end{itemize}
 
 \subsection{Schutzausrüstung und Gefahren}
-Im Handbetrieb ist die größte Gefahr, dass Haare, Kleidung oder Schmuck erfasst werden. Wenn so Körperteile zur Drehbank hingezogen werden, führt es schnell zu äußerst blutigen Unfällen.
+Im Handbetrieb ist die größte Gefahr, dass Haare, Kleidung oder Schmuck erfasst werden. Wenn Körperteile zur Drehbank hingezogen werden, führt es schnell zu äußerst blutigen Unfällen.
 
 \paragraph{Im Handbetrieb gilt immer, für alle Personen im Sicherheitsbereich:}
 \begin{itemize}
@@ -372,13 +379,13 @@ Im Handbetrieb ist die größte Gefahr, dass Haare, Kleidung oder Schmuck erfass
 
 \paragraph{Wegfliegende Teile:} Durch die Drehbewegung können Teile bis hin zum kompletten Werkstück wegfliegen. Um dies zu verhindern:
 \begin{itemize}
- \item Spannschlüssel \textbf{nie} im Futter stecken lassen.
+ \item Spannschlüssel \textbf{nie} im Futter stecken lassen, immer sofort abziehen!
 \item Werkstück fest und möglichst kurz im Futter spannen. Bei langen Werkstücken Reitstock zum Gegenspannen verwenden.
 \item Futter nicht zu weit aufspannen, da sich sonst die Backen im Betrieb lockern können und das Werkstück davon fliegt. Sie dürfen maximal 12\,mm über die Außenfläche des Futters überstehen.
 \item Beim Abstechen ist besondere Vorsicht und eine unter 1000 Umdrehungen begrenzte Drehzahl nötig.
 \end{itemize}
 
-\paragraph{Schnittverletzungen} an Werkzeug, Werkstück oder Spänen entstehen oft aus Unachtsamkeit. Kühlschmierstoff reizt die Haut. Wenn diese etwa durch kleinste Metallteilchen verletzt ist, kann dies bis zu Hauterkrankungen führen. Metallspäne können sehr scharf und heiß sein, besonders bei Stahl und Edelstahl.
+\paragraph{Schnittverletzungen:} An Werkzeug, Werkstück oder Spänen entstehen oft aus Unachtsamkeit kleine Schnitte in der Haut. Kühlschmierstoff reizt die Haut. Wenn diese etwa durch kleinste Metallteilchen verletzt ist, kann dies bis zu Hauterkrankungen führen. Metallspäne können sehr scharf und heiß sein, besonders bei Stahl und Edelstahl.
 \begin{itemize}
 \item Späne nur bei stehender Maschine mit geeignetem Werkzeug (z.B. Pinsel, Staubsauger; nicht: Druckluft, Hand) entfernen. % per Hand nicht zulässig nach BGI 5003 2.5., selbst für Alu??? -> leider ja. 
 	\item Kontakt mit Kühlschmierstoff vermeiden, Hände waschen.
@@ -429,9 +436,9 @@ Wenn Späne auf die Hand kommen, diese nicht wegreiben, sondern abspülen. Für 
 Öffne die Spannbacken vor dem Einsetzen auf einen adäquaten Durchmesser und setze das Rohmaterial
 plan zu den Auflageflächen der Spannbacken ein.
 Achte beim Festziehen darauf, dass das Material keine Unwucht hat.
-Das Werkstück darf in keinem Fall wackeln oder rutschen können.
-Bei hohen Drehzahlen muss das Werkstück unbedingt fest gespannt werden!
-(Der Fliehkrafteinfluss verringert die Spannkraft.)
+Das Werkstück darf in keinem Fall wackeln oder rutschen können. 
+Insbesondere bei hohen Drehzahlen reduziert der Fliehkrafteinfluss die Spannkraft.
+Daher muss das Werkstück in jedem Fall ordentlich festgespannt werden. (Spannschlüssel kräftig handfest)
 Außerdem sollte es möglichst weit in das Spannfutter gesteckt werden.
 Achte dabei auf einen Sicherheitsabstand von mindestens 1\,mm, besser 5\,mm, zwischen Spannfutter und Drehmeißel.
 
@@ -454,10 +461,13 @@ Im CNC-Betrieb ist die Kühlung voll aufzudrehen und im Handbetrieb entsprechend
 um ein übermäßiges Herausspritzen des KSS zu verhindern.
 Der Strom ist dabei auf die Schneide der Schneidplatte auszurichten.
 
+Vor der Arbeit mit KSS ist der Füllstand zu überprüfen. Der KSS-Stand ist in Ordnung, wenn die Pumpe sauber und blasenfrei fördern kann.
+
+Nach der Verwendung von KSS müssen alle mit Kühlschmierstoff in Berührung gebrachten Teile unbedingt nachgeölt werden, da diese sonst quasi sofort rosten. Dazu empfiehlt sich ein Lappen und das bereitstehende Öl.
+
 Im Handbetrieb kann alternativ, besonders zum Abstechen, mit einer kleinen Ölflasche geschmiert werden. 
 
 \section{Aufräumen und Wartung}
-
 
 \subsection{Nach dem Drehen}
 
@@ -474,8 +484,6 @@ Alu- und POM-Späne nicht mischen. Wir können nur rein-Alu-Späne bei der MEW a
 
 \subsection{KSS prüfen, Abschmieren und Ölen}
 An der Tür zum Besprechnungsraum hängt ein Wartungs- und Schmierplan. Dieser ist nach jeder Benutzung zu kontrollieren und gegebenenfalls sind die nötigen Wartungen auszuführen. Besonders wichtig sind dabei die Punkte \enquote{Schmieren nach Schmierplan} und die Punkte \enquote{KSS Prüfen}.
-
-\todoUnwichtig{ oder auch vor der Benutzung?}
 
 \subsection{Bezahlen}
 \begin{itemize}
@@ -664,8 +672,9 @@ Als Werkzeug wird eine Stechwendeschneidplatte (sternförmig), Werkzeug Nummer 4
 
 Rändeln ist das Einprägen von Mustern in das Werkstück, beispielsweise um geriffelte Grifflächen an Stellschrauben zu erzeugen.
 
-Zur Zeit ist nur manuelles Rändeln für Alu möglich. Überschneidungen des Rändels nur sehr schwer vermeidbar, daher sieht es nicht optimal aus, aber besser als nichts.
-\todoUnwichtig{CNC-Rändeln in Arbeit}
+Zur Zeit ist nur manuelles Rändeln für Alu möglich. Überschneidungen des Rändels nur sehr schwer vermeidbar, daher sieht es nicht optimal aus, aber besser als nichts. CNC-Rändeln ist aktuell nicht angelegt, ein Problem dabei ist, dass der Rändel manuell auf das Werkstück gesetzt werden muss, was im CNC-Modus nicht möglich ist.
+%\todoUnwichtig{CNC-Rändeln in Arbeit}
+% CNC Rändeln nicht vorhanden, auch keine Ansätze dazu vorhanden.
 
 Es ist ein relativ preiswertes Rändelwerkzeug vorhanden.
 Das Werkzeug kann in den Schnellspannhalter des Fasenmeißels gespannt werden.
@@ -807,7 +816,7 @@ Die Einschaltreihenfolge ist:
 	\item Drehmaschine auf Betriebsart \enquote{Auto} stellen
 	\item LinuxCNC auf dem Steuerrechner starten
 	\item Mit dem Not-Aus-Reset den Not-Aus freigeben
-	\item zweites Icon in LinuxCNC "`Maschine an/aus (F2)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
+	\item Zweites Icon in LinuxCNC "`Maschine an/aus (F2)"' drücken (die Maschine läuft hier noch nicht an, die Bezeichnung ist leicht verwirrend)
 \end{enumerate}
 
 \subsection{Nullpunkt und Referenzierung}
@@ -857,12 +866,13 @@ Ein Leerlauf ohne Werkzeug ist auch zum Einüben des Arbeitsablaufs sinnvoll.
 Ein Job wird durch Drücken des \enquote{Start}-Icons gestartet. Vorher sollte darauf geachtet werden,
 dass das passende Werkzeug eingelegt ist. LinuxCNC wird bei den meisten Jobs zum Start des Programms nach einem Werkzeugwechsel fragen. Bei GCode der nicht mit NX und dem FabLab-Preprocessing-Skript erzeugt wurde muss das aber nicht unbedingt der Fall sein.
 
-KSS ist manuell am Schaltschrank einzuschalten, es geht noch nicht automatisch.
-\todoUnwichtig{Text ändern, sobald es automatisch geht}
+KSS ist manuell am Schaltschrank einzuschalten, es geht nicht automatisch an, wenn der Job gestartet wird.
+% bleibt erst mal so.
+%\todoUnwichtig{Text ändern, sobald es automatisch geht}
 
 Der Job kann mit den entsprechenden Icons pausiert oder angehalten werden. Beim Werkzeugwechsel ist ggf. auch eine Pausierung mit dem entsprechenden Knopf aufzuheben.
 
-Im Programmablauf muss die Schutzhaube geschlossen sein. Die einzige Ausnahme davon ist wenn LinuxCNC einen Werkzeugwechsel anfordert. Die Maschine muss beim Programmablauf unbedingt genau beobachtet werden um ggf. rechtzeitig den Not-Aus-Schalter betätigen zu können falls Kollissionen oder andere Probleme auftreten. Bei \enquote{harmloseren} Problemen ist das Stop-Icon oder die Taste \enquote{Esc} ebenfalls geeignet.
+Im Programmablauf muss die Schutzhaube geschlossen sein. Die einzige Ausnahme davon ist, wenn LinuxCNC einen Werkzeugwechsel anfordert. Die Maschine muss beim Programmablauf unbedingt genau beobachtet werden um ggf. rechtzeitig den Not-Aus-Schalter betätigen zu können falls Kollissionen oder andere Probleme auftreten. Bei \enquote{harmloseren} Problemen ist das Stop-Icon oder die Taste \enquote{Esc} ebenfalls geeignet.
 
 Nach Ablauf des Jobs bis zum Stillstand der Spindel warten, bevor die Schutzhaube geöffnet wird.
 
