@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT: (C) 2012-2015 FAU FabLab and others
+% CC-BY-SA 3.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\basedir}{./fablab-document/}
+\documentclass[landscape]{\basedir/fablab-document}
+
+\usepackage{xfrac}		% for nice utf8 1/4 and 1/2
+\usepackage{tabularx}	% Tabelle mit teilweise gleich großen Spalten
+\usepackage{multirow}	% multirow Zellen
+\usepackage{colortbl}	% farbige Zellen
+
+\title{Wartungsplan Wabeco CC-D6000 - Quartal}
+
+\newcommand{\head}{\bf \LARGE}
+
+\newcommand{\quer}[1]{\rotatebox{90}{\textbf{#1}\hspace{1em}}}
+
+% linebreaks in Zellen
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% Kalenderwochen
+\newcounter{kw}
+\setcounter{kw}{1}
+\newcommand{\kw}{KW\arabic{kw} \stepcounter{kw}}
+
+%colors
+\definecolor{yellow}{RGB}{255, 211,  32}
+\definecolor{blue}	{RGB}{131, 202, 255}
+\definecolor{violet}{RGB}{153, 153, 255}
+\definecolor{green}	{RGB}{87,  157,  28}
+\definecolor{red}	{RGB}{255,  51,  51}
+\definecolor{gray}	{RGB}{178, 178, 178}
+
+
+\newcommand{\w}{\cellcolor{yellow}}
+\newcommand{\m}{\cellcolor{blue}}
+\renewcommand{\v}{\cellcolor{violet}}
+\newcommand{\h}{\cellcolor{green}}
+\renewcommand{\j}{\cellcolor{red}}
+\newcommand{\nop}{\cellcolor{gray}}
+
+\newcommand{\woe}{
+	\w wöchentlich &
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+	& \w
+}
+
+\newcommand{\mon}{
+	\m monatilich &
+	& \m
+	& \nop
+	& \nop
+	& \nop
+	& \m
+	& \nop
+	& \nop
+	& \nop
+	& \m
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+}
+
+\newcommand{\viertel}{
+	\v \sfrac{1}{4} jährlich &
+	& \v
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+}
+
+\newcommand{\halb}{
+	\h \sfrac{1}{2} jährlich &
+	& \h
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+}
+
+\newcommand{\jaehrl}{
+	\j jährlich &
+	& \j
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+}
+
+\begin{document}
+
+\begin{tabularx}{\textwidth}{|l|l|X||c|c|c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+	\multirow{3}{2.5em}{\Huge Q1}					&\head Intervall&\head Tätigkeit& \multicolumn{13}{c|}{\head Erledigt am (Datum)}									\\ \cline{4-16}
+													&				&				& \multicolumn{4}{c|}{Jan}	& \multicolumn{4}{c|}{Feb}	& \multicolumn{5}{c|}{Mar}	\\ \cline{4-16}
+													&				&				& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw		\\ \hline \hline
+	\multirow{10}{2.5em}{\quer{\specialcell{Reinigung\\/ Schmierung}}}
+													& \woe		\\ \cline{2-16}
+													& \woe		\\ \cline{2-16}
+													& \woe		\\ \cline{2-16}
+													& \woe		\\ \cline{2-16}
+													& \mon		\\ \cline{2-16}
+													& \mon		\\ \cline{2-16}
+													& \mon		\\ \cline{2-16}
+													& \mon		\\ \cline{2-16}
+													& \viertel	\\ \cline{2-16}
+													& \halb     \\ \hline \hline
+	\multirow{5}{2.5em}{\quer{\specialcell{Bestätigung\\/ Prüfung}}}
+													& \woe		\\ \cline{2-16}
+													& \viertel	\\ \cline{2-16}
+													& \viertel	\\ \cline{2-16}
+													& \viertel	\\ \cline{2-16}
+													& \jaehrl	\\ \hline \hline
+	\bf Austausch									& \halb		\\ \hline
+	\bf Sonstiges									&				&				&     &     &     &     &     &     &     &     &     &     &     &     &	\\ \hline
+
+\end{tabularx}
+
+\pagebreak
+
+\section*{Unregelmäßigkeiten}
+
+\begin{tabularx}{\textwidth}{|l|X|r|}
+	\hline
+	\head Problem:	& \head Beschreibung:	& \head Datum:	\\ \hline \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+\end{tabularx}
+
+\end{document}

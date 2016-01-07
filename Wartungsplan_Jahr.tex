@@ -1,0 +1,187 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT: (C) 2012-2015 FAU FabLab and others
+% CC-BY-SA 3.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\basedir}{./fablab-document/}
+\documentclass[landscape]{\basedir/fablab-document}
+
+\usepackage{xfrac}		% for nice utf8 1/4 and 1/2
+\usepackage{tabularx}	% Tabelle mit teilweise gleich großen Spalten
+\usepackage{multirow}	% multirow Zellen
+\usepackage{colortbl}	% farbige Zellen
+
+\title{Wartungsplan Wabeco CC-D6000 - Jahr}
+
+\newcommand{\head}{\bf \LARGE}
+
+\newcommand{\quer}[1]{\rotatebox{90}{\textbf{#1}\hspace{1em}}}
+
+% linebreaks in Zellen
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% Kalenderwochen
+\newcounter{kw}
+\setcounter{kw}{1}
+\newcommand{\kw}{KW\arabic{kw} \stepcounter{kw}}
+
+%colors
+\definecolor{yellow}{RGB}{255, 211,  32}
+\definecolor{blue}	{RGB}{131, 202, 255}
+\definecolor{violet}{RGB}{153, 153, 255}
+\definecolor{green}	{RGB}{87,  157,  28}
+\definecolor{red}	{RGB}{255,  51,  51}
+\definecolor{gray}	{RGB}{178, 178, 178}
+
+
+\newcommand{\w}{\cellcolor{yellow}}
+\newcommand{\m}{\cellcolor{blue}}
+\renewcommand{\v}{\cellcolor{violet}}
+\newcommand{\h}{\cellcolor{green}}
+\renewcommand{\j}{\cellcolor{red}}
+\newcommand{\nop}{\cellcolor{gray}}
+
+\newcommand{\mon}{
+	\m monatilich &
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+	& \m
+}
+
+\newcommand{\viertel}{
+	\v \sfrac{1}{4} jährlich &
+	& \v
+	& \nop
+	& \nop
+	& \v
+	& \nop
+	& \nop
+	& \v
+	& \nop
+	& \nop
+	& \v
+	& \nop
+	& \nop
+}
+
+\newcommand{\halb}{
+	\h \sfrac{1}{2} jährlich &
+	& \h
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \h
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+}
+
+\newcommand{\jaehrl}{
+	\j jährlich &
+	& \j
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+	& \nop
+}
+
+\begin{document}
+
+\begin{tabularx}{\textwidth}{|l|l|X||c|c|c|c|c|c|c|c|c|c|c|c|}
+	\hline
+													&\head Intervall&\head Tätigkeit& \multicolumn{12}{c|}{\head Erledigt am (Datum)}						\\ \cline{4-15}
+													&				&				& \multicolumn{3}{c|}{Q1}	& \multicolumn{3}{c|}{Q2}	& \multicolumn{3}{c|}{Q3}	& \multicolumn{3}{c|}{Q4}	\\ \cline{4-15}
+													&				&				& Jan & Feb & Mar & Apr & Mai & Jun & Jul & Aug & Sep & Okt & Nov & Dez	\\ \hline \hline
+	\multirow{10}{2.5em}{\quer{\specialcell{Reinigung\\/ Schmierung}}}
+													& \mon		\\ \cline{2-15}
+													& \mon		\\ \cline{2-15}
+													& \mon		\\ \cline{2-15}
+													& \mon		\\ \cline{2-15}
+													& \viertel	\\ \cline{2-15}
+													& \viertel	\\ \cline{2-15}
+													& \viertel	\\ \cline{2-15}
+													& \viertel	\\ \cline{2-15}
+													& \halb     \\ \cline{2-15}
+													& \jaehrl	\\ \hline \hline
+	\multirow{5}{2.5em}{\quer{\specialcell{Bestätigung\\/ Prüfung}}}
+													& \viertel	\\ \cline{2-15}
+													& \halb		\\ \cline{2-15}
+													& \halb		\\ \cline{2-15}
+													& \halb		\\ \cline{2-15}
+													& \jaehrl	\\ \hline \hline
+	\bf Austausch									& \jaehrl	\\ \hline
+	\bf Sonstiges									&				&				&     &     &     &     &     &     &     &     &     &     &     &	\\ \hline
+
+\end{tabularx}
+
+\section*{Wöchentliche Arbeiten}
+Auszuführen am \textbf{Donnerstag}. Kalenderwochen durchstreichen, wenn alles erledigt wurde.
+
+\begin{tabularx}{\textwidth}{|X||l|l|l|l|l|l|l|l|l|l|l|}
+	\hline
+	& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw	\\ \cline{2-12}
+	& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw	\\ \cline{2-12}
+	& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw	\\ \cline{2-12}
+	& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw	\\ \cline{2-12}
+	& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw &		&		\\ \hline
+\end{tabularx}
+
+\pagebreak
+
+\section*{Unregelmäßigkeiten}
+
+\begin{tabularx}{\textwidth}{|l|X|r|}
+	\hline
+	\head Problem:	& \head Beschreibung:	& \head Datum:	\\ \hline \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+					&						&				\\ \hline
+\end{tabularx}
+
+\end{document}
