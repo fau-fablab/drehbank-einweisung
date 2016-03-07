@@ -4,7 +4,7 @@ Drehbank Einweisung
 Einweisung des [FAU FabLab](https://fablab.fau.de) in die [Drehbank](https://fablab.fau.de/tool/cnc-drehbank).
 
 Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/drehbank-einweisung) ist als PDF unter
-https://user.fablab.fau.de/~buildserver/drehbank-einweisung/Einweisung_Drehbank.pdf
+https://brain.fablab.fau.de/build/drehbank-einweisung/Einweisung_Drehbank.pdf
 abrufbar und wird automatisch alle 20 Minuten aktualisiert.
 
 auschecken
@@ -16,8 +16,8 @@ git clone --recursive git@github.com:fau-fablab/drehbank-einweisung.git
 
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
-[![Build Status](https://user.fablab.fau.de/~buildserver/drehbank-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/drehbank-einweisung/)
-[![TODOs](https://user.fablab.fau.de/~buildserver/drehbank-einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/drehbank-einweisung/)
+[![Build Status](https://brain.fablab.fau.de/build/drehbank-einweisung/status.svg)](https://brain.fablab.fau.de/build/drehbank-einweisung/)
+[![TODOs](https://brain.fablab.fau.de/build/drehbank-einweisung/status-todos.svg)](https://brain.fablab.fau.de/build/drehbank-einweisung/)
 
 Lizenz
 ------
