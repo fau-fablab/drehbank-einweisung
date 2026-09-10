@@ -1,0 +1,22 @@
+name: Build PDFs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: make
+        run: make
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: output/*.pdf

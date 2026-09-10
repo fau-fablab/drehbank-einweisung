@@ -14,6 +14,19 @@ auschecken
 git clone --recursive git@github.com:fau-fablab/drehbank-einweisung.git
 ```
 
+bauen mit Docker
+----------------
+
+Statt LaTeX lokal zu installieren, kann der Build auch in einem Docker-Container
+mit der offiziellen [`texlive/texlive`](https://hub.docker.com/r/texlive/texlive)
+Image laufen:
+
+```bash
+docker run --rm -v "$PWD":/workdir -w /workdir texlive/texlive:latest make
+```
+
+Die fertigen PDFs landen anschließend im Ordner `output/`.
+
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
 [![Build Status](https://brain.fablab.fau.de/build/drehbank-einweisung/status.svg)](https://brain.fablab.fau.de/build/drehbank-einweisung/)
