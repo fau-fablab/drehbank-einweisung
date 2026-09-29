@@ -6,3 +6,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # Branch-Namen mit Bindestrich (dependabot-submodules-...), damit sie nicht
+    # mit einem Branch "dependabot" kollidieren (Buildserver: git fetch)
+    pull-request-branch-name:
+      separator: "-"
