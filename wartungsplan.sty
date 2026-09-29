@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gemeinsame Bausteine der Wartungspläne (Formulare zum Ausdrucken)
+% CC-BY-SA 3.0, FAU FabLab
+% Wie der Wartungsplan der CNC-Fräse, aber für mehrere Pläne nutzbar.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wartungsplan}[2026/09/29 Wartungsplan-Raster]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage[ngerman]{babel}
+\RequirePackage[a4paper,landscape,left=12mm,right=12mm,top=10mm,bottom=16mm,footskip=8mm]{geometry}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{amssymb}
+\RequirePackage{tabularx}
+\RequirePackage{lastpage}
+\RequirePackage{fancyhdr}
+\RequirePackage{tikz}
+\RequirePackage{xstring}
+
+% Versionsnummer wie in fablab-document (version.tex erzeugt make)
+\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
+
+\definecolor{fablab}{RGB}{20,51,105}
+% Intervallfarben (wie im bisherigen Plan)
+\definecolor{iW}{HTML}{FFCC00}   % wöchentlich
+\definecolor{iM}{HTML}{83CAFF}   % monatlich
+\definecolor{iQ}{HTML}{9999FF}   % vierteljährlich
+\definecolor{iH}{HTML}{579D1C}   % halbjährlich
+\definecolor{iJ}{HTML}{FF420E}   % jährlich
+\definecolor{iT}{gray}{0.85}     % täglich (nicht eintragen)
+
+% Pfad zum Nachdrucken, im Plan mit \renewcommand{\PlanPfad}{...} setzen
+\newcommand{\PlanPfad}{}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\scriptsize Nachdrucken: \texttt{\PlanPfad}
+  \quad Quelle: \texttt{github.com/fau-fablab/drehbank-einweisung}}
+\fancyfoot[R]{\scriptsize Version \Version\quad Seite \thepage\ von \pageref*{LastPage}}
+\setlength{\parindent}{0pt}
+
+% ---------------------------------------------------------------------
+%  Raster: Breiten und Höhen
+% ---------------------------------------------------------------------
+\newlength{\wG}\setlength{\wG}{8mm}     % Gruppe
+\newlength{\wI}\setlength{\wI}{29mm}    % Intervall
+\newlength{\wT}\setlength{\wT}{74mm}    % Tätigkeit
+\newlength{\wS}                         % Termin (aus der Restbreite)
+\newlength{\hZ}\setlength{\hZ}{7.4mm}   % Zeilenhöhe
+\newcounter{zeile}
+\newcommand{\nSp}{12}                   % Anzahl der Terminspalten
+
+% Anzahl der Terminspalten festlegen; \wS folgt aus der Restbreite
+\newcommand{\Spalten}[1]{%
+  \renewcommand{\nSp}{#1}%
+  \setlength{\wS}{\dimexpr(\linewidth-\wG-\wI-\wT)/#1\relax}}
+
+% Eine Aufgabe:  \Aufgabe{Farbe}{Intervall}{Tätigkeit}{Muster}
+%   Muster: ein Zeichen je Terminspalte
+%   x = fällig (Datum eintragen), . = nicht fällig, t = täglich (nicht eintragen),
+%   - = leeres Feld (z.B. für handschriftliche Aufgaben)
+\newcommand{\Aufgabe}[4]{%
+  \stepcounter{zeile}%
+  \pgfmathsetlengthmacro{\yo}{-\value{zeile}*\hZ+\hZ}%
+  \pgfmathsetlengthmacro{\yu}{-\value{zeile}*\hZ}%
+  \ifx\relax#1\relax\else
+    \fill[#1] (\wG,\yo) rectangle ++(\wI,-\hZ);
+  \fi
+  % weiße Schrift auf dunklen Intervallfarben
+  \def\tc{black}\IfStrEqCase{#1}{{iH}{\def\tc{white}}{iJ}{\def\tc{white}}}[]%
+  \node[anchor=west, font=\small\bfseries, text=\tc]
+    at (\wG+1.2mm, \yo-0.5\hZ) {#2};
+  \node[anchor=west, font=\small, text width=\wT-2.4mm]
+    at (\wG+\wI+1.2mm, \yo-0.5\hZ) {#3};
+  \foreach \i in {1,...,\nSp}{%
+    \StrChar{#4}{\i}[\c]%
+    \pgfmathsetlengthmacro{\xs}{\wG+\wI+\wT+(\i-1)*\wS}%
+    \IfStrEq{\c}{x}{\fill[#1!35] (\xs,\yo) rectangle ++(\wS,-\hZ);}{}%
+    \IfStrEq{\c}{.}{\fill[black!12] (\xs,\yo) rectangle ++(\wS,-\hZ);}{}%
+    \IfStrEq{\c}{t}{\fill[iT!55] (\xs,\yo) rectangle ++(\wS,-\hZ);}{}%
+  }%
+  \draw[black!60, line width=0.3pt] (\wG,\yu) -- (\wG+\wI+\wT+\nSp\wS,\yu);
+}
+% Trennlinie zwischen Gruppen
+\newcommand{\Trenner}{%
+  \pgfmathsetlengthmacro{\yt}{-\value{zeile}*\hZ}%
+  \draw[black, line width=1.2pt] (0,\yt) -- (\wG+\wI+\wT+\nSp\wS,\yt);}
+% Gruppenbezeichnung links, von Zeile #1 bis #2
+\newcommand{\Gruppe}[3]{%
+  \pgfmathsetlengthmacro{\ya}{-(#1-1)*\hZ}%
+  \pgfmathsetlengthmacro{\yb}{-#2*\hZ}%
+  \node[rotate=90, font=\footnotesize\bfseries, align=center]
+    at (0.5\wG, 0.5*\ya+0.5*\yb) {#3};}
+
+% Rahmen und senkrechte Linien des Plans; #1 = Liste der Spalten, nach denen
+% eine dicke Linie kommt (z.B. 3,6,9). Die Kopfzeile ist 14mm hoch.
+\newcommand{\Rahmen}[1]{%
+  \pgfmathsetlengthmacro{\xa}{\wG+\wI+\wT}%
+  \pgfmathsetlengthmacro{\yu}{-\value{zeile}*\hZ}%
+  \draw[black, line width=1.2pt] (0,14mm) rectangle (\xa+\nSp\wS,\yu);
+  \draw[black, line width=0.8pt] (\wG,0) -- (\wG,\yu);
+  \draw[black!60, line width=0.3pt] (\wG+\wI,0) -- (\wG+\wI,\yu);
+  \draw[black, line width=1.2pt] (\xa,14mm) -- (\xa,\yu);
+  \foreach \i in {1,...,\numexpr\nSp-1\relax}{
+    \pgfmathsetlengthmacro{\xs}{\xa+\i*\wS}
+    \draw[black!60, line width=0.3pt] (\xs,6.4mm) -- (\xs,\yu);
+  }
+  \foreach \i in {#1}{
+    \pgfmathsetlengthmacro{\xs}{\xa+\i*\wS}
+    \draw[black, line width=0.8pt] (\xs,14mm) -- (\xs,\yu);
+  }
+  \draw[black!60, line width=0.3pt] (\xa,6.4mm) -- (\xa+\nSp\wS,6.4mm);}
+
+% Kopf der Seite: Titel, Zeile mit Angaben (#2), Logo und Legende
+\newcommand{\Kopf}[2]{%
+\begin{minipage}[b]{0.72\linewidth}
+  {\LARGE\bfseries #1}\\[2mm]
+  \normalsize #2
+\end{minipage}\hfill
+\begin{minipage}[b]{0.25\linewidth}\raggedleft
+  \IfFileExists{fablab-document/logo/Logo/Logo-FAU-bunt.pdf}%
+    {\includegraphics[height=11mm]{fablab-document/logo/Logo/Logo-FAU-bunt.pdf}}{\textbf{FAU FabLab}}
+\end{minipage}\\[1mm]
+{\color{fablab}\rule{\linewidth}{0.8pt}}\\[1.5mm]}
+
+\newcommand{\Legende}{%
+\begin{tabular}{@{}l@{\quad}*{5}{l@{\quad}}}
+  \textbf{Intervall:} &
+  \colorbox{iW}{\strut\ wöchentlich\ } &
+  \colorbox{iM}{\strut\ monatlich\ } &
+  \colorbox{iQ}{\strut\ vierteljährlich\ } &
+  \colorbox{iH}{\strut\ \color{white}halbjährlich\ } &
+  \colorbox{iJ}{\strut\ \color{white}jährlich\ }
+\end{tabular}}
+
+\newcommand{\UZeilen}[1]{%
+  \ifnum#1>0
+    & & & \rule[-3mm]{0pt}{10.5mm}\\ \hline
+    \expandafter\UZeilen\expandafter{\numexpr#1-1\relax}%
+  \fi}
+% Seite mit Unregelmäßigkeiten; #1 = Titel des Plans, #2 = Anzahl der Zeilen
+\newcommand{\Unregelmaessigkeiten}[2]{%
+{\Large\bfseries Unregelmäßigkeiten} \hfill \small #1\\[2mm]
+\normalsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{|p{22mm}|p{80mm}|X|p{20mm}|}
+  \hline
+  \textbf{Datum} & \textbf{Problem} & \textbf{Beschreibung / Maßnahme} & \textbf{Kürzel} \\
+  \hline
+  \UZeilen{#2}
+\end{tabularx}}
