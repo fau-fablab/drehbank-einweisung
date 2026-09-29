@@ -1,196 +1,76 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% COPYRIGHT: (C) 2012-2015 FAU FabLab and others
-% CC-BY-SA 3.0
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\newcommand{\basedir}{./fablab-document/}
-\documentclass[landscape]{\basedir/fablab-document}
-
-\usepackage{nicefrac}	% for nice 1/4 and 1/2
-\usepackage{tabularx}	% Tabelle mit teilweise gleich großen Spalten
-\usepackage{multirow}	% multirow Zellen
-\usepackage{colortbl}	% farbige Zellen
-
-\title{Wartungsplan Wabeco CC-D6000 - Quartal}
-
-\newcommand{\head}{\bfseries \LARGE}
-
-\newcommand{\quer}[1]{\rotatebox{90}{\textbf{#1}\hspace{1em}}}
-
-% linebreaks in Zellen
-\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
-
-% Kalenderwochen
-\newcounter{kw}
-\setcounter{kw}{1}
-\newcommand{\kw}{KW\arabic{kw} \stepcounter{kw}}
-
-%colors
-\definecolor{yellow}{RGB}{255, 211,  32}
-\definecolor{blue}	{RGB}{131, 202, 255}
-\definecolor{violet}{RGB}{153, 153, 255}
-\definecolor{green}	{RGB}{87,  157,  28}
-\definecolor{red}	{RGB}{255,  51,  51}
-\definecolor{gray}	{RGB}{178, 178, 178}
-
-
-\newcommand{\w}{\cellcolor{yellow}}
-\newcommand{\m}{\cellcolor{blue}}
-\renewcommand{\v}{\cellcolor{violet}}
-\newcommand{\h}{\cellcolor{green}}
-\renewcommand{\j}{\cellcolor{red}}
-\newcommand{\nop}{\cellcolor{gray}}
-
-\newcommand{\woe}{
-	\w wöchentlich &
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-	& \w
-}
-
-\newcommand{\mon}{
-	\m monatlich &
-	& \m
-	& \nop
-	& \nop
-	& \nop
-	& \m
-	& \nop
-	& \nop
-	& \nop
-	& \m
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-}
-
-\newcommand{\viertel}{
-	\v \nicefrac{1}{4} jährlich &
-	& \v
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-}
-
-\newcommand{\halb}{
-	\h \nicefrac{1}{2} jährlich &
-	& \h
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-}
-
-\newcommand{\jaehrl}{
-	\j jährlich &
-	& \j
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-	& \nop
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wartungsplan CNC-Drehbank Wabeco CC-D6000 - Quartal (Formular zum Ausdrucken)
+% CC-BY-SA 3.0, FAU FabLab
+% Analog zum Wartungsplan der CNC-Fräse (fraese-einweisung).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[a4paper,landscape,10pt]{scrartcl}
+\usepackage{wartungsplan}
+\renewcommand{\PlanPfad}{Dateifreigabe/1\_FabLab\_Einweisungen/drehbank-einweisung/Wartungsplan\_Quartal.pdf}
 
 \begin{document}
 
-\begin{tabularx}{\textwidth}{|l|l|X||c|c|c|c|c|c|c|c|c|c|c|c|c|}
-	\hline
-	\multirow{3}{2.5em}{\Huge Q1}					&\head Intervall&\head Tätigkeit& \multicolumn{13}{c|}{\head Erledigt am (Datum)}									\\ \cline{4-16}
-													&				&				& \multicolumn{4}{c|}{Jan}	& \multicolumn{4}{c|}{Feb}	& \multicolumn{5}{c|}{Mär}	\\ \cline{4-16}
-													&				&				& \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw & \kw		\\ \hline \hline
-	\multirow{10}{2.5em}{\quer{\specialcell{Reinigung\\/ Schmierung}}}
-													& \woe		\\ \cline{2-16}
-													& \woe		\\ \cline{2-16}
-													& \woe		\\ \cline{2-16}
-													& \woe		\\ \cline{2-16}
-													& \mon		\\ \cline{2-16}
-													& \mon		\\ \cline{2-16}
-													& \mon		\\ \cline{2-16}
-													& \mon		\\ \cline{2-16}
-													& \viertel	\\ \cline{2-16}
-													& \halb     \\ \hline \hline
-	\multirow{5}{2.5em}{\quer{\specialcell{Bestätigung\\/ Prüfung}}}
-													& \woe		\\ \cline{2-16}
-													& \viertel	\\ \cline{2-16}
-													& \viertel	\\ \cline{2-16}
-													& \viertel	\\ \cline{2-16}
-													& \jaehrl	\\ \hline \hline
-	\bfseries Austausch									& \halb		\\ \hline
-	\bfseries Sonstiges									&				&				&     &     &     &     &     &     &     &     &     &     &     &     &	\\ \hline
+\Kopf{Wartungsplan CNC-Drehbank Wabeco CC-D6000 -- Quartal}{%
+  Quartal:\enspace $\square$ Q1\quad $\square$ Q2\quad $\square$ Q3\quad $\square$ Q4
+  \qquad Jahr: 20\rule{10mm}{0.4pt}
+  \qquad Plan begonnen am: \rule{25mm}{0.4pt}}
+\small
+In die \textbf{farbigen Felder} Datum und Kürzel eintragen, wenn die Aufgabe erledigt ist.
+Graue Felder: nicht fällig. In der ersten Zeile die Kalenderwoche eintragen.\\[1mm]
+\Legende
 
-\end{tabularx}
+\vspace{2.5mm}
+% ------------------------------ Plan ---------------------------------
+\Spalten{13}\setlength{\hZ}{6.9mm}
+\begin{tikzpicture}[x=1pt,y=1pt]
+  % Kopfzeile des Plans: Monate und Wochen
+  \pgfmathsetlengthmacro{\xa}{\wG+\wI+\wT}
+  \node[anchor=west, font=\small\bfseries] at (1.2mm, 9mm) {Aufgabe};
+  \node[anchor=west, font=\footnotesize] at (1.2mm, 3.2mm) {Intervall und Tätigkeit};
+  \node[anchor=east, font=\footnotesize] at (\xa-1.2mm, 3.2mm) {Woche im Quartal:};
+  \foreach \m/\a/\b in {1.\ Monat/0/4, 2.\ Monat/4/8, 3.\ Monat/8/13}{
+    \node[font=\small\bfseries] at (\xa+0.5*\a*\wS+0.5*\b*\wS, 9mm) {\m};
+  }
+  \foreach \i in {1,...,13}{
+    \node[font=\footnotesize] at (\xa+\i*\wS-0.5\wS, 3.2mm) {\i};
+  }
+  \draw[black, line width=1.2pt] (0,0) -- (\xa+13\wS,0);
+  \setcounter{zeile}{0}
+  \Aufgabe{}{Kalenderwoche}{}{-------------}
+  \Trenner
+  % Reinigung und Schmierung
+  \Aufgabe{iW}{wöchentlich}{}{xxxxxxxxxxxxx}
+  \Aufgabe{iW}{wöchentlich}{}{xxxxxxxxxxxxx}
+  \Aufgabe{iW}{wöchentlich}{}{xxxxxxxxxxxxx}
+  \Aufgabe{iW}{wöchentlich}{}{xxxxxxxxxxxxx}
+  \Aufgabe{iM}{monatlich}{}{x...x...x....}
+  \Aufgabe{iM}{monatlich}{}{x...x...x....}
+  \Aufgabe{iM}{monatlich}{}{x...x...x....}
+  \Aufgabe{iM}{monatlich}{}{x...x...x....}
+  \Aufgabe{iQ}{vierteljährlich}{}{x............}
+  \Aufgabe{iH}{halbjährlich}{}{x............}
+  \Gruppe{2}{11}{Reinigung /\\ Schmierung}
+  \Trenner
+  % Bestätigung / Prüfung
+  \Aufgabe{iW}{wöchentlich}{}{xxxxxxxxxxxxx}
+  \Aufgabe{iQ}{vierteljährlich}{}{x............}
+  \Aufgabe{iQ}{vierteljährlich}{}{x............}
+  \Aufgabe{iQ}{vierteljährlich}{}{x............}
+  \Aufgabe{iJ}{jährlich}{}{x............}
+  \Gruppe{12}{16}{Bestätigung /\\ Prüfung}
+  \Trenner
+  % Austausch
+  \Aufgabe{iH}{halbjährlich}{}{x............}
+  \Gruppe{17}{17}{\tiny Tausch}
+  \Trenner
+  % Sonstiges: frei für weitere Aufgaben
+  \Aufgabe{}{}{}{-------------}
+  \Aufgabe{}{}{}{-------------}
+  \Gruppe{18}{19}{Sonst.}
+  \Rahmen{4,8}
+\end{tikzpicture}
 
-\pagebreak
-
-\section*{Unregelmäßigkeiten}
-
-\begin{tabularx}{\textwidth}{|l|X|r|}
-	\hline
-	\head Problem:	& \head Beschreibung:	& \head Datum:	\\ \hline \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-					&						&				\\ \hline
-\end{tabularx}
+\newpage
+\Unregelmaessigkeiten{Wartungsplan CNC-Drehbank Wabeco CC-D6000 -- Quartal}{16}
 
 \end{document}
