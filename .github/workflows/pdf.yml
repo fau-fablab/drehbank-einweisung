@@ -1,0 +1,16 @@
+name: PDF bauen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    uses: fau-fablab/fablab-document/.github/workflows/pdf.yml@master
+    permissions:
+      contents: write
+    # Optional:
+    # with:
+    #   pakete: libreoffice-calc-nogui   # zusätzliche Debian-Pakete
+    #   release: false                   # keine Releases anlegen
