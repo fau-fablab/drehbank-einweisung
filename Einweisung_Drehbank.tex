@@ -10,6 +10,7 @@
 
 \usepackage{booktabs} % für Tabellen: fancy \addlinespace und besondere Querlinien 
 \usepackage{pdfpages} % für \includepdf
+\usepackage{fablab-document/fablab-ba} % Betriebsanweisung
 
 \usepackage[colorinlistoftodos,prependcaption]{todonotes}
 \presetkeys%
@@ -426,8 +427,7 @@ Wenn Späne auf die Hand kommen, diese nicht wegreiben, sondern abspülen. Für 
 
 \todoUnwichtig{Einen ähnlichen Abschnitt gibt es weiter unten nochmal. Manches wurde aus Versehen oben auch mit reindupliziert.}
 
-\addcontentsline{toc}{section}{Betriebsanweisung}
-\includepdf[fitpaper=true,offset=14 -7]{Betriebsanweisung_Drehen.pdf}
+\BAseite[sec:betriebsanweisung]{betriebsanweisung/ba_drehbank}
 
 \section{Vorbereitende Aufgaben}
 \subsection{Rohmaterial einspannen}
