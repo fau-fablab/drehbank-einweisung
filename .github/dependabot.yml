@@ -1,0 +1,8 @@
+# Dependabot prüft wöchentlich, ob fablab-document neue Commits hat (z.B. ein
+# geändertes Logo oder Layout), und öffnet dann automatisch einen Pull Request.
+version: 2
+updates:
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: weekly
