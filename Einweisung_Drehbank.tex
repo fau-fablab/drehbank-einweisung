@@ -540,7 +540,7 @@ In die freie Kegelaufnahme des Reitstockes (sogenannte Reitstockpinole) wird dan
 Dazu muss die Pinole mindestens auf 15\,mm ausgefahren sein.
 Unbedingt den sicheren Sitz des Werkzeuges prüfen!
 
-\textbf{Unbedingt darauf achten, dass hierbei keinerlei Späne auf dem Bohrfutterkegel oder in der Reitstockaufnahme sind! Falls das Bohrfutter oder die mitlaufende Körnerspitze mit einem Span geklemmt wird, ist es sehr wahrscheinlich, dass sich weder das Futter noch die Spitze jemals wieder demontieren lassen ohne etwas ernsthaft zu beschädigen!}
+\textbf{Unbedingt darauf achten, dass hierbei keinerlei Späne auf dem Bohrfutterkegel oder in der Reitstockaufnahme sind! Falls das Bohrfutter oder die mitlaufende Körnerspitze mit einem Span geklemmt wird, ist es sehr wahrscheinlich, dass sich weder das Futter noch die Spitze jemals wieder demontieren lassen, ohne etwas ernsthaft zu beschädigen!}
 
 Vorgehen:
 \begin{itemize}
@@ -577,7 +577,7 @@ Das Innendrehen funktioniert im Grunde wie das Außendrehen. Es gibt jedoch trot
 \begin{itemize}
 \item Anders als beim Außendrehen sieht man sein Werkzeug nur schlecht. Achte unbedingt darauf, keine Kollision zu fahren.\\
 \textbf{Nicht in die laufende Maschine beugen und versuchen, so das Werkzeug zu sehen!}
-\item Die Zustellung erfolgt beim Innendrehen in negativer Richtung, d.\,h. um 1\,mm abzunehmen ist mit dem Handrad 1\,mm zurückzufahren.
+\item Die Zustellung erfolgt beim Innendrehen in negativer Richtung, d.\,h. um 1\,mm abzunehmen, ist mit dem Handrad 1\,mm zurückzufahren.
 \end{itemize}
 
 \subsection{Fasen}
@@ -643,11 +643,11 @@ Während des Schnittvorganges immer wieder mit Öl schmieren.
 Vorgehen:
 \begin{itemize}
 \item Zunächst Zentrierbohrung (\ref{handdrehen:zentrierbohrung}) setzen\\
-	\textbf{WICHTIG: eine gute Zentrierbohrung mit sauberen Flanken im richtigen Winkel ist essentiell, ansonsten überhitzt die Spitze der Körnerspitze, da Gleitreibung statt Haftreibung auftritt (die Körnerspitze dreht nicht sauber mit). Im Zweifelsfall nochmal mit dem Zentrierbohrer nachbessern, falls die Spitze nicht sauber mitläuft.} 
+	\textbf{WICHTIG: Eine gute Zentrierbohrung mit sauberen Flanken im richtigen Winkel ist essentiell, ansonsten überhitzt die Spitze der Körnerspitze, da Gleitreibung statt Haftreibung auftritt (die Körnerspitze dreht nicht sauber mit). Im Zweifelsfall nochmal mit dem Zentrierbohrer nachbessern, falls die Spitze nicht sauber mitläuft.} 
 \item Sicherstellen, dass alle Späne aus der Bohrung entfernt sind
 \item Falls nicht die mitlaufende Körnerspitze montiert ist, Bohrfutter o.\,Ä. aus dem Reitstock entfernen
 \item Körnerspitze mit leichtem Druck in die Reitstockpinole einsetzen\\
-\textbf{Unbedingt auf Spanfreiheit achten! siehe \ref{handdrehen:zentrierbohrung}}
+\textbf{Unbedingt auf Spanfreiheit achten! Siehe \ref{handdrehen:zentrierbohrung}}
 \item Klemmung des Reitstocks öffnen und Körnerspitze bis kurz vor Materialkontakt schieben 
 \item Klemmung schließen
 \item Reitstockpinole ausfahren, bis die Körnerspitze am Werkstück anliegt.\\
@@ -782,7 +782,7 @@ Die Werkzeugbibliothek von NX enthält die im FabLab vorhandenen Werkzeuge mit b
 
 \todoUnwichtig{Laden der Werkzeugbibliothek?}
 
-\todoUnwichtig{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Maxs Online-Kurzanleitung}
+\todoUnwichtig{gespiegelte Anzeige oder nicht? bisher widersprüchliche Informationen und verschiedene Ansätze (arw/Toni/Max), höchstwahrscheinlich sogar inkonsistent zu Max' Online-Kurzanleitung}
 
 \subsubsection{Simulation}
 
@@ -830,7 +830,7 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 \begin{itemize}
 	\item Rohteil wie weiter oben beschrieben einspannen
 	\item Durchmesser des Rohteils mit Schieblehre bestimmen, Radius berechnen
-	\item Werkzeug 3 einsetzen\footnote{Es ist auch möglich, ein anderes Werkzeug als Werkzeug 3 zum Setzen des Nullpunktes zu verwenden. Hierzu müssen aber zuerst die Werkzeugoffsets dieses anderen Werkzeugs geladen werden. Hierzu muss man manuell in der Registerkarte \enquote{MDI (F5)} den GCode \texttt{M6 T$n$} wobei $n$ die Werkzeugnummer ist, also beispielsweise \texttt{M6 T2} für Werkzeug Nummer 2 eingeben. Anschließend muss noch \texttt{G43} eingegeben werden, um das Koordinatensystem dem gerade gesetzten Werkzeug anzupassen. Nach dem Rückwechsel auf die Registerkarte \enquote{Manuelle Kontrolle (F3)} kann man in der Anleitung normal weiter fortfahren. Es ist zu beachten, dass sich nicht alle Werkzeuge aufgrund ihrer Geometrie zur Nullpunktseinstellung eignen.}
+	\item Werkzeug 3 einsetzen\footnote{Es ist auch möglich, ein anderes Werkzeug als Werkzeug 3 zum Setzen des Nullpunktes zu verwenden. Hierzu müssen aber zuerst die Werkzeugoffsets dieses anderen Werkzeugs geladen werden. Hierzu muss man manuell in der Registerkarte \enquote{MDI (F5)} den GCode \texttt{M6 T$n$}, wobei $n$ die Werkzeugnummer ist, also beispielsweise \texttt{M6 T2} für Werkzeug Nummer 2 eingeben. Anschließend muss noch \texttt{G43} eingegeben werden, um das Koordinatensystem dem gerade gesetzten Werkzeug anzupassen. Nach dem Rückwechsel auf die Registerkarte \enquote{Manuelle Kontrolle (F3)} kann man in der Anleitung normal weiter fortfahren. Es ist zu beachten, dass sich nicht alle Werkzeuge aufgrund ihrer Geometrie zur Nullpunktseinstellung eignen.}
 	\item Schutzhaube schließen
 	\item Spindel im Rechtslauf drehen lassen, Drehzahl größer 1000 Umdrehungen (Einstellung mit \enquote{+} und \enquote{-}, Drehzahlanzeige ist grüner Balkengraph rechts oben)
 	\item Schrittgeschwindigkeit langsam einstellen, z.B. $20\,\frac{\mathrm{mm}}{\mathrm{min}}$
@@ -838,7 +838,7 @@ Das Werkzeug Nummer 3 ist das Referenzwerkzeug, d.h. die X- und Z-Offsets des Ko
 	\item mit dem Werkzeug die Außenfläche (außen auf der Rundung) leicht berühren, so dass gerade so ein minimaler Span auftritt, Werkzeug an dieser Position \textbf{stehen lassen}
 	\item mittels \enquote{Antasten} kann nun die Werkzeugposition spezifiziert werden, hierbei für die Außenfläche die X-Achse im erscheinenden Dialog auswählen und den oben vermessenen Radius als X-Koordinate angeben
 	\item der Nullpunkt der X-Achse ist nun die Rotationsachse
-	\item mit der \enquote{nach-unten-Taste} von der Außenfläche des Rohteils wegfahren.
+	\item mit der \enquote{Nach-unten-Taste} von der Außenfläche des Rohteils wegfahren.
 	\item die Stirnfläche kann in gleicher Weise angefahren werden, um den Nullpunkt der Z-Achse zu setzen, mit dem im Antasten-Dialog angegebenen Wert kann bestimmt werden, ob der Nullpunkt dabei an der Stirnseite oder an anderer Stelle liegen soll.
 	\item wiederum in Richtung der Z-Achse vom Rohteil wegfahren, bevor Bewegungen in der X-Achse durchgeführt werden
 	\item Spindel mit dem \enquote{Stop}-Knopf anhalten. Bei Stillstand kann die Schutzhaube wieder geöffnet werden.
